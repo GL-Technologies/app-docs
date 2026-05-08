@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Authenticator FAQ</title>
+    <title>Support Center</title>
     <style>
         :root {
             --primary-color: #007AFF; /* iOS Blue */
             --text-color: #333;
-            --bg-color: #f9f9f9;
+            --secondary-text: #666;
+            --bg-color: #f2f2f7; /* iOS System Gray 6 */
             --card-bg: #ffffff;
+            --border-color: #e5e5ea;
         }
 
         body {
@@ -21,152 +23,246 @@
             padding: 20px;
         }
 
-        h1 {
-            text-align: center;
-            font-size: 24px;
-            margin-bottom: 30px;
-        }
-
-        h2 {
-            font-size: 18px;
-            color: var(--primary-color);
-            margin-top: 30px;
-            margin-bottom: 10px;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 5px;
-        }
-
-        .faq-container {
+        .container {
             max-width: 800px;
             margin: 0 auto;
         }
 
-        details {
+        header {
+            text-align: center;
+            padding: 40px 0 20px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            color: var(--secondary-text);
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-top: 40px;
+            margin-bottom: 15px;
+            padding-left: 5px;
+        }
+
+        section {
             background-color: var(--card-bg);
-            margin-bottom: 10px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-radius: 12px;
             overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+
+        details {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        details:last-child {
+            border-bottom: none;
         }
 
         summary {
-            padding: 15px;
-            font-weight: 600;
+            padding: 16px 20px;
+            font-weight: 500;
             cursor: pointer;
-            list-style: none; /* Hides default triangle */
+            list-style: none;
             position: relative;
+            outline: none;
+            transition: background-color 0.2s;
         }
 
-        /* Custom toggle icon */
+        summary:hover {
+            background-color: #fafafa;
+        }
+
         summary::after {
-            content: '+';
+            content: '\203A'; /* Chevron right */
             position: absolute;
             right: 20px;
-            font-weight: bold;
-            color: var(--primary-color);
+            font-size: 22px;
+            color: #c7c7cc;
+            transition: transform 0.3s;
+            line-height: 1;
         }
 
         details[open] summary::after {
-            content: '-';
+            transform: rotate(90deg);
         }
 
         .answer {
-            padding: 0 15px 15px 15px;
+            padding: 0 20px 20px 20px;
             font-size: 15px;
-            color: #555;
+            color: var(--secondary-text);
         }
 
-        /* Highlight box for important info */
-        .warning {
-            background-color: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 10px;
-            margin-top: 10px;
+        .answer ul {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+
+        .answer li {
+            margin-bottom: 8px;
+        }
+
+        .highlight-box {
+            background-color: #f8f9ff;
+            border-left: 4px solid var(--primary-color);
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 4px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 40px 0;
+            border-top: 1px solid var(--border-color);
+            color: var(--secondary-text);
             font-size: 14px;
-            color: #856404;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: opacity 0.2s;
+        }
+
+        .contact-btn:hover {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 28px;
+            }
         }
     </style>
 </head>
 <body>
 
-<div class="faq-container">
-    <h1>Frequently Asked Questions</h1>
+<div class="container">
+    <header>
+        <h1>Support Center</h1>
+        <p class="subtitle">How can we help you today?</p>
+    </header>
 
-    <h2>📱 Getting Started</h2>
-
-    <details>
-        <summary>What is 2FA and why should I use it?</summary>
-        <div class="answer">
-            Two-Factor Authentication (2FA) adds an extra layer of security to your online accounts. Even if someone steals your password, they cannot access your account without the dynamic verification code generated by this app.
-        </div>
-    </details>
-
-    <details>
-        <summary>How do I add a new account?</summary>
-        <div class="answer">
-            You can add accounts in two ways:
-            <ul>
-                <li><strong>Scan QR Code:</strong> Tap the "+" button and scan the QR code provided by the service (e.g., Google, Facebook).</li>
-                <li><strong>Manual Entry:</strong> If you cannot scan the code, select "Manual Entry" and paste the secret key provided by the service.</li>
-            </ul>
-        </div>
-    </details>
-
-    <details>
-        <summary>Do I need an internet connection?</summary>
-        <div class="answer">
-            <strong>No.</strong> The codes are generated locally on your device based on a time algorithm. The app works perfectly in Airplane Mode or offline.
-        </div>
-    </details>
-
-    <h2>☁️ Backup & Recovery</h2>
-
-    <details>
-        <summary>If I lose my phone, can I recover my codes?</summary>
-        <div class="answer">
-            This depends on your backup settings:
-            <div class="warning">
-                <strong>Important:</strong> If you have enabled <strong>iCloud Sync/Backup</strong> within the app, your data is safe. Simply log in with the same Apple ID on a new device to restore it.
+    <h2>💎 Subscriptions & Purchases</h2>
+    <section>
+        <details>
+            <summary>How do I restore my Pro/Premium purchase?</summary>
+            <div class="answer">
+                If you have previously purchased a Pro version or subscription, you can restore it by:
+                <ol>
+                    <li>Opening the <strong>Settings</strong> or <strong>Store</strong> page within the app.</li>
+                    <li>Tapping the <strong>"Restore Purchases"</strong> button.</li>
+                    <li>Ensuring you are logged in with the same Apple ID used for the original purchase.</li>
+                </ol>
             </div>
-            <p>If you did <strong>not</strong> enable backup, the keys are stored only on your device's chip for security. In this case, data cannot be recovered. We strongly recommend enabling cloud backup or saving the "Recovery Codes" provided by your service providers.</p>
-        </div>
-    </details>
+        </details>
+        <details>
+            <summary>How do I cancel a subscription?</summary>
+            <div class="answer">
+                Subscriptions are managed by Apple. To cancel:
+                <ol>
+                    <li>Open the <strong>Settings</strong> app on your iPhone/iPad.</li>
+                    <li>Tap your <strong>Name</strong> at the top.</li>
+                    <li>Tap <strong>Subscriptions</strong>.</li>
+                    <li>Find the app and select <strong>Cancel Subscription</strong>.</li>
+                </ol>
+            </div>
+        </details>
+        <details>
+            <summary>Can I share my purchase with Family Sharing?</summary>
+            <div class="answer">
+                Most of our non-consumable Pro features support <strong>Apple Family Sharing</strong>. Ensure that Family Sharing is enabled in your iCloud settings and that "Share Purchases" is turned on.
+            </div>
+        </details>
+    </section>
 
-    <details>
-        <summary>How do I transfer to a new iPhone?</summary>
-        <div class="answer">
-            1. Ensure iCloud Sync is enabled on your old device.<br>
-            2. Sign in to your new iPhone with the same Apple ID.<br>
-            3. Download the app, and your accounts will appear automatically.
-        </div>
-    </details>
+    <h2>☁️ Data & Syncing</h2>
+    <section>
+        <details>
+            <summary>How is my data synced across devices?</summary>
+            <div class="answer">
+                We use <strong>iCloud</strong> to securely sync your data across all your Apple devices.
+                <div class="highlight-box">
+                    <strong>Tip:</strong> Ensure you are logged into the same Apple ID and that <strong>iCloud Drive</strong> is enabled in your device settings.
+                </div>
+            </div>
+        </details>
+        <details>
+            <summary>Is my data backed up?</summary>
+            <div class="answer">
+                If iCloud Sync is enabled, your data is automatically backed up to your personal iCloud storage. We do not store your personal data on our own servers, ensuring maximum privacy.
+            </div>
+        </details>
+    </section>
 
-    <h2>🛡️ Security & Privacy</h2>
-
-    <details>
-        <summary>Do you store my passwords or keys?</summary>
-        <div class="answer">
-            <strong>Absolutely not.</strong> We use a Zero-Knowledge architecture. Your secret keys are encrypted and stored locally on your device (in the iOS Keychain) or in your personal iCloud. We (the developers) have no access to your data.
-        </div>
-    </details>
-
-    <details>
-        <summary>Can I lock the app?</summary>
-        <div class="answer">
-            Yes. You can enable <strong>Face ID / Touch ID</strong> in the Settings. This ensures that only you can view your verification codes.
-        </div>
-    </details>
+    <h2>🛡️ Privacy & Security</h2>
+    <section>
+        <details>
+            <summary>Do you collect my personal information?</summary>
+            <div class="answer">
+                <strong>Your privacy is our priority.</strong> Most of our apps operate on a "Privacy by Design" principle. We do not collect your personal content. For details on usage analytics, please refer to the <strong>Privacy Policy</strong> found in the app settings.
+            </div>
+        </details>
+        <details>
+            <summary>Can I lock the app with Face ID / Touch ID?</summary>
+            <div class="answer">
+                Yes, most of our apps offer an <strong>App Lock</strong> feature in the Settings menu to protect your sensitive information using your device's biometric authentication.
+            </div>
+        </details>
+    </section>
 
     <h2>🔧 Troubleshooting</h2>
+    <section>
+        <details>
+            <summary>The app is crashing or not responding.</summary>
+            <div class="answer">
+                Please try the following steps:
+                <ul>
+                    <li>Check the <strong>App Store</strong> for any available updates.</li>
+                    <li>Force-close the app and relaunch it.</li>
+                    <li>Restart your device.</li>
+                    <li>If the problem persists, please contact us with your device model and OS version.</li>
+                </ul>
+            </div>
+        </details>
+        <details>
+            <summary>Feature X is not working as expected.</summary>
+            <div class="answer">
+                Ensure you have granted the necessary permissions (e.g., Camera, Photos, or Notifications) in the <strong>Settings</strong> app under the specific app section.
+            </div>
+        </details>
+    </section>
 
-    <details>
-        <summary>Why is my code saying "Invalid" or "Incorrect"?</summary>
-        <div class="answer">
-            The most common reason is that your device's <strong>Time</strong> is not perfectly synced. TOTP codes require precise timing.
-            <p><strong>Fix:</strong> Go to iPhone Settings > General > Date & Time, and ensure "Set Automatically" is turned ON.</p>
-        </div>
-    </details>
-
+    <div class="footer">
+        <p>Still need help?</p>
+        <p>Our support team is here to assist you with any questions or feedback.</p>
+        <a href="mailto:GL.Tech@icloud.com" class="contact-btn">Contact Support</a>
+        <p style="margin-top: 40px; font-size: 12px; opacity: 0.6;">
+            © 2025 GL Technologies. All rights reserved.
+        </p>
+    </div>
 </div>
 
 </body>
