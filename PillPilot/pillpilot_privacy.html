@@ -3,142 +3,233 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <title>Pill Reminder Privacy Policy</title>
+    <title>PillPilot Privacy Policy</title>
     <style>
 
         :root {
             --primary-color: #007AFF;
-            --bg-color: #f2f2f7;
-            --card-bg: #ffffff;
-            --text-color: #1c1c1e;
-            --secondary-text: #6c6c70;
-            --border-color: #e5e5ea;
-            --notice-bg: #f0f7ff;
-            --notice-border: #b3d7ff;
+            --primary-rgb: 0, 122, 255;
+            --bg-color: #F2F2F7;
+            --card-bg: #FFFFFF;
+            --text-color: #1C1C1E;
+            --secondary-text: #8E8E93;
+            --border-color: rgba(60, 60, 67, 0.12);
+            --separator-color: rgba(60, 60, 67, 0.08);
+            --segmented-bg: rgba(118, 118, 128, 0.12);
+            --notice-bg: #F0F7FF;
+            --notice-border: #B3D7FF;
             --notice-text: #004085;
-            --warning-bg: #fff8e6;
-            --warning-border: #ffd666;
-            --warning-text: #874d00;
-            --accent-bg: #f8f9ff;
-            --subcard-bg: #f9f9fb;
+            --warning-bg: #FFF9EB;
+            --warning-border: #FFE69C;
+            --warning-text: #855700;
+            --subcard-bg: #F9F9FB;
+            --badge-bg: rgba(0, 122, 255, 0.08);
         }
 
         @media (prefers-color-scheme: dark) {
             :root {
                 --primary-color: #0A84FF;
+                --primary-rgb: 10, 132, 255;
                 --bg-color: #000000;
-                --card-bg: #1c1c1e;
-                --text-color: #f2f2f7;
-                --secondary-text: #8e8e93;
-                --border-color: #2c2c2e;
-                --notice-bg: #001f3f;
+                --card-bg: #1C1C1E;
+                --text-color: #FFFFFF;
+                --secondary-text: #8E8E93;
+                --border-color: rgba(255, 255, 255, 0.12);
+                --separator-color: rgba(255, 255, 255, 0.08);
+                --segmented-bg: rgba(118, 118, 128, 0.24);
+                --notice-bg: #002244;
                 --notice-border: #004085;
-                --notice-text: #b3d7ff;
-                --warning-bg: #2b2100;
+                --notice-text: #B3D7FF;
+                --warning-bg: #2B2100;
                 --warning-border: #594400;
-                --warning-text: #ffc53d;
-                --accent-bg: #141b2d;
+                --warning-text: #FFC53D;
                 --subcard-bg: #242426;
+                --badge-bg: rgba(10, 132, 255, 0.15);
             }
         }
 
         * {
             box-sizing: border-box;
             -webkit-tap-highlight-color: transparent;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Icons", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
             color: var(--text-color);
             background-color: var(--bg-color);
-            margin: 0;
-            padding: 20px 12px;
+            padding: 24px 16px;
             -webkit-font-smoothing: antialiased;
             word-wrap: break-word;
         }
 
         .container {
-            max-width: 820px;
+            max-width: 800px;
             margin: 0 auto;
             background: var(--card-bg);
-            padding: 36px 28px;
-            border-radius: 18px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            padding: 32px 28px;
+            border-radius: 20px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+            border: 1px solid var(--border-color);
         }
 
-        .top-bar {
+        /* Top Bar Header */
+        .top-navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
+            margin-bottom: 16px;
             gap: 12px;
-            margin-bottom: 24px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 14px;
         }
 
-        .nav-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px 16px;
-            font-size: 14px;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-            display: inline-flex;
-            align-items: center;
-            min-height: 32px;
-        }
-
-        .nav-links a:hover {
-            text-decoration: underline;
-        }
-
-        .lang-picker {
+        .nav-back-pill {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            background: var(--bg-color);
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
             padding: 6px 12px;
-            border-radius: 20px;
-            border: 1px solid var(--border-color);
-            min-height: 36px;
+            border-radius: 16px;
+            background: var(--badge-bg);
+            transition: all 0.2s ease;
         }
 
-        .lang-picker select {
-            background: transparent;
-            border: none;
-            color: var(--text-color);
+        .nav-back-pill:hover, .nav-back-pill:active {
+            opacity: 0.8;
+            transform: scale(0.98);
+        }
+
+        /* Custom Elegant Language Selector Capsule */
+        .lang-capsule {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--segmented-bg);
+            padding: 6px 14px;
+            border-radius: 20px;
             font-size: 13px;
             font-weight: 500;
-            cursor: pointer;
-            outline: none;
-            font-family: inherit;
-        }
-
-        h1 {
-            font-size: 25px;
-            font-weight: 700;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 12px;
-            margin-top: 0;
-            margin-bottom: 16px;
             color: var(--text-color);
-            line-height: 1.3;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: all 0.2s ease;
         }
 
+        .lang-capsule:hover {
+            border-color: var(--primary-color);
+        }
+
+        .lang-globe {
+            font-size: 14px;
+            line-height: 1;
+        }
+
+        .lang-arrow {
+            font-size: 10px;
+            color: var(--secondary-text);
+            margin-left: 2px;
+        }
+
+        .lang-native-select {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            -webkit-appearance: none;
+        }
+
+        /* iOS Segmented Control (Tabs) */
+        .segmented-control {
+            display: flex;
+            background: var(--segmented-bg);
+            padding: 3px;
+            border-radius: 12px;
+            margin-bottom: 28px;
+            gap: 3px;
+        }
+
+        .segmented-item {
+            flex: 1;
+            text-align: center;
+            padding: 8px 10px;
+            font-size: 13px;
+            font-weight: 500;
+            border-radius: 9px;
+            color: var(--secondary-text);
+            text-decoration: none;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .segmented-item.active {
+            background: var(--card-bg);
+            color: var(--text-color);
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+        }
+
+        .segmented-item:hover:not(.active) {
+            color: var(--text-color);
+        }
+
+        /* Page Headers */
+        header.doc-header {
+            text-align: center;
+            padding: 10px 0 24px;
+        }
+
+        .header-icon {
+            font-size: 48px;
+            margin-bottom: 12px;
+            display: inline-block;
+            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.06));
+        }
+
+        h1.doc-title {
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 6px;
+            color: var(--text-color);
+        }
+
+        p.doc-subtitle {
+            font-size: 15px;
+            color: var(--secondary-text);
+            margin-bottom: 16px;
+        }
+
+        .meta-info {
+            font-size: 13px;
+            color: var(--secondary-text);
+            margin-bottom: 24px;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        /* Content Styling */
         h2 {
             font-size: 18px;
             font-weight: 600;
-            margin-top: 30px;
-            margin-bottom: 12px;
+            letter-spacing: -0.3px;
+            margin-top: 32px;
+            margin-bottom: 14px;
             color: var(--text-color);
-            line-height: 1.35;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         h3 {
@@ -147,12 +238,12 @@
             margin-top: 18px;
             margin-bottom: 8px;
             color: var(--primary-color);
-            line-height: 1.35;
         }
 
         p {
             margin-bottom: 14px;
             font-size: 15px;
+            line-height: 1.6;
             color: var(--text-color);
         }
 
@@ -167,30 +258,12 @@
             line-height: 1.55;
         }
 
-        .meta-info {
-            font-size: 13.5px;
-            color: var(--secondary-text);
-            margin-bottom: 20px;
-            line-height: 1.5;
-        }
-
-        .badge {
-            display: inline-block;
-            background-color: rgba(0, 122, 255, 0.1);
-            color: var(--primary-color);
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 12.5px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-
         .notice-box {
             background-color: var(--notice-bg);
             border: 1px solid var(--notice-border);
             color: var(--notice-text);
-            padding: 16px;
-            border-radius: 12px;
+            padding: 16px 18px;
+            border-radius: 14px;
             margin: 20px 0;
             font-size: 14px;
             line-height: 1.55;
@@ -200,9 +273,9 @@
             background-color: var(--warning-bg);
             border: 1px solid var(--warning-border);
             color: var(--warning-text);
-            padding: 18px;
-            border-radius: 12px;
-            margin: 22px 0;
+            padding: 18px 20px;
+            border-radius: 14px;
+            margin: 24px 0;
             font-size: 14px;
             line-height: 1.6;
         }
@@ -219,18 +292,130 @@
         .ai-section {
             background: var(--subcard-bg);
             border: 1px solid var(--border-color);
-            padding: 20px 16px;
-            border-radius: 12px;
+            padding: 22px 20px;
+            border-radius: 14px;
             margin: 16px 0 24px 0;
         }
 
-        .footer {
-            margin-top: 40px;
+        /* Grouped Inset FAQ List */
+        section.faq-group {
+            background-color: var(--subcard-bg);
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        details {
+            border-bottom: 1px solid var(--separator-color);
+            transition: background-color 0.2s ease;
+        }
+
+        details:last-child {
+            border-bottom: none;
+        }
+
+        summary {
+            padding: 16px 20px;
+            font-weight: 500;
+            font-size: 15px;
+            cursor: pointer;
+            list-style: none;
+            position: relative;
+            outline: none;
+            color: var(--text-color);
+            line-height: 1.45;
+            padding-right: 42px;
+            user-select: none;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary:hover {
+            background-color: rgba(var(--primary-rgb), 0.04);
+        }
+
+        summary::after {
+            content: '';
+            position: absolute;
+            right: 18px;
+            top: 50%;
+            width: 8px;
+            height: 8px;
+            border-top: 2px solid #C7C7CC;
+            border-right: 2px solid #C7C7CC;
+            transform: translateY(-50%) rotate(45deg);
+            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        details[open] summary::after {
+            transform: translateY(-50%) rotate(135deg);
+        }
+
+        .answer {
+            padding: 0 20px 20px 20px;
+            font-size: 14.5px;
+            color: var(--secondary-text);
+            line-height: 1.65;
+        }
+
+        .answer strong {
+            color: var(--text-color);
+        }
+
+        .tip-box {
+            background-color: var(--card-bg);
+            border-left: 3px solid var(--primary-color);
+            padding: 12px 14px;
+            border-radius: 6px;
+            margin-top: 12px;
+            font-size: 13px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+
+        .contact-card {
+            background: var(--subcard-bg);
+            border-radius: 16px;
+            padding: 28px 20px;
+            text-align: center;
+            margin-top: 36px;
+            border: 1px solid var(--border-color);
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 24px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            margin-top: 16px;
+            transition: transform 0.15s ease, opacity 0.2s ease;
+            box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.25);
+        }
+
+        .contact-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .contact-btn:active {
+            transform: scale(0.98);
+        }
+
+        footer {
+            margin-top: 36px;
             font-size: 13px;
             color: var(--secondary-text);
             text-align: center;
             border-top: 1px solid var(--border-color);
-            padding-top: 22px;
+            padding-top: 20px;
         }
 
         a {
@@ -242,59 +427,64 @@
             text-decoration: underline;
         }
 
-        /* Mobile specific styling for small screens */
+        /* Mobile Optimization */
         @media (max-width: 600px) {
             body {
                 padding: 12px 8px;
             }
             .container {
-                padding: 20px 16px;
-                border-radius: 14px;
+                padding: 20px 14px;
+                border-radius: 16px;
             }
-            .top-bar {
-                flex-direction: column;
-                align-items: stretch;
-                gap: 12px;
-                padding-bottom: 12px;
+            .top-navbar {
+                margin-bottom: 12px;
             }
-            .nav-links {
-                justify-content: flex-start;
-                gap: 10px 14px;
+            .nav-back-pill {
                 font-size: 13px;
+                padding: 5px 10px;
             }
-            .lang-picker {
-                align-self: flex-start;
-                width: 100%;
-                justify-content: space-between;
-                padding: 8px 12px;
+            .lang-capsule {
+                padding: 5px 10px;
+                font-size: 12.5px;
             }
-            .lang-picker select {
-                width: 100%;
-                font-size: 13px;
+            .segmented-control {
+                margin-bottom: 20px;
+                padding: 2.5px;
             }
-            h1 {
-                font-size: 21px;
-                padding-bottom: 10px;
-                margin-bottom: 14px;
+            .segmented-item {
+                font-size: 12px;
+                padding: 7px 6px;
+            }
+            h1.doc-title {
+                font-size: 22px;
+            }
+            .header-icon {
+                font-size: 40px;
+                margin-bottom: 8px;
+            }
+            p.doc-subtitle {
+                font-size: 14px;
+                margin-bottom: 12px;
             }
             h2 {
                 font-size: 16.5px;
                 margin-top: 24px;
             }
-            h3 {
-                font-size: 14.5px;
-            }
             p, li {
                 font-size: 14px;
             }
-            .notice-box, .warning-box {
+            .notice-box, .warning-box, .ai-section {
                 padding: 14px 12px;
-                border-radius: 10px;
-                font-size: 13.5px;
+                border-radius: 12px;
             }
-            .ai-section {
-                padding: 14px 12px;
-                border-radius: 10px;
+            summary {
+                padding: 14px 14px;
+                font-size: 14px;
+                padding-right: 36px;
+            }
+            .answer {
+                padding: 0 14px 14px 14px;
+                font-size: 13.5px;
             }
         }
 
@@ -302,56 +492,63 @@
 </head>
 <body>
     <div class="container">
-        <div class="top-bar">
-            <div class="nav-links">
-                <a href="index.html" id="nav_overview">← Pill Reminder Overview</a>
-                <a href="terms.html" id="nav_terms">Terms of Use</a>
-                <a href="faq.html" id="nav_faq">Support & FAQ</a>
+        
+        <div class="top-navbar">
+            <a href="index.html" class="nav-back-pill" id="btn_back">← Pill Reminder</a>
+            <div class="lang-capsule">
+                <span class="lang-globe">🌐</span>
+                <span id="currentLangLabel">English</span>
+                <span class="lang-arrow">▼</span>
+                <select id="langSelect" class="lang-native-select" onchange="changeLanguage(this.value)">
+                    <option value="en" selected>English</option>
+                    <option value="zh-Hans">简体中文</option>
+                    <option value="zh-Hant">繁體中文</option>
+                    <option value="ja">日本語</option>
+                    <option value="es">Español</option>
+                    <option value="de">Deutsch</option>
+                    <option value="fr">Français</option>
+                </select>
             </div>
-            
-        <div class="lang-picker">
-            <span>🌐</span>
-            <select id="langSelect" onchange="changeLanguage(this.value)">
-                <option value="en" selected>English (Default)</option>
-                <option value="zh-Hans">简体中文</option>
-                <option value="zh-Hant">繁體中文</option>
-                <option value="ja">日本語</option>
-                <option value="es">Español</option>
-                <option value="de">Deutsch</option>
-                <option value="fr">Français</option>
-            </select>
         </div>
     
-        </div>
+        
+        <nav class="segmented-control">
+            <a href="privacy.html" class="segmented-item active" id="tab_privacy">Privacy Policy</a>
+            <a href="terms.html" class="segmented-item" id="tab_terms">Terms of Use</a>
+            <a href="faq.html" class="segmented-item" id="tab_faq">Support & FAQ</a>
+        </nav>
+    
 
-        <div class="badge" id="badge">Privacy Policy</div>
-        <h1 id="title">Pill Reminder Privacy Policy</h1>
-        <p class="meta-info" id="meta"><strong>Effective Date:</strong> August 21, 2026 | <strong>Last Updated:</strong> August 21, 2026</p>
+        <header class="doc-header">
+            <div class="header-icon">🔒</div>
+            <h1 class="doc-title" id="title">PillPilot Privacy Policy</h1>
+            <p class="meta-info" id="meta"><strong>Effective Date:</strong> August 20, 2026 | <strong>Last Updated:</strong> August 20, 2026</p>
+        </header>
 
-        <p id="intro1">Welcome to <strong>Pill Reminder</strong> ("we", "our", or "us"), developed and operated by <strong>GL Technologies</strong>. Pill Reminder is an iOS medication tracking and reminder application designed to help individuals and caregivers organize medication schedules, record intake, track inventory, and receive timely reminder alerts.</p>
-        <p id="intro2">We believe your medical routines and medication records are strictly private personal health information. This Privacy Policy explains how Pill Reminder collects, uses, handles, and protects your information in strict adherence to Apple's App Store Review Guidelines, Apple Human Interface Guidelines, and global privacy standards.</p>
+        <p id="intro1">Welcome to <strong>PillPilot</strong> ("we", "our", or "us"), developed and operated by <strong>GL Technologies</strong>. PillPilot is an iOS medication management and reminder application designed to help individuals and caregivers organize medication schedules, record intake, track inventory, and receive timely reminder alerts.</p>
+        <p id="intro2">We believe your medical routines and medication records are strictly private personal health information. This Privacy Policy explains how PillPilot collects, uses, handles, and protects your information in strict adherence to Apple's App Store Review Guidelines, Apple Human Interface Guidelines, and global privacy standards.</p>
 
-        <div class="notice-box" id="notice">🛡️ <strong>Our Privacy Pledge:</strong> Pill Reminder is built on a "Privacy by Design" foundation. The app does not require account creation, does not display third-party advertisements, does not sell your personal data, and stores your health records locally on your device by default.</div>
+        <div class="notice-box" id="notice">🛡️ <strong>Our Privacy Pledge:</strong> PillPilot is built on a "Privacy by Design" foundation. The app does not require account creation, does not display third-party advertisements, does not sell your personal data, and stores your health records locally on your device by default.</div>
 
         <h2 id="h1">1. Information We Process & System Permissions</h2>
         <p id="h1_intro">We strictly follow the principle of <strong>Data Minimization</strong>. We only request system permissions and process information that is directly necessary to provide medication scheduling and reminder features:</p>
         <ul>
             <li id="h1_meds"><strong>Medication & Schedule Records:</strong> All information you create (including medication names, dosages, units, taking frequencies, reminder times, inventory counts, expiration dates, and personal notes) is stored securely on your local device.</li>
-            <li id="h1_camera"><strong>Camera & Photo Library (NSCameraUsageDescription / NSPhotoLibraryUsageDescription):</strong> If you use medication label scanning, barcode lookup, or prescription OCR intake, Pill Reminder requests access to your camera or photo library. Images are analyzed locally and ephemerally to assist you in filling in medication information. You always have full review and editing control before any information is saved.</li>
-            <li id="h1_mic"><strong>Microphone & Speech Recognition (NSMicrophoneUsageDescription / NSSpeechRecognitionUsageDescription):</strong> If you use voice input to quickly dictate medication schedules, Pill Reminder uses Apple's Speech Recognition framework to convert your voice to text. Audio is processed for real-time transcription and is not permanently recorded or saved on external servers.</li>
-            <li id="h1_faceid"><strong>Face ID / Touch ID (NSFaceIDUsageDescription):</strong> If you enable the <em>App Lock</em> feature to secure your medication lists, authentication is performed on-device via Apple's LocalAuthentication framework. Biometric data is strictly confined to your device's Secure Enclave; Pill Reminder never has access to your raw biometric data.</li>
-            <li id="h1_notif"><strong>Notifications & Alarms (NSAlarmKitUsageDescription):</strong> To deliver timely reminders and critical alarms, Pill Reminder schedules local notifications and alarms on your device.</li>
-            <li id="h1_live"><strong>Live Activities & Widgets:</strong> Pill Reminder uses Apple's ActivityKit and WidgetKit to display next-dose countdowns and status on your Lock Screen and Dynamic Island based on local schedules.</li>
+            <li id="h1_camera"><strong>Camera & Photo Library (NSCameraUsageDescription / NSPhotoLibraryUsageDescription):</strong> If you use medication label scanning, barcode lookup, or prescription OCR intake, PillPilot requests access to your camera or photo library. Images are analyzed locally and ephemerally to assist you in filling in medication information. You always have full review and editing control before any information is saved.</li>
+            <li id="h1_mic"><strong>Microphone & Speech Recognition (NSMicrophoneUsageDescription / NSSpeechRecognitionUsageDescription):</strong> If you use voice input to quickly dictate medication schedules, PillPilot uses Apple's Speech Recognition framework to convert your voice to text. Audio is processed for real-time transcription and is not permanently recorded or saved on external servers.</li>
+            <li id="h1_faceid"><strong>Face ID / Touch ID (NSFaceIDUsageDescription):</strong> If you enable the <em>App Lock</em> feature to secure your medication lists, authentication is performed on-device via Apple's LocalAuthentication framework. Biometric data is strictly confined to your device's Secure Enclave; PillPilot never has access to your raw biometric data.</li>
+            <li id="h1_notif"><strong>Notifications & Alarms (NSAlarmKitUsageDescription):</strong> To deliver timely reminders and critical alarms, PillPilot schedules local notifications and alarms on your device.</li>
+            <li id="h1_live"><strong>Live Activities & Widgets:</strong> PillPilot uses Apple's ActivityKit and WidgetKit to display next-dose countdowns and status on your Lock Screen and Dynamic Island based on local schedules.</li>
         </ul>
 
         <h2 id="h2">2. AI Services and Data Processing</h2>
         <p id="h2_intro">Our application provides optional AI-assisted medication intake, prescription label OCR parsing, voice schedule extraction, and conversational intake assistance. This section describes how these AI features work, what data is involved, and how it is processed in compliance with Apple App Store guidelines.</p>
         <div class="ai-section">
             <h3 id="h2_sub1_title">(1) AI Technology Implementation & Infrastructure</h3>
-            <div id="h2_sub1_text">Pill Reminder integrates advanced Artificial Intelligence technologies to help parse and structure medication schedules. We specifically utilize:<ul><li><strong>Google Gemini AI (google/gemini-2.5-flash) and Vision AI Models:</strong> Accessed via our secure, dedicated AI Gateway infrastructure to power intelligent prescription label extraction, medication packaging analysis, voice transcription parsing, and conversational intake assistance.</li><li><strong>On-Device Pre-processing:</strong> Apple's native Vision framework is utilized locally on your device for initial OCR text detection before any optional cloud parsing.</li></ul></div>
+            <div id="h2_sub1_text">PillPilot integrates advanced Artificial Intelligence technologies to help parse and structure medication schedules. We specifically utilize:<ul><li><strong>Google Gemini AI (google/gemini-2.5-flash) and Vision AI Models:</strong> Accessed via our secure, dedicated AI Gateway infrastructure to power intelligent prescription label extraction, medication packaging analysis, voice transcription parsing, and conversational intake assistance.</li><li><strong>On-Device Pre-processing:</strong> Apple's native Vision framework is utilized locally on your device for initial OCR text detection before any optional cloud parsing.</li></ul></div>
 
             <h3 id="h2_sub2_title">(2) What Data Is Shared with AI Services</h3>
-            <div id="h2_sub2_text">When you interact with AI-powered features (e.g. photo label scanning, voice dictation, or chat intake), only the following minimal data is sent to the AI processing gateway:<ul><li><strong>Text Prompts & OCR Text:</strong> The text recognized from the medication packaging, prescription label, or your spoken dictation transcript.</li><li><strong>Medication Images:</strong> Temporary image data of medication boxes or labels when you select image analysis mode.</li><li><strong>Conversation Context:</strong> Limited recent conversation turns strictly needed to complete medication intake clarification.</li><li><strong>Technical Metadata:</strong> Request identifiers, timestamps, and application identifier necessary to complete the API request.</li><li><strong>🚫 Privacy Filtering & Excluded Data:</strong> Pill Reminder automatically applies privacy minimization filters prior to sending requests, stripping or redacting identifiable patient names, personal addresses, phone numbers, and clinician account details. We do NOT share your biometric data, Apple ID credentials, payment details, device identifiers, or location with AI providers.</li></ul></div>
+            <div id="h2_sub2_text">When you interact with AI-powered features (e.g. photo label scanning, voice dictation, or chat intake), only the following minimal data is sent to the AI processing gateway:<ul><li><strong>Text Prompts & OCR Text:</strong> The text recognized from the medication packaging, prescription label, or your spoken dictation transcript.</li><li><strong>Medication Images:</strong> Temporary image data of medication boxes or labels when you select image analysis mode.</li><li><strong>Conversation Context:</strong> Limited recent conversation turns strictly needed to complete medication intake clarification.</li><li><strong>Technical Metadata:</strong> Request identifiers, timestamps, and application identifier necessary to complete the API request.</li><li><strong>🚫 Privacy Filtering & Excluded Data:</strong> PillPilot automatically applies privacy minimization filters prior to sending requests, stripping or redacting identifiable patient names, personal addresses, phone numbers, and clinician account details. We do NOT share your biometric data, Apple ID credentials, payment details, device identifiers, or location with AI providers.</li></ul></div>
 
             <h3 id="h2_sub3_title">(3) How AI Processes Your Data</h3>
             <div id="h2_sub3_text">When you use AI-assisted features:<ul><li><strong>Encrypted Transmission:</strong> Your data is transmitted exclusively via secure HTTPS/TLS encrypted connections.</li><li><strong>Real-Time Ephemeral Processing:</strong> The AI model processes your request in real time within seconds solely to structure medication parameters (such as drug name, dosage, frequency, and time).</li><li><strong>Immediate Discard:</strong> Once the structured response is returned to your device, the processing payload is immediately discarded and is not retained on the AI gateway servers.</li></ul></div>
@@ -360,7 +557,7 @@
             <div id="h2_sub4_text">We enforce a strict zero-training policy regarding user health and medication data:<ul><li>The transmitted data is used <strong>solely</strong> for real-time inference and answering your medication intake requests.</li><li>Your data is <strong>NOT</strong> used to train, fine-tune, or improve any foundational AI models.</li><li>We do not sell, license, rent, or share your AI interaction data with advertisers, data brokers, or any third parties.</li></ul></div>
 
             <h3 id="h2_sub5_title">(5) AI Content & Medical Safety Disclaimer</h3>
-            <div id="h2_sub5_text"><ul><li>AI-generated text, extractions, and suggestions are produced by automated algorithms and may contain inaccuracies or errors.</li><li>Pill Reminder is an informational tool and <strong>does NOT provide medical advice or clinical diagnosis</strong>.</li><li>Users must independently review and verify all extracted medication names, strengths, dosages, frequencies, and scheduled times before saving or taking any medication.</li><li>Do not submit passwords, financial information, government ID numbers, or unrelated confidential personal records through the AI assistant.</li></ul></div>
+            <div id="h2_sub5_text"><ul><li>AI-generated text, extractions, and suggestions are produced by automated algorithms and may contain inaccuracies or errors.</li><li>PillPilot is an informational tool and <strong>does NOT provide medical advice or clinical diagnosis</strong>.</li><li>Users must independently review and verify all extracted medication names, strengths, dosages, frequencies, and scheduled times before saving or taking any medication.</li><li>Do not submit passwords, financial information, government ID numbers, or unrelated confidential personal records through the AI assistant.</li></ul></div>
 
             <h3 id="h2_sub6_title">(6) Your Control, Consent Withdrawal & Data Deletion</h3>
             <div id="h2_sub6_text"><ul><li><strong>Entirely Optional:</strong> Use of AI features is completely optional. You can choose manual medication entry at any time without any degradation of core tracking features.</li><li><strong>Withdraw Consent:</strong> You may discontinue using AI features at any time. Once you stop submitting AI requests, no data is shared with the AI infrastructure.</li><li><strong>Request Data Deletion:</strong> You may request the deletion of any data associated with your inquiries by contacting us at <a href="mailto:GL.Tech@icloud.com">GL.Tech@icloud.com</a>. We will process your request within 30 days.</li></ul></div>
@@ -369,17 +566,17 @@
         <h2 id="h3">3. Data Storage & iCloud Synchronization</h2>
         <ul>
             <li id="h3_local"><strong>Local-First Storage:</strong> Your primary database is stored directly on your iOS device via Apple's SwiftData framework.</li>
-            <li id="h3_icloud"><strong>Apple iCloud Sync:</strong> If enabled, Pill Reminder utilizes Apple CloudKit to synchronize your records across your personal Apple devices. Your data is encrypted and tied exclusively to your personal Apple ID account. GL Technologies does not operate separate proprietary servers holding your personal health data.</li>
+            <li id="h3_icloud"><strong>Apple iCloud Sync:</strong> If enabled, PillPilot utilizes Apple CloudKit to synchronize your records across your personal Apple devices. Your data is encrypted and tied exclusively to your personal Apple ID account. GL Technologies does not operate separate proprietary servers holding your personal health data.</li>
         </ul>
 
         <h2 id="h4">4. Drug Reference Data Lookups</h2>
-        <p id="h4_p">Pill Reminder provides informational reference data (such as drug information from public catalog services like openFDA or cached reference catalogs). When you search for reference information, anonymous queries containing only the drug name or national drug code are sent. No user identity, location, or personal schedule data is transmitted during reference queries.</p>
+        <p id="h4_p">PillPilot provides informational reference data (such as drug information from public catalog services like openFDA or cached reference catalogs). When you search for reference information, anonymous queries containing only the drug name or national drug code are sent. No user identity, location, or personal schedule data is transmitted during reference queries.</p>
 
         <h2 id="h5">5. In-App Purchases & Subscriptions</h2>
-        <p id="h5_p">Pill Reminder Pro subscriptions and in-app purchases are processed directly by Apple via StoreKit 2. We do not process, store, or have access to your credit card information, bank details, or billing address. Apple manages all financial transactions in accordance with Apple's Privacy Policy.</p>
+        <p id="h5_p">PillPilot Pro subscriptions and in-app purchases are processed directly by Apple via StoreKit 2. We do not process, store, or have access to your credit card information, bank details, or billing address. Apple manages all financial transactions in accordance with Apple's Privacy Policy.</p>
 
         <h2 id="h6">6. Third-Party Tracking & Advertising</h2>
-        <p id="h6_p">Pill Reminder does <strong>not</strong> contain third-party ad networks, tracking cookies, or commercial data brokers. We do not track your activity across third-party apps or websites.</p>
+        <p id="h6_p">PillPilot does <strong>not</strong> contain third-party ad networks, tracking cookies, or commercial data brokers. We do not track your activity across third-party apps or websites.</p>
 
         <h2 id="h7">7. Your Data Rights & Deletion</h2>
         <p id="h7_p1">You have full ownership and control over your medication data:</p>
@@ -390,13 +587,13 @@
         </ul>
 
         <h2 id="h8">8. Children's Privacy</h2>
-        <p id="h8_p">Pill Reminder is not intended for use by children under 13 without parental supervision. We do not knowingly collect personal information directly from children under 13.</p>
+        <p id="h8_p">PillPilot is not intended for use by children under 13 without parental supervision. We do not knowingly collect personal information directly from children under 13.</p>
 
         <h2 id="h9">9. Updates to This Policy</h2>
         <p id="h9_p">We may update our Privacy Policy periodically to reflect new features or regulatory requirements. Any updates will be published on this page with an updated effective date.</p>
 
         <h2 id="h10">10. Contact Us</h2>
-        <p id="h10_p">If you have any questions or feedback regarding this Privacy Policy or your data privacy in Pill Reminder, please reach out to us at:</p>
+        <p id="h10_p">If you have any questions or feedback regarding this Privacy Policy or your data privacy in PillPilot, please reach out to us at:</p>
         <p>
             <strong>GL Technologies</strong><br>
             <strong>Email:</strong> <a href="mailto:GL.Tech@icloud.com">GL.Tech@icloud.com</a><br>
@@ -409,7 +606,8 @@
     </div>
 
     <script>
-        const i18n = {"en": {"nav_overview": "← Pill Reminder Overview", "nav_terms": "Terms of Use", "nav_faq": "Support & FAQ", "badge": "Privacy Policy", "title": "Pill Reminder Privacy Policy", "meta": "<strong>Effective Date:</strong> August 21, 2026 | <strong>Last Updated:</strong> August 21, 2026", "intro1": "Welcome to <strong>Pill Reminder</strong> (\"we\", \"our\", or \"us\"), developed and operated by <strong>GL Technologies</strong>. Pill Reminder is an iOS medication tracking and reminder application designed to help individuals and caregivers organize medication schedules, record intake, track inventory, and receive timely reminder alerts.", "intro2": "We believe your medical routines and medication records are strictly private personal health information. This Privacy Policy explains how Pill Reminder collects, uses, handles, and protects your information in strict adherence to Apple's App Store Review Guidelines, Apple Human Interface Guidelines, and global privacy standards.", "notice": "🛡️ <strong>Our Privacy Pledge:</strong> Pill Reminder is built on a \"Privacy by Design\" foundation. The app does not require account creation, does not display third-party advertisements, does not sell your personal data, and stores your health records locally on your device by default.", "h1": "1. Information We Process & System Permissions", "h1_intro": "We strictly follow the principle of <strong>Data Minimization</strong>. We only request system permissions and process information that is directly necessary to provide medication scheduling and reminder features:", "h1_meds": "<strong>Medication & Schedule Records:</strong> All information you create (including medication names, dosages, units, taking frequencies, reminder times, inventory counts, expiration dates, and personal notes) is stored securely on your local device.", "h1_camera": "<strong>Camera & Photo Library (NSCameraUsageDescription / NSPhotoLibraryUsageDescription):</strong> If you use medication label scanning, barcode lookup, or prescription OCR intake, Pill Reminder requests access to your camera or photo library. Images are analyzed locally and ephemerally to assist you in filling in medication information. You always have full review and editing control before any information is saved.", "h1_mic": "<strong>Microphone & Speech Recognition (NSMicrophoneUsageDescription / NSSpeechRecognitionUsageDescription):</strong> If you use voice input to quickly dictate medication schedules, Pill Reminder uses Apple's Speech Recognition framework to convert your voice to text. Audio is processed for real-time transcription and is not permanently recorded or saved on external servers.", "h1_faceid": "<strong>Face ID / Touch ID (NSFaceIDUsageDescription):</strong> If you enable the <em>App Lock</em> feature to secure your medication lists, authentication is performed on-device via Apple's LocalAuthentication framework. Biometric data is strictly confined to your device's Secure Enclave; Pill Reminder never has access to your raw biometric data.", "h1_notif": "<strong>Notifications & Alarms (NSAlarmKitUsageDescription):</strong> To deliver timely reminders and critical alarms, Pill Reminder schedules local notifications and alarms on your device.", "h1_live": "<strong>Live Activities & Widgets:</strong> Pill Reminder uses Apple's ActivityKit and WidgetKit to display next-dose countdowns and status on your Lock Screen and Dynamic Island based on local schedules.", "h2": "2. AI Services and Data Processing", "h2_intro": "Our application provides optional AI-assisted medication intake, prescription label OCR parsing, voice schedule extraction, and conversational intake assistance. This section describes how these AI features work, what data is involved, and how it is processed in compliance with Apple App Store guidelines.", "h2_sub1_title": "(1) AI Technology Implementation & Infrastructure", "h2_sub1_text": "Pill Reminder integrates advanced Artificial Intelligence technologies to help parse and structure medication schedules. We specifically utilize:<ul><li><strong>Google Gemini AI (google/gemini-2.5-flash) and Vision AI Models:</strong> Accessed via our secure, dedicated AI Gateway infrastructure to power intelligent prescription label extraction, medication packaging analysis, voice transcription parsing, and conversational intake assistance.</li><li><strong>On-Device Pre-processing:</strong> Apple's native Vision framework is utilized locally on your device for initial OCR text detection before any optional cloud parsing.</li></ul>", "h2_sub2_title": "(2) What Data Is Shared with AI Services", "h2_sub2_text": "When you interact with AI-powered features (e.g. photo label scanning, voice dictation, or chat intake), only the following minimal data is sent to the AI processing gateway:<ul><li><strong>Text Prompts & OCR Text:</strong> The text recognized from the medication packaging, prescription label, or your spoken dictation transcript.</li><li><strong>Medication Images:</strong> Temporary image data of medication boxes or labels when you select image analysis mode.</li><li><strong>Conversation Context:</strong> Limited recent conversation turns strictly needed to complete medication intake clarification.</li><li><strong>Technical Metadata:</strong> Request identifiers, timestamps, and application identifier necessary to complete the API request.</li><li><strong>🚫 Privacy Filtering & Excluded Data:</strong> Pill Reminder automatically applies privacy minimization filters prior to sending requests, stripping or redacting identifiable patient names, personal addresses, phone numbers, and clinician account details. We do NOT share your biometric data, Apple ID credentials, payment details, device identifiers, or location with AI providers.</li></ul>", "h2_sub3_title": "(3) How AI Processes Your Data", "h2_sub3_text": "When you use AI-assisted features:<ul><li><strong>Encrypted Transmission:</strong> Your data is transmitted exclusively via secure HTTPS/TLS encrypted connections.</li><li><strong>Real-Time Ephemeral Processing:</strong> The AI model processes your request in real time within seconds solely to structure medication parameters (such as drug name, dosage, frequency, and time).</li><li><strong>Immediate Discard:</strong> Once the structured response is returned to your device, the processing payload is immediately discarded and is not retained on the AI gateway servers.</li></ul>", "h2_sub4_title": "(4) Data Usage and Zero-Training Policy", "h2_sub4_text": "We enforce a strict zero-training policy regarding user health and medication data:<ul><li>The transmitted data is used <strong>solely</strong> for real-time inference and answering your medication intake requests.</li><li>Your data is <strong>NOT</strong> used to train, fine-tune, or improve any foundational AI models.</li><li>We do not sell, license, rent, or share your AI interaction data with advertisers, data brokers, or any third parties.</li></ul>", "h2_sub5_title": "(5) AI Content & Medical Safety Disclaimer", "h2_sub5_text": "<ul><li>AI-generated text, extractions, and suggestions are produced by automated algorithms and may contain inaccuracies or errors.</li><li>Pill Reminder is an informational tool and <strong>does NOT provide medical advice or clinical diagnosis</strong>.</li><li>Users must independently review and verify all extracted medication names, strengths, dosages, frequencies, and scheduled times before saving or taking any medication.</li><li>Do not submit passwords, financial information, government ID numbers, or unrelated confidential personal records through the AI assistant.</li></ul>", "h2_sub6_title": "(6) Your Control, Consent Withdrawal & Data Deletion", "h2_sub6_text": "<ul><li><strong>Entirely Optional:</strong> Use of AI features is completely optional. You can choose manual medication entry at any time without any degradation of core tracking features.</li><li><strong>Withdraw Consent:</strong> You may discontinue using AI features at any time. Once you stop submitting AI requests, no data is shared with the AI infrastructure.</li><li><strong>Request Data Deletion:</strong> You may request the deletion of any data associated with your inquiries by contacting us at <a href=\"mailto:GL.Tech@icloud.com\">GL.Tech@icloud.com</a>. We will process your request within 30 days.</li></ul>", "h3": "3. Data Storage & iCloud Synchronization", "h3_local": "<strong>Local-First Storage:</strong> Your primary database is stored directly on your iOS device via Apple's SwiftData framework.", "h3_icloud": "<strong>Apple iCloud Sync:</strong> If enabled, Pill Reminder utilizes Apple CloudKit to synchronize your records across your personal Apple devices. Your data is encrypted and tied exclusively to your personal Apple ID account. GL Technologies does not operate separate proprietary servers holding your personal health data.", "h4": "4. Drug Reference Data Lookups", "h4_p": "Pill Reminder provides informational reference data (such as drug information from public catalog services like openFDA or cached reference catalogs). When you search for reference information, anonymous queries containing only the drug name or national drug code are sent. No user identity, location, or personal schedule data is transmitted during reference queries.", "h5": "5. In-App Purchases & Subscriptions", "h5_p": "Pill Reminder Pro subscriptions and in-app purchases are processed directly by Apple via StoreKit 2. We do not process, store, or have access to your credit card information, bank details, or billing address. Apple manages all financial transactions in accordance with Apple's Privacy Policy.", "h6": "6. Third-Party Tracking & Advertising", "h6_p": "Pill Reminder does <strong>not</strong> contain third-party ad networks, tracking cookies, or commercial data brokers. We do not track your activity across third-party apps or websites.", "h7": "7. Your Data Rights & Deletion", "h7_p1": "You have full ownership and control over your medication data:", "h7_li1": "You can view, edit, or delete any medication entry, schedule, or dose log within the app at any time.", "h7_li2": "Deleting the app permanently removes all local data stored on your device.", "h7_li3": "If iCloud Sync was enabled, you can manage or delete your iCloud backup data via iOS <em>Settings &gt; [Your Apple Account] &gt; iCloud &gt; Manage Storage</em>.", "h8": "8. Children's Privacy", "h8_p": "Pill Reminder is not intended for use by children under 13 without parental supervision. We do not knowingly collect personal information directly from children under 13.", "h9": "9. Updates to This Policy", "h9_p": "We may update our Privacy Policy periodically to reflect new features or regulatory requirements. Any updates will be published on this page with an updated effective date.", "h10": "10. Contact Us", "h10_p": "If you have any questions or feedback regarding this Privacy Policy or your data privacy in Pill Reminder, please reach out to us at:", "footer": "&copy; 2026 GL Technologies. All rights reserved."}, "zh-Hans": {"nav_overview": "← Pill Reminder 概览", "nav_terms": "服务条款", "nav_faq": "支持与常见问题", "badge": "隐私政策", "title": "Pill Reminder 隐私政策", "meta": "<strong>生效日期：</strong>2026年8月21日 | <strong>最近更新：</strong>2026年8月21日", "intro1": "欢迎使用 <strong>Pill Reminder</strong>（以下简称“本应用”或“我们”），本应用由 <strong>GL Technologies</strong> 开发并运营。Pill Reminder 是一款专注于用药管理与服药提醒的 iOS 应用，旨在帮助个人与家庭照护者有序管理用药计划、记录服药情况、追踪库存并获得准时提醒。", "intro2": "我们深知您的用药日程与健康记录属于高度敏感的个人隐私。本隐私政策严格遵循 Apple App Store 审核指南（包括 5.1.1 隐私准则与最新 AI 技术披露要求）、Apple 人机界面指南（HIG）以及全球通用数据合规标准，向您说明我们如何收集、使用、保护及处理您的信息。", "notice": "🛡️ <strong>隐私承诺：</strong>Pill Reminder 践行“从设计到隐私（Privacy by Design）”理念。本应用无需注册账号、不投放任何第三方广告、绝不买卖个人数据，所有用药与健康数据默认完全存储在您的本地设备上。", "h1": "1. 我们处理的信息及使用的系统权限", "h1_intro": "我们严格遵循<strong>“数据最小化（Data Minimization）”</strong>原则，仅在实现用药日程与提醒所必需的范围内申请权限和处理信息：", "h1_meds": "<strong>用药与日程记录：</strong>您创建的所有数据（包括药品名称、剂量单位、服药频次、提醒时间、库存数量、有效期及备注）均安全保存在您的本地设备数据库中。", "h1_camera": "<strong>相机与相册权限（NSCameraUsageDescription / NSPhotoLibraryUsageDescription）：</strong>当您使用药盒扫描、条形码识别或处方标签 OCR 录入时，本应用会申请相机或相册权限。图像仅在本地及即时分析中用于提取药品信息，保存前您始终拥有完整的人工审核与修改权利。", "h1_mic": "<strong>麦克风与语音识别权限（NSMicrophoneUsageDescription / NSSpeechRecognitionUsageDescription）：</strong>当您使用语音快速录入用药日程时，本应用利用 Apple 原生语音识别框架将语音转换为文字。音频仅在录入时即时转译，绝不会在外部服务器中永久存储录音。", "h1_faceid": "<strong>面容 ID / 触控 ID（NSFaceIDUsageDescription）：</strong>当您开启<em>应用锁</em>以保护用药隐私时，认证完全在设备端由 Apple LocalAuthentication 框架处理。生物识别信息仅保存在硬件级 Secure Enclave（安全隔区）中，本应用绝无法获取您的原始生物识别数据。", "h1_notif": "<strong>通知与闹钟权限（NSAlarmKitUsageDescription）：</strong>为了确保准时服药，本应用在本地调度通知、强提醒闹钟以及实时活动。", "h1_live": "<strong>实时活动与小组件（Live Activities & Widgets）：</strong>本应用利用 ActivityKit 与 WidgetKit 在灵动岛和锁定屏幕上展示即将到来的服药倒计时与状态。", "h2": "2. AI 服务与数据处理规范（符合 App Store 审核要求）", "h2_intro": "本应用提供了可选的 AI 智能用药录入、处方药盒标签 OCR 提取、语音用药计划解析以及对话式录入助手。本章节依据 Apple App Store 审核政策与隐私规范，详细披露 AI 功能的实现机制、涉及的数据类型及处理方式。", "h2_sub1_title": "(1) AI 技术实现与基础设施", "h2_sub1_text": "Pill Reminder 集成了业界先进的人工智能模型以提供精准高效的用药解析体验：<ul><li><strong>大模型驱动：</strong>采用 <strong>Google Gemini AI (google/gemini-2.5-flash 模型)</strong> 及视觉解析技术，通过安全专用的 AI 网关基础设施调用，用于驱动处方标签 OCR 结构化提取、药盒图像分析、语音输入解析以及用药录入对话助手。</li><li><strong>端侧预处理：</strong>在发起云端请求前，优先通过 Apple 设备端原生 Vision 框架进行初步文本检测与预处理。</li></ul>", "h2_sub2_title": "(2) 与第三方 AI 服务共享的数据范围", "h2_sub2_text": "当您主动使用 AI 相关功能时，仅有完成该次请求所严格必需的数据会被发送至 AI 网关：<ul><li><strong>文本提示与 OCR 文本：</strong>从药盒、处方笺识别出的文字或您语音转换的文本内容。</li><li><strong>药盒图像数据：</strong>当您选择图像识别模式时提交的临时包装图片。</li><li><strong>对话上下文：</strong>完成当前用药录入澄清所需的最近少量对话历史。</li><li><strong>技术元数据：</strong>完成 API 请求所必需的请求标识符、时间戳及 App 标识。</li><li><strong>🚫 隐私脱敏与严格禁止项：</strong>Pill Reminder 在向 AI 网关发送数据前会自动执行隐私脱敏算法，剔除患者姓名、家庭住址、电话号码及医生处方账号等个人身份信息。我们绝不会将您的账户凭据、生物识别信息、支付数据、设备标识符或地理位置共享给 AI 服务商。</li></ul>", "h2_sub3_title": "(3) AI 如何处理您的数据", "h2_sub3_text": "当您使用 AI 功能时：<ul><li><strong>全程加密传输：</strong>数据均通过高强度 HTTPS/TLS 加密通道传输至服务器。</li><li><strong>即时生成与秒级响应：</strong>AI 模型在数秒内完成实时推理，仅用于提取药品名称、规格、用法用量及服药时间等结构化参数并向您返回结果。</li><li><strong>即时销毁：</strong>请求响应完成后，处理通道中的数据即被丢弃，不在网关服务器上留存个人用药数据。</li></ul>", "h2_sub4_title": "(4) 数据用途与零模型训练政策 (Zero-Training Policy)", "h2_sub4_text": "我们对用户健康与医疗数据实施严格的零训练政策：<ul><li>收集的数据<strong>仅用于</strong>实时 AI 推理与完成您的用药计划录入。</li><li>您的数据<strong>绝不用于</strong>训练、微调或改进任何公共或私有 AI 大模型。</li><li>我们绝不向广告商、数据代理商或任何无关第三方出售、出租或分享您的 AI 交互数据。</li></ul>", "h2_sub5_title": "(5) AI 内容免责声明与医疗安全提示", "h2_sub5_text": "<ul><li>AI 生成的内容与提取结果由自动化系统产生，可能存在误差或识别不完整。</li><li>Pill Reminder 属于辅助工具，<strong>不提供任何医疗诊断、处方建议或临床决策</strong>。</li><li>在保存数据或实际服药前，用户必须自行独立核对所有药品名称、剂量、频次及时间。</li><li>请勿向 AI 助手输入密码、银行卡号、身份证号或其他无关的高度敏感机密信息。</li></ul>", "h2_sub6_title": "(6) 您的控制权、撤回同意与数据删除途径", "h2_sub6_text": "<ul><li><strong>完全可选：</strong>AI 功能完全为自愿选择使用。您可以随时选择手动录入用药，不使用 AI 功能绝不影响应用的其余核心记录与提醒功能。</li><li><strong>随时撤回同意：</strong>您可随时停止使用 AI 功能，一旦停止提交，将不再有任何数据发送至 AI 设施。</li><li><strong>申请数据删除：</strong>若您需要删除曾向 AI 服务提供的相关数据记录，可通过发送邮件至 <a href=\"mailto:GL.Tech@icloud.com\">GL.Tech@icloud.com</a> 提出申请，我们将在 30 天内完成处理。</li></ul>", "h3": "3. 数据存储与 iCloud 同步", "h3_local": "<strong>端侧本地优先：</strong>您的主要数据使用 Apple SwiftData 框架直接存储在您的 iOS 设备本地。", "h3_icloud": "<strong>Apple iCloud 跨设备同步：</strong>若您开启 iCloud 同步，数据将通过 Apple CloudKit 架构在您的个人 Apple 设备间加密流转，完全绑定于您的私人 Apple ID。GL Technologies 不设私有服务器存储您的个人用药档案。", "h4": "4. 药品参考数据库查询", "h4_p": "Pill Reminder 提供权威药品资料参考（如 openFDA 公开数据库或内置药品库）。查询时仅发送药品名称或标准编码进行匿名检索，不会上传您的身份标识、地理位置或个人日程数据。", "h5": "5. App 内购买与订阅服务", "h5_p": "Pill Reminder Pro 高级版订阅与内购均通过 Apple StoreKit 2 处理。所有支付与账单信息完全由 Apple Inc. 安全托管，我们无法接触、获取或保存您的信用卡及银行账户信息。", "h6": "6. 第三方追踪与广告声明", "h6_p": "Pill Reminder <strong>不包含</strong>任何第三方广告 SDK、追踪 Cookie 或商业数据分销代码。我们绝不跨应用或跨网站追踪您的活动。", "h7": "7. 您的数据权利与删除途径", "h7_p1": "您对自己的用药数据拥有完全的控制权：", "h7_li1": "您可以随时在应用内修改或彻底删除任何药品、日程与服药记录。", "h7_li2": "卸载本应用将立即清除存储在您设备上的所有本地数据。", "h7_li3": "若启用了 iCloud 同步，您可通过 iOS <em>设置 &gt; [您的 Apple 账户] &gt; iCloud &gt; 管理储存空间</em> 清除云端备份。", "h8": "8. 未成年人隐私保护", "h8_p": "本应用不面向 13 周岁以下儿童独立使用。家长或监护人可使用本应用为其家属管理用药，但我们不会主动收集儿童个人信息。", "h9": "9. 隐私政策的更新", "h9_p": "我们可能会根据功能演进或合规要求适时更新本政策。更新内容将在此页面公布，并同步更新生效日期。", "h10": "10. 联系我们", "h10_p": "若您对本隐私政策或个人数据保护有任何疑问与建议，请通过以下方式与我们联系：", "footer": "&copy; 2026 GL Technologies. 保留所有权利。"}, "zh-Hant": {"nav_overview": "← Pill Reminder 概覽", "nav_terms": "服務條款", "nav_faq": "支援與常見問題", "badge": "隱私權政策", "title": "Pill Reminder 隱私權政策", "meta": "<strong>生效日期：</strong>2026年8月21日 | <strong>最近更新：</strong>2026年8月21日", "intro1": "歡迎使用 <strong>Pill Reminder</strong>（以下簡稱「本應用程式」或「我們」），本應用程式由 <strong>GL Technologies</strong> 開發與營運。Pill Reminder 是一款專為用藥管理與服藥提醒設計的 iOS 應用程式，協助個人及照護者妥善規劃用藥排程、記錄服藥狀況、追蹤庫存並取得即時提醒。", "intro2": "我們深知您的用藥時程與健康記錄屬於極度私密的個人資訊。本隱私權政策嚴格遵循 Apple App Store 審核規範（包含 5.1.1 隱私規範與最新 AI 技術揭露要求）、Apple 人機介面指南（HIG）及各項資料保護法規，說明我們如何收集、使用、保護與處理您的資訊。", "notice": "🛡️ <strong>隱私承諾：</strong>Pill Reminder 採用「隱私優先設計（Privacy by Design）」理念。本應用程式無需註冊帳號、不投放任何第三方廣告、絕不販售個人數據，所有用藥記錄預設完全儲存於您的本地裝置中。", "h1": "1. 我們處理的資訊與使用的系統權限", "h1_intro": "我們嚴格遵循<strong>「數據最小化（Data Minimization）」</strong>原則，僅在提供用藥日程與提醒所必需的範圍內請求權限與處理資訊：", "h1_meds": "<strong>用藥與排程記錄：</strong>您所建立的所有資料（包括藥品名稱、劑量、服藥頻率、提醒時間、庫存數量、有效期限及備忘錄）均安全儲存於您的本地裝置資料庫中。", "h1_camera": "<strong>相機與相簿權限（NSCameraUsageDescription / NSPhotoLibraryUsageDescription）：</strong>當您使用藥品標籤掃描、條形碼或處方箋 OCR 辨識時，本應用程式會請求相機或相簿存取權。影像僅於本地及即時分析中用於提取藥品資訊，儲存前您始終享有完整的人工審核與編輯權限。", "h1_mic": "<strong>麥克風與語音辨識權限（NSMicrophoneUsageDescription / NSSpeechRecognitionUsageDescription）：</strong>當您使用語音快速輸入用藥時程時，本應用程式運用 Apple 原生語音辨識架構轉換為文字。語音僅於輸入時即時轉譯，絕不會在外部伺服器上留存音訊。", "h1_faceid": "<strong>Face ID / Touch ID（NSFaceIDUsageDescription）：</strong>當您啟用<em>應用程式鎖定</em>以保護用藥隱私時，認證完全在裝置端由 Apple LocalAuthentication 處理。生物辨識資訊受限於硬體級 Secure Enclave（安全隔離區），本應用程式絕無法存取您的原始生物特徵資料。", "h1_notif": "<strong>通知與鬧鐘權限（NSAlarmKitUsageDescription）：</strong>為了確保準時服藥，本應用程式於本地排程發送通知、強提醒鬧鐘及即時動態。", "h1_live": "<strong>即時動態與小工具（Live Activities & Widgets）：</strong>本應用程式運用 ActivityKit 與 WidgetKit 於動態島及鎖定畫面上呈現即將到來的服藥倒數與狀態。", "h2": "2. AI 服務與資料處理規範（符合 App Store 審核標準）", "h2_intro": "本應用程式提供可選的 AI 智慧用藥輸入、處方箋標籤 OCR 辨識、語音用藥時程解析及對話式輸入助理。本章節依據 Apple App Store 最新政策，詳細揭露 AI 功能的技術實現、資料處理流程與您的權利。", "h2_sub1_title": "(1) AI 技術實現與基礎架構", "h2_sub1_text": "Pill Reminder 整合頂尖人工智慧模型以提供精準的用藥時程解析：<ul><li><strong>大型語言模型：</strong>採用 <strong>Google Gemini AI (google/gemini-2.5-flash 模型)</strong> 及視覺解析技術，透過專屬安全 AI 閘道提供處方 OCR 結構化辨識、藥盒圖像分析、語音轉譯解析及對話助理。</li><li><strong>本地端預處理：</strong>在向雲端傳送前，優先透過 Apple 原生 Vision 框架於裝置端執行影像與文字偵測。</li></ul>", "h2_sub2_title": "(2) 與第三方 AI 共享之資料範圍", "h2_sub2_text": "當您主動使用 AI 功能時，僅傳送完成該次請求所必須之最小資料：<ul><li><strong>文字提示與 OCR 辨識文字：</strong>由藥盒或處方箋辨識之文字或語音轉譯內容。</li><li><strong>藥盒影像資料：</strong>選擇圖像分析時所提交之臨時照片。</li><li><strong>對話上下文：</strong>完成當次用藥輸入所需之最近簡短對話。</li><li><strong>技術中繼資料：</strong>請求識別碼、時間戳記與 App 識別碼。</li><li><strong>🚫 隱私去識別化與禁止項目：</strong>在傳送至 AI 閘道前，Pill Reminder 自動執行去識別化演算法，去除病患姓名、住址、電話及處方箋帳號。絕不共享您的生物特徵、Apple ID、付款資料、裝置識別碼或定位資訊。</li></ul>", "h2_sub3_title": "(3) AI 如何處理您的資料", "h2_sub3_text": "使用 AI 功能時：<ul><li><strong>安全加密傳輸：</strong>全程使用 HTTPS/TLS 加密傳輸。</li><li><strong>即時生成與秒級回應：</strong>AI 模型於數秒內即時處理並傳回結構化用藥資訊。</li><li><strong>即時銷毀：</strong>請求完成後資料立即自處理通道銷毀，不在伺服器保留。</li></ul>", "h2_sub4_title": "(4) 資料用途與零模型訓練政策 (Zero-Training Policy)", "h2_sub4_text": "我們對使用者健康與醫療資訊實施嚴格的零模型訓練政策：<ul><li>收集之資料<strong>僅用於</strong>即時 AI 推理並完成用藥排程。</li><li>您的資料<strong>絕不用於</strong>訓練、微調或改進任何公共或私有 AI 模型。</li><li>絕不向廣告商或第三方資料商販售、出租或分享您的 AI 互動資料。</li></ul>", "h2_sub5_title": "(5) AI 內容免責聲明與醫療安全提示", "h2_sub5_text": "<ul><li>AI 生成之內容由自動化系統產生，可能存在誤差。</li><li>Pill Reminder 為輔助工具，<strong>不提供任何醫療診斷或處方建議</strong>。</li><li>儲存或實際服藥前，使用者必須自行核對藥品名稱、劑量、頻率與時間。</li><li>請勿輸入密碼、身分證號或機密個人隱私。</li></ul>", "h2_sub6_title": "(6) 您的控制權、撤回同意與資料刪除途徑", "h2_sub6_text": "<ul><li><strong>完全自由選用：</strong>AI 功能完全可自選使用，手動輸入不受任何影響。</li><li><strong>隨時撤回同意：</strong>停止使用 AI 功能即停止資料傳輸。</li><li><strong>申請刪除資料：</strong>若需刪除曾傳送至 AI 服務之資料，請寄信至 <a href=\"mailto:GL.Tech@icloud.com\">GL.Tech@icloud.com</a>，我們將於 30 日內處理完畢。</li></ul>", "h3": "3. 資料儲存與 iCloud 同步", "h3_local": "<strong>本地端優先儲存：</strong>您的主要資料庫使用 Apple SwiftData 框架直接儲存於您的 iOS 裝置本地。", "h3_icloud": "<strong>Apple iCloud 跨裝置同步：</strong>若您啟用 iCloud 同步，資料將透過 Apple CloudKit 架構在您的個人 Apple 裝置間加密同步，完全綁定於您的個人 Apple ID。GL Technologies 不設立私有伺服器儲存您的個人健康記錄。", "h4": "4. 藥物參考資料庫查詢", "h4_p": "Pill Reminder 提供藥品資訊參考查詢（如 openFDA 公開資料庫或內建藥物庫）。查詢時僅發送藥品名稱或標準代碼進行匿名搜尋，絕不會傳送您的身分識別、所在位置或個人排程資料。", "h5": "5. App 内購買與訂閱服務", "h5_p": "Pill Reminder Pro 高級版訂閱與內購皆由 Apple StoreKit 2 處理。所有付款與帳單資訊完全由 Apple Inc. 安全保管，我們無法接觸、獲取或儲存您的信用卡及銀行帳號資訊。", "h6": "6. 第三方追蹤與廣告聲明", "h6_p": "Pill Reminder <strong>不包含</strong>任何第三方廣告 SDK、追蹤 Cookie 或商業資料分析套件。我們絕不跨應用程式或跨網站追蹤您的活動。", "h7": "7. 您的資料權利與刪除途徑", "h7_p1": "您對自己的用藥資料擁有完全的控制權：", "h7_li1": "您可以隨時在應用程式內修改或徹底刪除任何藥品、排程與服藥表記錄。", "h7_li2": "解除安裝本應用程式將立即清除儲存於您裝置上的所有本地資料。", "h7_li3": "若啟用了 iCloud 同步，您可透過 iOS <em>設定 &gt; [您的 Apple 帳號] &gt; iCloud &gt; 管理儲存空間</em> 清除雲端備份。", "h8": "8. 兒童隱私保護", "h8_p": "本應用程式不針對 13 歲以下兒童獨立使用。家長或監護人可使用本應用程式協助家屬管理用藥，但我們不會主動收集兒童個人資訊。", "h9": "9. 隱私權政策的更新", "h9_p": "我們可能隨功能演進或法規要求適時更新本政策。更新內容將發布於此網頁，並同步更新生效日期。", "h10": "10. 聯絡我們", "h10_p": "若您對本隱私權政策或個人資料保護有任何問題與建議，請透過以下方式與我們聯繫：", "footer": "&copy; 2026 GL Technologies. 版權所有。"}, "ja": {"nav_overview": "← Pill Reminder 概要", "nav_terms": "利用規約", "nav_faq": "サポート＆FAQ", "badge": "プライバシーポリシー", "title": "Pill Reminder プライバシーポリシー", "meta": "<strong>発効日：</strong>2026年8月21日 | <strong>最終更新日：</strong>2026年8月21日", "intro1": "<strong>Pill Reminder</strong>（以下「本アプリ」または「当社」）へようこそ。本アプリは <strong>GL Technologies</strong> により開発・運営されています。Pill Reminder は服薬スケジュール管理、服用記録、在庫追跡、タイムリーなリマインダー通知を目的とした iOS アプリケーションです。", "intro2": "当社はお客様の服薬情報や健康記録を極めて重要な個人情報であると認識しています。本プライバシーポリシーでは、Apple の App Store 審査ガイドライン（5.1.1 規則および最新の AI 技術開示要件を含む）に基づき、情報の保護・取り扱いについて説明します。", "notice": "🛡️ <strong>プライバシーへの誓約：</strong>Pill Reminder は「プライバシー・バイ・デザイン」原則に基づいて設計されています。アカウント登録不要、サードパーティ広告の非掲載、個人データの非売却を徹底し、すべての健康記録はデフォルトでお客様のデバイス内にのみ保存されます。", "h1": "1. 処理する情報と利用するシステム権限", "h1_intro": "当社は<strong>「データ最小化」</strong>の原則を厳格に順守し、服薬スケジュールおよびリマインダーの提供に必要な情報のみを処理します：", "h1_meds": "<strong>服薬・スケジュール記録：</strong>医薬品名、用量単位、服用頻度、通知時刻、在庫数、有効期限、メモなど、作成されたすべてのデータはお使いの端末内に安全に保存されます。", "h1_camera": "<strong>カメラおよび写真ライブラリ（NSCameraUsageDescription / NSPhotoLibraryUsageDescription）：</strong>薬のパッケージや処方箋ラベルの OCR スキャン機能を使用する際、カメラまたは写真へのアクセスを求めます。画像は薬品情報の抽出補助のために端末内・一時的に処理され、保存前にお客様が必ず確認・修正できます。", "h1_mic": "<strong>マイクおよび音声認識（NSMicrophoneUsageDescription / NSSpeechRecognitionUsageDescription）：</strong>音声入力で服薬予定を登録する場合、Apple の音声認識フレームワークを用いてリアルタイムに文字起こしを行います。音声データが外部サーバーに恒久保存されることはありません。", "h1_faceid": "<strong>Face ID / Touch ID（NSFaceIDUsageDescription）：</strong>アプリロック機能を有効にした場合、認証は端末上の Apple LocalAuthentication フレームワークによって実行されます。生体認証情報はハードウェア保護領域（Secure Enclave）内に留まり、当社が生体データにアクセスすることはできません。", "h1_notif": "<strong>通知およびアラーム（NSAlarmKitUsageDescription）：</strong>飲み忘れを防ぐため、端末上でローカル通知、強力アラーム、ライブアクティビティをスケジュールします。", "h1_live": "<strong>ライブアクティビティとウィジェット：</strong>ActivityKit および WidgetKit を利用し、ロック画面や Dynamic Island に次回の服薬カウントダウンを表示します。", "h2": "2. AI サービスおよびデータ処理方針（App Store ガイドライン準拠）", "h2_intro": "本アプリはオプションとして、AI による処方箋 OCR 抽出、薬パッケージ解析、音声スケジュール解析、対話型登録アシスタントを提供しています。本セクションでは、AI 機能の仕組みとデータ保護について詳細に開示します。", "h2_sub1_title": "(1) AI 技術の導入とインフラ構成", "h2_sub1_text": "Pill Reminder では、高度な AI 技術を導入しています：<ul><li><strong>Google Gemini AI (google/gemini-2.5-flash モデル)：</strong>専用の安全な AI ゲートウェイ経由で利用し、処方ラベル OCR 解析、パッケージ画像解析、音声テキスト変換後のスケジュール構造化、および登録チャットアシスタントを駆動します。</li><li><strong>オンデバイス前処理：</strong>クラウドへのリクエスト送信前に、Apple ネイティブの Vision フレームワークを用いて端末上で文字領域の検出を行います。</li></ul>", "h2_sub2_title": "(2) AI サービスと共有されるデータ", "h2_sub2_text": "AI 機能をご利用の際、処理に必要な最小限のデータのみが送信されます：<ul><li><strong>テキストおよび OCR 抽出文字：</strong>薬のラベルや音声から文字起こしされたテキスト。</li><li><strong>薬パッケージ画像：</strong>画像解析モード時に送信される一時的な写真データ。</li><li><strong>会話コンテキスト：</strong>服薬登録を完了するために必要な直近の短いやり取り。</li><li><strong>技術メタデータ：</strong>リクエスト識別子、タイムスタンプ、App ID。</li><li><strong>🚫 プライバシーマスキング処理：</strong>AI ゲートウェイへの送信前に、患者氏名、住所、電話番号等の個人識別情報を自動削除します。生体認証、Apple ID、決済情報、端末識別子、位置情報が AI プロバイダーに送信されることはありません。</li></ul>", "h2_sub3_title": "(3) AI によるデータ処理方法", "h2_sub3_text": "<ul><li><strong>暗号化通信：</strong>すべてのデータは強固な HTTPS/TLS 経由で暗号化通信されます。</li><li><strong>リアルタイム推論：</strong>AI モデルは薬品名や用量・時刻の抽出のために数秒間でリアルタイム処理を行い、結果を返します。</li><li><strong>即時破棄：</strong>応答完了後、処理パイプライン上のデータは直ちに破棄され、サーバーに保存されることはありません。</li></ul>", "h2_sub4_title": "(4) モデル学習の完全禁止ポリシー (Zero-Training Policy)", "h2_sub4_text": "<ul><li>送信データはリアルタイム推論と服薬登録に<strong>のみ</strong>使用されます。</li><li>お客様のデータが AI モデルの学習やファインチューニングに使用されることは<strong>一切ありません</strong>。</li><li>広告事業者やデータブローカー等への販売や共有は行いません。</li></ul>", "h2_sub5_title": "(5) AI 免責事項と医療上の注意事項", "h2_sub5_text": "<ul><li>AI の生成・抽出結果には誤りが含まれる可能性があります。</li><li>本アプリは補助ツールであり、<strong>医療アドバイスや診断を提供するものではありません</strong>。</li><li>保存および服薬前に、必ずご自身で薬品名や用量をご確認ください。</li><li>パスワードや暗証番号などの機密情報を AI に入力しないでください。</li></ul>", "h2_sub6_title": "(6) お客様の権利・同意の撤回およびデータ削除", "h2_sub6_text": "<ul><li><strong>完全任意：</strong>AI 機能の利用は完全に任意であり、手動登録もいつでもご利用いただけます。</li><li><strong>同意の撤回：</strong>AI 機能の利用を中止することで、いつでもデータの送信を停止できます。</li><li><strong>削除申請：</strong>AI サービスに関連するデータの削除をご希望の場合は、<a href=\"mailto:GL.Tech@icloud.com\">GL.Tech@icloud.com</a> までご連絡ください。30日以内に対応いたします。</li></ul>", "h3": "3. データの保存と iCloud 同期", "h3_local": "<strong>ローカルファースト保存：</strong>主要データは Apple SwiftData フレームワークを通じて端末内に直接保存されます。", "h3_icloud": "<strong>Apple iCloud 同期：</strong>iCloud 同期を有効にすると、Apple CloudKit を通じてお客様の個人 Apple ID に紐づく Apple デバイス間で暗号化同期されます。当社がお客様の健康データを保管する独自サーバーを運用することはありません。", "h4": "4. 医薬品リファレンス検索", "h4_p": "Pill Reminder では医薬品の参考情報（openFDA 等）を提供しています。検索時は薬品名または標準コードのみを用いた匿名リクエストが送信され、個人識別情報や服薬履歴が送信されることはありません。", "h5": "5. アプリ内課金と定期購読", "h5_p": "Pill Reminder Pro の定期購読およびアプリ内課金は Apple StoreKit 2 を通じて安全に処理されます。当社がクレジットカード番号や請求先情報にアクセス・保存することはありません。", "h6": "6. サードパーティによる追跡および広告の排除", "h6_p": "Pill Reminder にはサードパーティ製の広告 SDK や行動追跡トラッカーは<strong>一切含まれていません</strong>。他のアプリや Web サイトにまたがったトラッキングは行いません。", "h7": "7. お客様のデータ管理権と削除", "h7_p1": "お客様はご自身の服薬データに対して完全な管理権を有しています：", "h7_li1": "アプリ内ですべての医薬品、スケジュール、服用履歴をいつでも編集・完全削除できます。", "h7_li2": "アプリをアンインストールすると、端末上のすべてのローカルデータが即座に消去されます。", "h7_li3": "iCloud 同期を使用している場合は、iOS の <em>設定 &gt; [Apple アカウント] &gt; iCloud &gt; ストレージを管理</em> からクラウドデータを削除できます。", "h8": "8. お子様のプライバシー", "h8_p": "本アプリは13歳未満のお子様による単独利用を対象としていません。保護者がご家族の服薬を管理するために利用することは可能ですが、お子様の個人情報を意図的に収集することはありません。", "h9": "9. ポリシーの改定", "h9_p": "本プライバシーポリシーは機能追加や法改正等に応じて更新されることがあります。更新内容は本ページに掲示されます。", "h10": "10. お問い合わせ", "h10_p": "本プライバシーポリシーに関するご質問やご意見は、以下までご連絡ください：", "footer": "&copy; 2026 GL Technologies. All rights reserved."}, "es": {"nav_overview": "← Resumen de Pill Reminder", "nav_terms": "Términos de Uso", "nav_faq": "Soporte y FAQ", "badge": "Política de Privacidad", "title": "Política de Privacidad de Pill Reminder", "meta": "<strong>Fecha de entrada en vigor:</strong> 21 de agosto de 2026 | <strong>Última actualización:</strong> 21 de agosto de 2026", "intro1": "Bienvenido a <strong>Pill Reminder</strong> (\"nosotros\" o \"nuestro\"), desarrollada y operada por <strong>GL Technologies</strong>. Pill Reminder es una aplicación para iOS diseñada para ayudar a personas y cuidadores a organizar horarios de medicación, registrar tomas, controlar el inventario y recibir recordatorios oportunos.", "intro2": "Creemos firmemente que sus registros de salud y tratamientos médicos son información estrictamente privada. Esta Política de Privacidad describe cómo Pill Reminder recopila, procesa y protege su información según las directrices de la App Store de Apple y las normativas internacionales de privacidad.", "notice": "🛡️ <strong>Nuestro compromiso:</strong> Pill Reminder se basa en la \"Privacidad por Diseño\". No requiere registro de cuentas, no incluye anuncios de terceros, no vende sus datos personales y almacena sus registros médicos localmente en su dispositivo por defecto.", "h1": "1. Información que procesamos y permisos requeridos", "h1_intro": "Seguimos estrictamente el principio de <strong>Minimización de Datos</strong>. Solo procesamos los datos necesarios para brindar los servicios de recordatorio:", "h1_meds": "<strong>Registros de Medicación:</strong> Toda la información creada (nombres de fármacos, dosis, horarios, inventario y notas) se almacena de forma segura en su dispositivo local.", "h1_camera": "<strong>Cámara y Fotos (NSCameraUsageDescription / NSPhotoLibraryUsageDescription):</strong> Al escanear etiquetas o recetas médicas mediante OCR, se solicita acceso a la cámara o fotos. Las imágenes se procesan de forma efímera para facilitarle el registro, permitiéndole revisar y editar todo antes de guardar.", "h1_mic": "<strong>Micrófono y Reconocimiento de Voz (NSMicrophoneUsageDescription / NSSpeechRecognitionUsageDescription):</strong> Al dictar horarios por voz, se utiliza el reconocimiento nativo de Apple. El audio no se graba de forma permanente en servidores externos.", "h1_faceid": "<strong>Face ID / Touch ID (NSFaceIDUsageDescription):</strong> Si activa el bloqueo de la app, la autenticación biométrica se gestiona en el Secure Enclave de su dispositivo sin que la app tenga acceso a sus datos biométricos.", "h1_notif": "<strong>Notificaciones y Alarmas (NSAlarmKitUsageDescription):</strong> Programadas localmente para emitir avisos y alarmas sin depender de servidores remotos.", "h1_live": "<strong>Actividades en Vivo y Widgets:</strong> Muestran la cuenta regresiva de su próxima toma en la Isla Dinámica y Pantalla de Bloqueo.", "h2": "2. Servicios de IA y Procesamiento de Datos (Conforme a Directrices de Apple)", "h2_intro": "Nuestra aplicación ofrece funciones asistidas por Inteligencia Artificial para el escaneo de etiquetas, transcripción de voz y asistente de registro. Esta sección describe cómo se procesan estos datos.", "h2_sub1_title": "(1) Tecnología de IA e Infraestructura", "h2_sub1_text": "Utilizamos:<ul><li><strong>Google Gemini AI (google/gemini-2.5-flash):</strong> A través de nuestra infraestructura segura de API Gateway para estructurar dosis y horarios.</li><li><strong>Procesamiento en el dispositivo:</strong> Detección previa con el framework Vision nativo de Apple.</li></ul>", "h2_sub2_title": "(2) Datos compartidos con la IA", "h2_sub2_text": "Solo se envían los datos indispensables:<ul><li>Texto extraído de recetas o transcripciones de voz.</li><li>Imágenes temporales del medicamento.</li><li>Contexto inmediato de la conversación.</li><li><strong>🚫 Filtrado de Privacidad:</strong> Se eliminan automáticamente nombres de pacientes, direcciones y números de póliza. No se comparten datos biométricos, cuentas de Apple ID ni información de pago.</li></ul>", "h2_sub3_title": "(3) Cómo procesa la IA sus datos", "h2_sub3_text": "<ul><li><strong>Cifrado TLS/HTTPS.</strong></li><li><strong>Procesamiento efímero en tiempo real</strong> en segundos.</li><li><strong>Eliminación inmediata</strong> tras generar la respuesta.</li></ul>", "h2_sub4_title": "(4) Política de Cero Entrenamiento (Zero-Training Policy)", "h2_sub4_text": "<ul><li>Sus datos <strong>NO</strong> se utilizan para entrenar o mejorar modelos de IA.</li><li>No vendemos ni compartimos sus datos con anunciantes ni terceros.</li></ul>", "h2_sub5_title": "(5) Descargo de Responsabilidad de IA", "h2_sub5_text": "<ul><li>La IA es una ayuda y puede contener errores. <strong>No constituye asesoramiento médico.</strong></li><li>Verifique siempre dosis y horarios antes de medicarse.</li></ul>", "h2_sub6_title": "(6) Control del Usuario y Eliminación", "h2_sub6_text": "<ul><li>El uso de IA es 100% opcional. Puede ingresar medicamentos manualmente.</li><li>Para solicitar la eliminación de datos, escriba a <a href=\"mailto:GL.Tech@icloud.com\">GL.Tech@icloud.com</a>.</li></ul>", "h3": "3. Almacenamiento y Sincronización con iCloud", "h3_local": "<strong>Almacenamiento Local:</strong> Los datos se guardan en el almacenamiento local de iOS mediante SwiftData.", "h3_icloud": "<strong>Sincronización iCloud:</strong> Si se habilita, Apple CloudKit sincroniza sus datos de manera cifrada entre sus propios dispositivos Apple.", "h4": "4. Consultas de Referencia Farmacológica", "h4_p": "Las consultas de información farmacológica pública (ej. openFDA) se realizan de forma anónima sin transmitir información del usuario.", "h5": "5. Compras dentro de la App y Suscripciones", "h5_p": "Las suscripciones a Pill Reminder Pro se gestionan a través de Apple StoreKit 2. No almacenamos ni tenemos acceso a sus datos de tarjetas bancarias.", "h6": "6. Sin Rastreadores de Publicidad", "h6_p": "Pill Reminder <strong>no</strong> incluye redes publicitarias ni rastreadores entre apps.", "h7": "7. Sus Derechos y Eliminación de Datos", "h7_p1": "Usted tiene control total sobre sus datos:", "h7_li1": "Puede editar o eliminar cualquier medicamento o registro en cualquier momento.", "h7_li2": "Al desinstalar la app se eliminan todos los datos locales de su dispositivo.", "h7_li3": "Puede gestionar o borrar los datos de iCloud desde los Ajustes de iOS de su cuenta Apple.", "h8": "8. Privacidad de Menores", "h8_p": "Pill Reminder no está dirigida a menores de 13 años sin supervisión de sus tutores.", "h9": "9. Cambios a esta Política", "h9_p": "Nos reservamos el derecho de actualizar esta política. Los cambios se publicarán en esta página.", "h10": "10. Contacto", "h10_p": "Para cualquier consulta sobre privacidad, contáctenos en:", "footer": "&copy; 2026 GL Technologies. Todos los derechos reservados."}, "de": {"nav_overview": "← Pill Reminder Übersicht", "nav_terms": "Nutzungsbedingungen", "nav_faq": "Support & FAQ", "badge": "Datenschutzerklärung", "title": "Pill Reminder Datenschutzerklärung", "meta": "<strong>Gültig ab:</strong> 21. August 2026 | <strong>Letzte Aktualisierung:</strong> 21. August 2026", "intro1": "Willkommen bei <strong>Pill Reminder</strong> („wir“, „uns“), entwickelt und betrieben von <strong>GL Technologies</strong>. Pill Reminder ist eine iOS-App zur Organisation von Medikamentenplänen, Einnahmedokumentation, Bestandsverwaltung und zuverlässigen Erinnerungen.", "intro2": "Ihre Gesundheitsdaten sind streng vertraulich. Diese Datenschutzerklärung erläutert, wie Pill Reminder Ihre Daten im Einklang mit den Apple App Store Richtlinien und internationalen Datenschutzstandards schützt.", "notice": "🛡️ <strong>Unser Datenschutzversprechen:</strong> Pill Reminder basiert auf „Privacy by Design“. Keine Benutzerkontenpflicht, keine Werbung, kein Verkauf persönlicher Daten und standardmäßig vollständige lokale Speicherung auf Ihrem Gerät.", "h1": "1. Verarbeitete Daten & Berechtigungen", "h1_intro": "Wir folgen dem Grundsatz der <strong>Datenminimierung</strong>:", "h1_meds": "<strong>Medikamentendaten:</strong> Alle erfassten Medikamentennamen, Dosierungen, Zeiten und Bestände verbleiben lokal auf Ihrem Gerät.", "h1_camera": "<strong>Kamera & Fotos:</strong> Dienen ausschließlich dem Scannen von Verpackungen oder Rezepten per OCR. Bilder werden flüchtig verarbeitet und vor dem Speichern durch Sie überprüft.", "h1_mic": "<strong>Mikrofon & Spracherkennung:</strong> Ermöglicht Spracheingabe von Einnahmeplänen über Apples On-Device-Framework.", "h1_faceid": "<strong>Face ID / Touch ID:</strong> Schützt den App-Zugriff über die Secure Enclave Ihres Geräts.", "h1_notif": "<strong>Mitteilungen & Alarme:</strong> Lokale Alarme zur zuverlässigen Erinnerung an Ihre Einnahmezeiten.", "h1_live": "<strong>Live-Aktivitäten & Widgets:</strong> Zeigen die nächste Einnahme auf dem Sperrbildschirm und der Dynamic Island an.", "h2": "2. KI-Dienste und Datenverarbeitung (Gemäß Apple App Store Richtlinien)", "h2_intro": "Die App bietet optionale KI-Funktionen zur Texterfassung, Spracheingabe und Unterstützung bei der Medikamentenerfassung.", "h2_sub1_title": "(1) Eingesetzte KI-Technologie", "h2_sub1_text": "Wir nutzen:<ul><li><strong>Google Gemini AI (google/gemini-2.5-flash Modell):</strong> Über unser sicheres KI-Gateway zur Erkennung von Rezepten, Dosierungen und Sprachbefehlen.</li><li><strong>Lokale Vorverarbeitung:</strong> Über Apples Vision-Framework direkt auf Ihrem Gerät.</li></ul>", "h2_sub2_title": "(2) An die KI übermittelte Daten", "h2_sub2_text": "Es werden nur unbedingt erforderliche Daten übermittelt:<ul><li>OCR-Text oder Sprachprotokolle.</li><li>Temporäre Bilder von Verpackungen.</li><li><strong>🚫 Anonymisierung:</strong> Patientennamen, Adressen und persönliche Nummern werden vorab unkenntlich gemacht. Keine Weitergabe von Passwörtern, Zahlungsdaten oder Gerätekennungen.</li></ul>", "h2_sub3_title": "(3) Datenverarbeitung", "h2_sub3_text": "<ul><li>Verschlüsselt über HTTPS/TLS.</li><li>Flüchtige Echtzeit-Verarbeitung in Sekunden.</li><li>Sofortige Löschung nach der Antwort.</li></ul>", "h2_sub4_title": "(4) Kein Modelltraining (Zero-Training Policy)", "h2_sub4_text": "<ul><li>Ihre Daten werden <strong>NICHT</strong> zum Trainieren von KI-Modellen verwendet.</li><li>Kein Verkauf oder Weitergabe an Werbetreibende.</li></ul>", "h2_sub5_title": "(5) Haftungsausschluss für KI-Inhalte", "h2_sub5_text": "<ul><li>KI-Ergebnisse können Fehler enthalten. <strong>Keine medizinische Beratung.</strong></li><li>Überprüfen Sie alle Angaben vor der Einnahme stets eigenverantwortlich.</li></ul>", "h2_sub6_title": "(6) Nutzerkontrolle und Datenlöschung", "h2_sub6_text": "<ul><li>KI-Nutzung ist vollständig optional.</li><li>Löschanfragen richten Sie an <a href=\"mailto:GL.Tech@icloud.com\">GL.Tech@icloud.com</a>.</li></ul>", "h3": "3. Speicherung & iCloud-Synchronisation", "h3_local": "<strong>Lokal auf dem Gerät:</strong> Nutzung von Apples SwiftData zur lokalen Speicherung.", "h3_icloud": "<strong>iCloud Sync:</strong> Sichere Synchronisierung über Apple CloudKit zwischen Ihren Apple-Geräten.", "h4": "4. Arzneimittelreferenzdaten", "h4_p": "Abfragen in öffentlichen Datenbanken (z.B. openFDA) erfolgen vollkommen anonym.", "h5": "5. In-App-Käufe & Abonnements", "h5_p": "Abgewickelt über Apple StoreKit 2. Wir erhalten keinen Zugriff auf Bank- oder Kreditkartendaten.", "h6": "6. Keine Werbetracker von Drittanbietern", "h6_p": "Pill Reminder enthält <strong>keine</strong> Werbenetzwerke oder Tracking-Dienste.", "h7": "7. Ihre Rechte & Datenlöschung", "h7_p1": "Sie haben die volle Kontrolle über Ihre Daten:", "h7_li1": "Einträge können jederzeit in der App geändert oder gelöscht werden.", "h7_li2": "Das Löschen der App entfernt alle lokalen Daten.", "h7_li3": "iCloud-Daten können in den iOS-Einstellungen verwaltet werden.", "h8": "8. Schutz von Minderjährigen", "h8_p": "Die App richtet sich nicht an Kinder unter 13 Jahren ohne elterliche Aufsicht.", "h9": "9. Änderungen", "h9_p": "Aktualisierungen werden auf dieser Seite veröffentlicht.", "h10": "10. Kontakt", "h10_p": "Bei Fragen zum Datenschutz kontaktieren Sie uns unter:", "footer": "&copy; 2026 GL Technologies. Alle Rechte vorbehalten."}, "fr": {"nav_overview": "← Aperçu de Pill Reminder", "nav_terms": "Conditions d'Utilisation", "nav_faq": "Support & FAQ", "badge": "Politique de Confidentialité", "title": "Politique de Confidentialité de Pill Reminder", "meta": "<strong>Date d'effet :</strong> 21 août 2026 | <strong>Dernière mise à jour :</strong> 21 août 2026", "intro1": "Bienvenue sur <strong>Pill Reminder</strong> (« nous », « notre »), développé et exploité par <strong>GL Technologies</strong>. Pill Reminder est une application iOS conçue pour aider les utilisateurs et soignants à organiser les prises de médicaments, suivre les stocks et recevoir des rappels fiables.", "intro2": "Nous considérons que vos données médicales sont strictement personnelles et confidentielles. Cette Politique explique comment vos données sont protégées conformément aux directives de l'App Store d'Apple et aux règles internationales de confidentialité.", "notice": "🛡️ <strong>Notre engagement :</strong> Pill Reminder repose sur le principe de « Confidentialité dès la conception ». Pas de compte obligatoire, aucune publicité tierce, aucune vente de données et stockage local par défaut.", "h1": "1. Données traitées et autorisations requises", "h1_intro": "Nous respectons le principe de <strong>Minimisation des Données</strong> :", "h1_meds": "<strong>Dossier de Médication :</strong> Vos noms de médicaments, posologies, heures de prise et stocks sont stockés localement sur votre appareil.", "h1_camera": "<strong>Appareil photo et Photos :</strong> Utilisés pour la reconnaissance de boîtes ou ordonnances par OCR. Traitement éphémère avec validation manuelle obligatoire.", "h1_mic": "<strong>Microphone et Reconnaissance Vocale :</strong> Transcription vocale de vos horaires via les outils natifs d'Apple, sans enregistrement permanent.", "h1_faceid": "<strong>Face ID / Touch ID :</strong> Protection de l'accès à l'application via la Secure Enclave de votre appareil.", "h1_notif": "<strong>Notifications et Alarmes :</strong> Programmées localement pour garantir la ponctualité de vos prises de médicaments.", "h1_live": "<strong>Activités en Direct & Widgets :</strong> Affichage du compte à rebours sur l'écran verrouillé et la Dynamic Island.", "h2": "2. Services IA et Traitement des Données (Conforme aux Directives Apple)", "h2_intro": "Notre application propose des fonctionnalités optionnelles basées sur l'Intelligence Artificielle pour la reconnaissance d'ordonnances, la saisie vocale et l'aide à la saisie de médicaments.", "h2_sub1_title": "(1) Technologie IA et Infrastructure", "h2_sub1_text": "Nous utilisons :<ul><li><strong>Google Gemini AI (modèle google/gemini-2.5-flash) :</strong> Via notre passerelle API sécurisée pour structurer posologies et horaires.</li><li><strong>Prétraitement local :</strong> Détection de texte via le framework Vision d'Apple sur l'appareil.</li></ul>", "h2_sub2_title": "(2) Données partagées avec l'IA", "h2_sub2_text": "Seules les données strictement nécessaires sont transmises :<ul><li>Texte extrait des ordonnances ou transcriptions vocales.</li><li>Photos temporaires de boîtes de médicaments.</li><li><strong>🚫 Masquage de Confidentialité :</strong> Les noms de patients, adresses et identifiants sont automatiquement masqués. Aucun partage de données biométriques, bancaires ou identifiants d'appareil.</li></ul>", "h2_sub3_title": "(3) Traitement des données par l'IA", "h2_sub3_text": "<ul><li>Chiffrement TLS/HTTPS de bout en bout.</li><li>Traitement éphémère en temps réel.</li><li>Suppression immédiate après génération de la réponse.</li></ul>", "h2_sub4_title": "(4) Politique de Non-Entraînement (Zero-Training Policy)", "h2_sub4_text": "<ul><li>Vos données ne sont <strong>JAMAIS</strong> utilisées pour entraîner des modèles d'IA.</li><li>Aucune revente à des régies publicitaires.</li></ul>", "h2_sub5_title": "(5) Avertissement sur les Contenus IA", "h2_sub5_text": "<ul><li>L'IA est une aide et peut comporter des erreurs. <strong>Ne constitue aucun avis médical.</strong></li><li>Vérifiez toujours vos posologies avant toute prise.</li></ul>", "h2_sub6_title": "(6) Contrôle Utilisateur et Suppression", "h2_sub6_text": "<ul><li>L'utilisation de l'IA est entièrement facultative.</li><li>Pour toute demande de suppression, écrivez à <a href=\"mailto:GL.Tech@icloud.com\">GL.Tech@icloud.com</a>.</li></ul>", "h3": "3. Stockage et Synchronisation iCloud", "h3_local": "<strong>Stockage Local Prioritaire :</strong> Utilisation de SwiftData directement sur votre appareil iOS.", "h3_icloud": "<strong>Synchronisation iCloud :</strong> Chiffrement et synchronisation via Apple CloudKit rattachés à votre identifiant Apple.", "h4": "4. Référence Médicamenteuse", "h4_p": "Les recherches dans les bases de données publiques (ex. openFDA) sont totalement anonymes.", "h5": "5. Achats Intégrés et Abonnements", "h5_p": "Gérés par Apple StoreKit 2. Nous ne collectons aucune coordonnée bancaire.", "h6": "6. Aucun Traqueur Publicitaire", "h6_p": "Pill Reminder ne comporte <strong>aucun</strong> SDK publicitaire ou traqueur tiers.", "h7": "7. Vos Droits et Suppression", "h7_p1": "Vous conservez le contrôle total :", "h7_li1": "Modification ou suppression possible à tout moment dans l'application.", "h7_li2": "La suppression de l'application efface toutes les données locales.", "h7_li3": "Gestion des données iCloud dans les Réglages iOS de votre compte Apple.", "h8": "8. Protection des Enfants", "h8_p": "L'application n'est pas destinée aux enfants de moins de 13 ans sans supervision parentale.", "h9": "9. Mises à Jour de la Politique", "h9_p": "Toute mise à jour sera publiée sur cette page.", "h10": "10. Nous Contacter", "h10_p": "Pour toute question relative à la confidentialité, écrivez-nous à :", "footer": "&copy; 2026 GL Technologies. Tous droits réservés."}};
+        const i18n = {"en": {"nav_overview": "← PillPilot Overview", "nav_terms": "Terms of Use", "nav_faq": "Support & FAQ", "badge": "Privacy Policy", "title": "PillPilot Privacy Policy", "meta": "<strong>Effective Date:</strong> August 20, 2026 | <strong>Last Updated:</strong> August 20, 2026", "intro1": "Welcome to <strong>PillPilot</strong> (\"we\", \"our\", or \"us\"), developed and operated by <strong>GL Technologies</strong>. PillPilot is an iOS medication management and reminder application designed to help individuals and caregivers organize medication schedules, record intake, track inventory, and receive timely reminder alerts.", "intro2": "We believe your medical routines and medication records are strictly private personal health information. This Privacy Policy explains how PillPilot collects, uses, handles, and protects your information in strict adherence to Apple's App Store Review Guidelines, Apple Human Interface Guidelines, and global privacy standards.", "notice": "🛡️ <strong>Our Privacy Pledge:</strong> PillPilot is built on a \"Privacy by Design\" foundation. The app does not require account creation, does not display third-party advertisements, does not sell your personal data, and stores your health records locally on your device by default.", "h1": "1. Information We Process & System Permissions", "h1_intro": "We strictly follow the principle of <strong>Data Minimization</strong>. We only request system permissions and process information that is directly necessary to provide medication scheduling and reminder features:", "h1_meds": "<strong>Medication & Schedule Records:</strong> All information you create (including medication names, dosages, units, taking frequencies, reminder times, inventory counts, expiration dates, and personal notes) is stored securely on your local device.", "h1_camera": "<strong>Camera & Photo Library (NSCameraUsageDescription / NSPhotoLibraryUsageDescription):</strong> If you use medication label scanning, barcode lookup, or prescription OCR intake, PillPilot requests access to your camera or photo library. Images are analyzed locally and ephemerally to assist you in filling in medication information. You always have full review and editing control before any information is saved.", "h1_mic": "<strong>Microphone & Speech Recognition (NSMicrophoneUsageDescription / NSSpeechRecognitionUsageDescription):</strong> If you use voice input to quickly dictate medication schedules, PillPilot uses Apple's Speech Recognition framework to convert your voice to text. Audio is processed for real-time transcription and is not permanently recorded or saved on external servers.", "h1_faceid": "<strong>Face ID / Touch ID (NSFaceIDUsageDescription):</strong> If you enable the <em>App Lock</em> feature to secure your medication lists, authentication is performed on-device via Apple's LocalAuthentication framework. Biometric data is strictly confined to your device's Secure Enclave; PillPilot never has access to your raw biometric data.", "h1_notif": "<strong>Notifications & Alarms (NSAlarmKitUsageDescription):</strong> To deliver timely reminders and critical alarms, PillPilot schedules local notifications and alarms on your device.", "h1_live": "<strong>Live Activities & Widgets:</strong> PillPilot uses Apple's ActivityKit and WidgetKit to display next-dose countdowns and status on your Lock Screen and Dynamic Island based on local schedules.", "h2": "2. AI Services and Data Processing", "h2_intro": "Our application provides optional AI-assisted medication intake, prescription label OCR parsing, voice schedule extraction, and conversational intake assistance. This section describes how these AI features work, what data is involved, and how it is processed in compliance with Apple App Store guidelines.", "h2_sub1_title": "(1) AI Technology Implementation & Infrastructure", "h2_sub1_text": "PillPilot integrates advanced Artificial Intelligence technologies to help parse and structure medication schedules. We specifically utilize:<ul><li><strong>Google Gemini AI (google/gemini-2.5-flash) and Vision AI Models:</strong> Accessed via our secure, dedicated AI Gateway infrastructure to power intelligent prescription label extraction, medication packaging analysis, voice transcription parsing, and conversational intake assistance.</li><li><strong>On-Device Pre-processing:</strong> Apple's native Vision framework is utilized locally on your device for initial OCR text detection before any optional cloud parsing.</li></ul>", "h2_sub2_title": "(2) What Data Is Shared with AI Services", "h2_sub2_text": "When you interact with AI-powered features (e.g. photo label scanning, voice dictation, or chat intake), only the following minimal data is sent to the AI processing gateway:<ul><li><strong>Text Prompts & OCR Text:</strong> The text recognized from the medication packaging, prescription label, or your spoken dictation transcript.</li><li><strong>Medication Images:</strong> Temporary image data of medication boxes or labels when you select image analysis mode.</li><li><strong>Conversation Context:</strong> Limited recent conversation turns strictly needed to complete medication intake clarification.</li><li><strong>Technical Metadata:</strong> Request identifiers, timestamps, and application identifier necessary to complete the API request.</li><li><strong>🚫 Privacy Filtering & Excluded Data:</strong> PillPilot automatically applies privacy minimization filters prior to sending requests, stripping or redacting identifiable patient names, personal addresses, phone numbers, and clinician account details. We do NOT share your biometric data, Apple ID credentials, payment details, device identifiers, or location with AI providers.</li></ul>", "h2_sub3_title": "(3) How AI Processes Your Data", "h2_sub3_text": "When you use AI-assisted features:<ul><li><strong>Encrypted Transmission:</strong> Your data is transmitted exclusively via secure HTTPS/TLS encrypted connections.</li><li><strong>Real-Time Ephemeral Processing:</strong> The AI model processes your request in real time within seconds solely to structure medication parameters (such as drug name, dosage, frequency, and time).</li><li><strong>Immediate Discard:</strong> Once the structured response is returned to your device, the processing payload is immediately discarded and is not retained on the AI gateway servers.</li></ul>", "h2_sub4_title": "(4) Data Usage and Zero-Training Policy", "h2_sub4_text": "We enforce a strict zero-training policy regarding user health and medication data:<ul><li>The transmitted data is used <strong>solely</strong> for real-time inference and answering your medication intake requests.</li><li>Your data is <strong>NOT</strong> used to train, fine-tune, or improve any foundational AI models.</li><li>We do not sell, license, rent, or share your AI interaction data with advertisers, data brokers, or any third parties.</li></ul>", "h2_sub5_title": "(5) AI Content & Medical Safety Disclaimer", "h2_sub5_text": "<ul><li>AI-generated text, extractions, and suggestions are produced by automated algorithms and may contain inaccuracies or errors.</li><li>PillPilot is an informational tool and <strong>does NOT provide medical advice or clinical diagnosis</strong>.</li><li>Users must independently review and verify all extracted medication names, strengths, dosages, frequencies, and scheduled times before saving or taking any medication.</li><li>Do not submit passwords, financial information, government ID numbers, or unrelated confidential personal records through the AI assistant.</li></ul>", "h2_sub6_title": "(6) Your Control, Consent Withdrawal & Data Deletion", "h2_sub6_text": "<ul><li><strong>Entirely Optional:</strong> Use of AI features is completely optional. You can choose manual medication entry at any time without any degradation of core tracking features.</li><li><strong>Withdraw Consent:</strong> You may discontinue using AI features at any time. Once you stop submitting AI requests, no data is shared with the AI infrastructure.</li><li><strong>Request Data Deletion:</strong> You may request the deletion of any data associated with your inquiries by contacting us at <a href=\"mailto:GL.Tech@icloud.com\">GL.Tech@icloud.com</a>. We will process your request within 30 days.</li></ul>", "h3": "3. Data Storage & iCloud Synchronization", "h3_local": "<strong>Local-First Storage:</strong> Your primary database is stored directly on your iOS device via Apple's SwiftData framework.", "h3_icloud": "<strong>Apple iCloud Sync:</strong> If enabled, PillPilot utilizes Apple CloudKit to synchronize your records across your personal Apple devices. Your data is encrypted and tied exclusively to your personal Apple ID account. GL Technologies does not operate separate proprietary servers holding your personal health data.", "h4": "4. Drug Reference Data Lookups", "h4_p": "PillPilot provides informational reference data (such as drug information from public catalog services like openFDA or cached reference catalogs). When you search for reference information, anonymous queries containing only the drug name or national drug code are sent. No user identity, location, or personal schedule data is transmitted during reference queries.", "h5": "5. In-App Purchases & Subscriptions", "h5_p": "PillPilot Pro subscriptions and in-app purchases are processed directly by Apple via StoreKit 2. We do not process, store, or have access to your credit card information, bank details, or billing address. Apple manages all financial transactions in accordance with Apple's Privacy Policy.", "h6": "6. Third-Party Tracking & Advertising", "h6_p": "PillPilot does <strong>not</strong> contain third-party ad networks, tracking cookies, or commercial data brokers. We do not track your activity across third-party apps or websites.", "h7": "7. Your Data Rights & Deletion", "h7_p1": "You have full ownership and control over your medication data:", "h7_li1": "You can view, edit, or delete any medication entry, schedule, or dose log within the app at any time.", "h7_li2": "Deleting the app permanently removes all local data stored on your device.", "h7_li3": "If iCloud Sync was enabled, you can manage or delete your iCloud backup data via iOS <em>Settings &gt; [Your Apple Account] &gt; iCloud &gt; Manage Storage</em>.", "h8": "8. Children's Privacy", "h8_p": "PillPilot is not intended for use by children under 13 without parental supervision. We do not knowingly collect personal information directly from children under 13.", "h9": "9. Updates to This Policy", "h9_p": "We may update our Privacy Policy periodically to reflect new features or regulatory requirements. Any updates will be published on this page with an updated effective date.", "h10": "10. Contact Us", "h10_p": "If you have any questions or feedback regarding this Privacy Policy or your data privacy in PillPilot, please reach out to us at:", "footer": "&copy; 2026 GL Technologies. All rights reserved.", "tab_privacy": "Privacy Policy", "tab_terms": "Terms of Use", "tab_faq": "Support & FAQ", "btn_back": "← Pill Reminder"}, "zh-Hans": {"nav_overview": "← PillPilot 概览", "nav_terms": "服务条款", "nav_faq": "支持与常见问题", "badge": "隐私政策", "title": "PillPilot 隐私政策", "meta": "<strong>生效日期：</strong>2026年8月20日 | <strong>最近更新：</strong>2026年8月20日", "intro1": "欢迎使用 <strong>PillPilot</strong>（以下简称“本应用”或“我们”），本应用由 <strong>GL Technologies</strong> 开发并运营。PillPilot 是一款专注于用药管理与服药提醒的 iOS 应用，旨在帮助个人与家庭照护者有序管理用药计划、记录服药情况、追踪库存并获得准时提醒。", "intro2": "我们深知您的用药日程与健康记录属于高度敏感的个人隐私。本隐私政策严格遵循 Apple App Store 审核指南（包括 5.1.1 隐私准则与最新 AI 技术披露要求）、Apple 人机界面指南（HIG）以及全球通用数据合规标准，向您说明我们如何收集、使用、保护及处理您的信息。", "notice": "🛡️ <strong>隐私承诺：</strong>PillPilot 践行“从设计到隐私（Privacy by Design）”理念。本应用无需注册账号、不投放任何第三方广告、绝不买卖个人数据，所有用药与健康数据默认完全存储在您的本地设备上。", "h1": "1. 我们处理的信息及使用的系统权限", "h1_intro": "我们严格遵循<strong>“数据最小化（Data Minimization）”</strong>原则，仅在实现用药日程与提醒所必需的范围内申请权限和处理信息：", "h1_meds": "<strong>用药与日程记录：</strong>您创建的所有数据（包括药品名称、剂量单位、服药频次、提醒时间、库存数量、有效期及备注）均安全保存在您的本地设备数据库中。", "h1_camera": "<strong>相机与相册权限（NSCameraUsageDescription / NSPhotoLibraryUsageDescription）：</strong>当您使用药盒扫描、条形码识别或处方标签 OCR 录入时，本应用会申请相机或相册权限。图像仅在本地及即时分析中用于提取药品信息，保存前您始终拥有完整的人工审核与修改权利。", "h1_mic": "<strong>麦克风与语音识别权限（NSMicrophoneUsageDescription / NSSpeechRecognitionUsageDescription）：</strong>当您使用语音快速录入用药日程时，本应用利用 Apple 原生语音识别框架将语音转换为文字。音频仅在录入时即时转译，绝不会在外部服务器中永久存储录音。", "h1_faceid": "<strong>面容 ID / 触控 ID（NSFaceIDUsageDescription）：</strong>当您开启<em>应用锁</em>以保护用药隐私时，认证完全在设备端由 Apple LocalAuthentication 框架处理。生物识别信息仅保存在硬件级 Secure Enclave（安全隔区）中，本应用绝无法获取您的原始生物识别数据。", "h1_notif": "<strong>通知与闹钟权限（NSAlarmKitUsageDescription）：</strong>为了确保准时服药，本应用在本地调度通知、强提醒闹钟以及实时活动。", "h1_live": "<strong>实时活动与小组件（Live Activities & Widgets）：</strong>本应用利用 ActivityKit 与 WidgetKit 在灵动岛和锁定屏幕上展示即将到来的服药倒计时与状态。", "h2": "2. AI 服务与数据处理规范（符合 App Store 审核要求）", "h2_intro": "本应用提供了可选的 AI 智能用药录入、处方药盒标签 OCR 提取、语音用药计划解析以及对话式录入助手。本章节依据 Apple App Store 审核政策与隐私规范，详细披露 AI 功能的实现机制、涉及的数据类型及处理方式。", "h2_sub1_title": "(1) AI 技术实现与基础设施", "h2_sub1_text": "PillPilot 集成了业界先进的人工智能模型以提供精准高效的用药解析体验：<ul><li><strong>大模型驱动：</strong>采用 <strong>Google Gemini AI (google/gemini-2.5-flash 模型)</strong> 及视觉解析技术，通过安全专用的 AI 网关基础设施调用，用于驱动处方标签 OCR 结构化提取、药盒图像分析、语音输入解析以及用药录入对话助手。</li><li><strong>端侧预处理：</strong>在发起云端请求前，优先通过 Apple 设备端原生 Vision 框架进行初步文本检测与预处理。</li></ul>", "h2_sub2_title": "(2) 与第三方 AI 服务共享的数据范围", "h2_sub2_text": "当您主动使用 AI 相关功能时，仅有完成该次请求所严格必需的数据会被发送至 AI 网关：<ul><li><strong>文本提示与 OCR 文本：</strong>从药盒、处方笺识别出的文字或您语音转换的文本内容。</li><li><strong>药盒图像数据：</strong>当您选择图像识别模式时提交的临时包装图片。</li><li><strong>对话上下文：</strong>完成当前用药录入澄清所需的最近少量对话历史。</li><li><strong>技术元数据：</strong>完成 API 请求所必需的请求标识符、时间戳及 App 标识。</li><li><strong>🚫 隐私脱敏与严格禁止项：</strong>PillPilot 在向 AI 网关发送数据前会自动执行隐私脱敏算法，剔除患者姓名、家庭住址、电话号码及医生处方账号等个人身份信息。我们绝不会将您的账户凭据、生物识别信息、支付数据、设备标识符或地理位置共享给 AI 服务商。</li></ul>", "h2_sub3_title": "(3) AI 如何处理您的数据", "h2_sub3_text": "当您使用 AI 功能时：<ul><li><strong>全程加密传输：</strong>数据均通过高强度 HTTPS/TLS 加密通道传输至服务器。</li><li><strong>即时生成与秒级响应：</strong>AI 模型在数秒内完成实时推理，仅用于提取药品名称、规格、用法用量及服药时间等结构化参数并向您返回结果。</li><li><strong>即时销毁：</strong>请求响应完成后，处理通道中的数据即被丢弃，不在网关服务器上留存个人用药数据。</li></ul>", "h2_sub4_title": "(4) 数据用途与零模型训练政策 (Zero-Training Policy)", "h2_sub4_text": "我们对用户健康与医疗数据实施严格的零训练政策：<ul><li>收集的数据<strong>仅用于</strong>实时 AI 推理与完成您的用药计划录入。</li><li>您的数据<strong>绝不用于</strong>训练、微调或改进任何公共或私有 AI 大模型。</li><li>我们绝不向广告商、数据代理商或任何无关第三方出售、出租或分享您的 AI 交互数据。</li></ul>", "h2_sub5_title": "(5) AI 内容免责声明与医疗安全提示", "h2_sub5_text": "<ul><li>AI 生成的内容与提取结果由自动化系统产生，可能存在误差或识别不完整。</li><li>PillPilot 属于辅助工具，<strong>不提供任何医疗诊断、处方建议或临床决策</strong>。</li><li>在保存数据或实际服药前，用户必须自行独立核对所有药品名称、剂量、频次及时间。</li><li>请勿向 AI 助手输入密码、银行卡号、身份证号或其他无关的高度敏感机密信息。</li></ul>", "h2_sub6_title": "(6) 您的控制权、撤回同意与数据删除途径", "h2_sub6_text": "<ul><li><strong>完全可选：</strong>AI 功能完全为自愿选择使用。您可以随时选择手动录入用药，不使用 AI 功能绝不影响应用的其余核心记录与提醒功能。</li><li><strong>随时撤回同意：</strong>您可随时停止使用 AI 功能，一旦停止提交，将不再有任何数据发送至 AI 设施。</li><li><strong>申请数据删除：</strong>若您需要删除曾向 AI 服务提供的相关数据记录，可通过发送邮件至 <a href=\"mailto:GL.Tech@icloud.com\">GL.Tech@icloud.com</a> 提出申请，我们将在 30 天内完成处理。</li></ul>", "h3": "3. 数据存储与 iCloud 同步", "h3_local": "<strong>端侧本地优先：</strong>您的主要数据使用 Apple SwiftData 框架直接存储在您的 iOS 设备本地。", "h3_icloud": "<strong>Apple iCloud 跨设备同步：</strong>若您开启 iCloud 同步，数据将通过 Apple CloudKit 架构在您的个人 Apple 设备间加密流转，完全绑定于您的私人 Apple ID。GL Technologies 不设私有服务器存储您的个人用药档案。", "h4": "4. 药品参考数据库查询", "h4_p": "PillPilot 提供权威药品资料参考（如 openFDA 公开数据库或内置药品库）。查询时仅发送药品名称或标准编码进行匿名检索，不会上传您的身份标识、地理位置或个人日程数据。", "h5": "5. App 内购买与订阅服务", "h5_p": "PillPilot Pro 高级版订阅与内购均通过 Apple StoreKit 2 处理。所有支付与账单信息完全由 Apple Inc. 安全托管，我们无法接触、获取或保存您的信用卡及银行账户信息。", "h6": "6. 第三方追踪与广告声明", "h6_p": "PillPilot <strong>不包含</strong>任何第三方广告 SDK、追踪 Cookie 或商业数据分销代码。我们绝不跨应用或跨网站追踪您的活动。", "h7": "7. 您的数据权利与删除途径", "h7_p1": "您对自己的用药数据拥有完全的控制权：", "h7_li1": "您可以随时在应用内修改或彻底删除任何药品、日程与服药记录。", "h7_li2": "卸载本应用将立即清除存储在您设备上的所有本地数据。", "h7_li3": "若启用了 iCloud 同步，您可通过 iOS <em>设置 &gt; [您的 Apple 账户] &gt; iCloud &gt; 管理储存空间</em> 清除云端备份。", "h8": "8. 未成年人隐私保护", "h8_p": "本应用不面向 13 周岁以下儿童独立使用。家长或监护人可使用本应用为其家属管理用药，但我们不会主动收集儿童个人信息。", "h9": "9. 隐私政策的更新", "h9_p": "我们可能会根据功能演进或合规要求适时更新本政策。更新内容将在此页面公布，并同步更新生效日期。", "h10": "10. 联系我们", "h10_p": "若您对本隐私政策或个人数据保护有任何疑问与建议，请通过以下方式与我们联系：", "footer": "&copy; 2026 GL Technologies. 保留所有权利。", "tab_privacy": "隐私政策", "tab_terms": "服务条款", "tab_faq": "支持与FAQ", "btn_back": "← Pill Reminder"}, "zh-Hant": {"nav_overview": "← PillPilot 概覽", "nav_terms": "服務條款", "nav_faq": "支援與常見問題", "badge": "隱私權政策", "title": "PillPilot 隱私權政策", "meta": "<strong>生效日期：</strong>2026年8月20日 | <strong>最近更新：</strong>2026年8月20日", "intro1": "歡迎使用 <strong>PillPilot</strong>（以下簡稱「本應用程式」或「我們」），本應用程式由 <strong>GL Technologies</strong> 開發與營運。PillPilot 是一款專為用藥管理與服藥提醒設計的 iOS 應用程式，協助個人及照護者妥善規劃用藥排程、記錄服藥狀況、追蹤庫存並取得即時提醒。", "intro2": "我們深知您的用藥時程與健康記錄屬於極度私密的個人資訊。本隱私權政策嚴格遵循 Apple App Store 審核規範（包含 5.1.1 隱私規範與最新 AI 技術揭露要求）、Apple 人機介面指南（HIG）及各項資料保護法規，說明我們如何收集、使用、保護與處理您的資訊。", "notice": "🛡️ <strong>隱私承諾：</strong>PillPilot 採用「隱私優先設計（Privacy by Design）」理念。本應用程式無需註冊帳號、不投放任何第三方廣告、絕不販售個人數據，所有用藥記錄預設完全儲存於您的本地裝置中。", "h1": "1. 我們處理的資訊與使用的系統權限", "h1_intro": "我們嚴格遵循<strong>「數據最小化（Data Minimization）」</strong>原則，僅在提供用藥日程與提醒所必需的範圍內請求權限與處理資訊：", "h1_meds": "<strong>用藥與排程記錄：</strong>您所建立的所有資料（包括藥品名稱、劑量、服藥頻率、提醒時間、庫存數量、有效期限及備忘錄）均安全儲存於您的本地裝置資料庫中。", "h1_camera": "<strong>相機與相簿權限（NSCameraUsageDescription / NSPhotoLibraryUsageDescription）：</strong>當您使用藥品標籤掃描、條形碼或處方箋 OCR 辨識時，本應用程式會請求相機或相簿存取權。影像僅於本地及即時分析中用於提取藥品資訊，儲存前您始終享有完整的人工審核與編輯權限。", "h1_mic": "<strong>麥克風與語音辨識權限（NSMicrophoneUsageDescription / NSSpeechRecognitionUsageDescription）：</strong>當您使用語音快速輸入用藥時程時，本應用程式運用 Apple 原生語音辨識架構轉換為文字。語音僅於輸入時即時轉譯，絕不會在外部伺服器上留存音訊。", "h1_faceid": "<strong>Face ID / Touch ID（NSFaceIDUsageDescription）：</strong>當您啟用<em>應用程式鎖定</em>以保護用藥隱私時，認證完全在裝置端由 Apple LocalAuthentication 處理。生物辨識資訊受限於硬體級 Secure Enclave（安全隔離區），本應用程式絕無法存取您的原始生物特徵資料。", "h1_notif": "<strong>通知與鬧鐘權限（NSAlarmKitUsageDescription）：</strong>為了確保準時服藥，本應用程式於本地排程發送通知、強提醒鬧鐘及即時動態。", "h1_live": "<strong>即時動態與小工具（Live Activities & Widgets）：</strong>本應用程式運用 ActivityKit 與 WidgetKit 於動態島及鎖定畫面上呈現即將到來的服藥倒數與狀態。", "h2": "2. AI 服務與資料處理規範（符合 App Store 審核標準）", "h2_intro": "本應用程式提供可選的 AI 智慧用藥輸入、處方箋標籤 OCR 辨識、語音用藥時程解析及對話式輸入助理。本章節依據 Apple App Store 最新政策，詳細揭露 AI 功能的技術實現、資料處理流程與您的權利。", "h2_sub1_title": "(1) AI 技術實現與基礎架構", "h2_sub1_text": "PillPilot 整合頂尖人工智慧模型以提供精準的用藥時程解析：<ul><li><strong>大型語言模型：</strong>採用 <strong>Google Gemini AI (google/gemini-2.5-flash 模型)</strong> 及視覺解析技術，透過專屬安全 AI 閘道提供處方 OCR 結構化辨識、藥盒圖像分析、語音轉譯解析及對話助理。</li><li><strong>本地端預處理：</strong>在向雲端傳送前，優先透過 Apple 原生 Vision 框架於裝置端執行影像與文字偵測。</li></ul>", "h2_sub2_title": "(2) 與第三方 AI 共享之資料範圍", "h2_sub2_text": "當您主動使用 AI 功能時，僅傳送完成該次請求所必須之最小資料：<ul><li><strong>文字提示與 OCR 辨識文字：</strong>由藥盒或處方箋辨識之文字或語音轉譯內容。</li><li><strong>藥盒影像資料：</strong>選擇圖像分析時所提交之臨時照片。</li><li><strong>對話上下文：</strong>完成當次用藥輸入所需之最近簡短對話。</li><li><strong>技術中繼資料：</strong>請求識別碼、時間戳記與 App 識別碼。</li><li><strong>🚫 隱私去識別化與禁止項目：</strong>在傳送至 AI 閘道前，PillPilot 自動執行去識別化演算法，去除病患姓名、住址、電話及處方箋帳號。絕不共享您的生物特徵、Apple ID、付款資料、裝置識別碼或定位資訊。</li></ul>", "h2_sub3_title": "(3) AI 如何處理您的資料", "h2_sub3_text": "使用 AI 功能時：<ul><li><strong>安全加密傳輸：</strong>全程使用 HTTPS/TLS 加密傳輸。</li><li><strong>即時生成與秒級回應：</strong>AI 模型於數秒內即時處理並傳回結構化用藥資訊。</li><li><strong>即時銷毀：</strong>請求完成後資料立即自處理通道銷毀，不在伺服器保留。</li></ul>", "h2_sub4_title": "(4) 資料用途與零模型訓練政策 (Zero-Training Policy)", "h2_sub4_text": "我們對使用者健康與醫療資訊實施嚴格的零模型訓練政策：<ul><li>收集之資料<strong>僅用於</strong>即時 AI 推理並完成用藥排程。</li><li>您的資料<strong>絕不用於</strong>訓練、微調或改進任何公共或私有 AI 模型。</li><li>絕不向廣告商或第三方資料商販售、出租或分享您的 AI 互動資料。</li></ul>", "h2_sub5_title": "(5) AI 內容免責聲明與醫療安全提示", "h2_sub5_text": "<ul><li>AI 生成之內容由自動化系統產生，可能存在誤差。</li><li>PillPilot 為輔助工具，<strong>不提供任何醫療診斷或處方建議</strong>。</li><li>儲存或實際服藥前，使用者必須自行核對藥品名稱、劑量、頻率與時間。</li><li>請勿輸入密碼、身分證號或機密個人隱私。</li></ul>", "h2_sub6_title": "(6) 您的控制權、撤回同意與資料刪除途徑", "h2_sub6_text": "<ul><li><strong>完全自由選用：</strong>AI 功能完全可自選使用，手動輸入不受任何影響。</li><li><strong>隨時撤回同意：</strong>停止使用 AI 功能即停止資料傳輸。</li><li><strong>申請刪除資料：</strong>若需刪除曾傳送至 AI 服務之資料，請寄信至 <a href=\"mailto:GL.Tech@icloud.com\">GL.Tech@icloud.com</a>，我們將於 30 日內處理完畢。</li></ul>", "h3": "3. 資料儲存與 iCloud 同步", "h3_local": "<strong>本地端優先儲存：</strong>您的主要資料庫使用 Apple SwiftData 框架直接儲存於您的 iOS 裝置本地。", "h3_icloud": "<strong>Apple iCloud 跨裝置同步：</strong>若您啟用 iCloud 同步，資料將透過 Apple CloudKit 架構在您的個人 Apple 裝置間加密同步，完全綁定於您的個人 Apple ID。GL Technologies 不設立私有伺服器儲存您的個人健康記錄。", "h4": "4. 藥物參考資料庫查詢", "h4_p": "PillPilot 提供藥品資訊參考查詢（如 openFDA 公開資料庫或內建藥物庫）。查詢時僅發送藥品名稱或標準代碼進行匿名搜尋，絕不會傳送您的身分識別、所在位置或個人排程資料。", "h5": "5. App 內購買與訂閱服務", "h5_p": "PillPilot Pro 高級版訂閱與內購皆由 Apple StoreKit 2 處理。所有付款與帳單資訊完全由 Apple Inc. 安全保管，我們無法接觸、獲取或儲存您的信用卡及銀行帳號資訊。", "h6": "6. 第三方追蹤與廣告聲明", "h6_p": "PillPilot <strong>不包含</strong>任何第三方廣告 SDK、追蹤 Cookie 或商業資料分析套件。我們絕不跨應用程式或跨網站追蹤您的活動。", "h7": "7. 您的資料權利與刪除途徑", "h7_p1": "您對自己的用藥資料擁有完全的控制權：", "h7_li1": "您可以隨時在應用程式內修改或徹底刪除任何藥品、排程與服藥表記錄。", "h7_li2": "解除安裝本應用程式將立即清除儲存於您裝置上的所有本地資料。", "h7_li3": "若啟用了 iCloud 同步，您可透過 iOS <em>設定 &gt; [您的 Apple 帳號] &gt; iCloud &gt; 管理儲存空間</em> 清除雲端備份。", "h8": "8. 兒童隱私保護", "h8_p": "本應用程式不針對 13 歲以下兒童獨立使用。家長或監護人可使用本應用程式協助家屬管理用藥，但我們不會主動收集兒童個人資訊。", "h9": "9. 隱私權政策的更新", "h9_p": "我們可能隨功能演進或法規要求適時更新本政策。更新內容將發布於此網頁，並同步更新生效日期。", "h10": "10. 聯絡我們", "h10_p": "若您對本隱私權政策或個人資料保護有任何問題與建議，請透過以下方式與我們聯繫：", "footer": "&copy; 2026 GL Technologies. 版權所有。", "tab_privacy": "隱私權政策", "tab_terms": "服務條款", "tab_faq": "支援與FAQ", "btn_back": "← Pill Reminder"}, "ja": {"nav_overview": "← PillPilot 概要", "nav_terms": "利用規約", "nav_faq": "サポート＆FAQ", "badge": "プライバシーポリシー", "title": "PillPilot プライバシーポリシー", "meta": "<strong>発効日：</strong>2026年8月20日 | <strong>最終更新日：</strong>2026年8月20日", "intro1": "<strong>PillPilot</strong>（以下「本アプリ」または「当社」）へようこそ。本アプリは <strong>GL Technologies</strong> により開発・運営されています。PillPilot は服薬スケジュール管理、服用記録、在庫追跡、タイムリーなリマインダー通知を目的とした iOS アプリケーションです。", "intro2": "当社はお客様の服薬情報や健康記録を極めて重要な個人情報であると認識しています。本プライバシーポリシーでは、Apple の App Store 審査ガイドライン（5.1.1 規則および最新の AI 技術開示要件を含む）に基づき、情報の保護・取り扱いについて説明します。", "notice": "🛡️ <strong>プライバシーへの誓約：</strong>PillPilot は「プライバシー・バイ・デザイン」原則に基づいて設計されています。アカウント登録不要、サードパーティ広告の非掲載、個人データの非売却を徹底し、すべての健康記録はデフォルトでお客様のデバイス内にのみ保存されます。", "h1": "1. 処理する情報と利用するシステム権限", "h1_intro": "当社は<strong>「データ最小化」</strong>の原則を厳格に順守し、服薬スケジュールおよびリマインダーの提供に必要な情報のみを処理します：", "h1_meds": "<strong>服薬・スケジュール記録：</strong>医薬品名、用量単位、服用頻度、通知時刻、在庫数、有効期限、メモなど、作成されたすべてのデータはお使いの端末内に安全に保存されます。", "h1_camera": "<strong>カメラおよび写真ライブラリ（NSCameraUsageDescription / NSPhotoLibraryUsageDescription）：</strong>薬のパッケージや処方箋ラベルの OCR スキャン機能を使用する際、カメラまたは写真へのアクセスを求めます。画像は薬品情報の抽出補助のために端末内・一時的に処理され、保存前にお客様が必ず確認・修正できます。", "h1_mic": "<strong>マイクおよび音声認識（NSMicrophoneUsageDescription / NSSpeechRecognitionUsageDescription）：</strong>音声入力で服薬予定を登録する場合、Apple の音声認識フレームワークを用いてリアルタイムに文字起こしを行います。音声データが外部サーバーに恒久保存されることはありません。", "h1_faceid": "<strong>Face ID / Touch ID（NSFaceIDUsageDescription）：</strong>アプリロック機能を有効にした場合、認証は端末上の Apple LocalAuthentication フレームワークによって実行されます。生体認証情報はハードウェア保護領域（Secure Enclave）内に留まり、当社が生体データにアクセスすることはできません。", "h1_notif": "<strong>通知およびアラーム（NSAlarmKitUsageDescription）：</strong>飲み忘れを防ぐため、端末上でローカル通知、強力アラーム、ライブアクティビティをスケジュールします。", "h1_live": "<strong>ライブアクティビティとウィジェット：</strong>ActivityKit および WidgetKit を利用し、ロック画面や Dynamic Island に次回の服薬カウントダウンを表示します。", "h2": "2. AI サービスおよびデータ処理方針（App Store ガイドライン準拠）", "h2_intro": "本アプリはオプションとして、AI による処方箋 OCR 抽出、薬パッケージ解析、音声スケジュール解析、対話型登録アシスタントを提供しています。本セクションでは、AI 機能の仕組みとデータ保護について詳細に開示します。", "h2_sub1_title": "(1) AI 技術の導入とインフラ構成", "h2_sub1_text": "PillPilot では、高度な AI 技術を導入しています：<ul><li><strong>Google Gemini AI (google/gemini-2.5-flash モデル)：</strong>専用の安全な AI ゲートウェイ経由で利用し、処方ラベル OCR 解析、パッケージ画像解析、音声テキスト変換後のスケジュール構造化、および登録チャットアシスタントを駆動します。</li><li><strong>オンデバイス前処理：</strong>クラウドへのリクエスト送信前に、Apple ネイティブの Vision フレームワークを用いて端末上で文字領域の検出を行います。</li></ul>", "h2_sub2_title": "(2) AI サービスと共有されるデータ", "h2_sub2_text": "AI 機能をご利用の際、処理に必要な最小限のデータのみが送信されます：<ul><li><strong>テキストおよび OCR 抽出文字：</strong>薬のラベルや音声から文字起こしされたテキスト。</li><li><strong>薬パッケージ画像：</strong>画像解析モード時に送信される一時的な写真データ。</li><li><strong>会話コンテキスト：</strong>服薬登録を完了するために必要な直近の短いやり取り。</li><li><strong>技術メタデータ：</strong>リクエスト識別子、タイムスタンプ、App ID。</li><li><strong>🚫 プライバシーマスキング処理：</strong>AI ゲートウェイへの送信前に、患者氏名、住所、電話番号等の個人識別情報を自動削除します。生体認証、Apple ID、決済情報、端末識別子、位置情報が AI プロバイダーに送信されることはありません。</li></ul>", "h2_sub3_title": "(3) AI によるデータ処理方法", "h2_sub3_text": "<ul><li><strong>暗号化通信：</strong>すべてのデータは強固な HTTPS/TLS 経由で暗号化通信されます。</li><li><strong>リアルタイム推論：</strong>AI モデルは薬品名や用量・時刻の抽出のために数秒間でリアルタイム処理を行い、結果を返します。</li><li><strong>即時破棄：</strong>応答完了後、処理パイプライン上のデータは直ちに破棄され、サーバーに保存されることはありません。</li></ul>", "h2_sub4_title": "(4) モデル学習の完全禁止ポリシー (Zero-Training Policy)", "h2_sub4_text": "<ul><li>送信データはリアルタイム推論と服薬登録に<strong>のみ</strong>使用されます。</li><li>お客様のデータが AI モデルの学習やファインチューニングに使用されることは<strong>一切ありません</strong>。</li><li>広告事業者やデータブローカー等への販売や共有は行いません。</li></ul>", "h2_sub5_title": "(5) AI 免責事項と医療上の注意事項", "h2_sub5_text": "<ul><li>AI の生成・抽出結果には誤りが含まれる可能性があります。</li><li>本アプリは補助ツールであり、<strong>医療アドバイスや診断を提供するものではありません</strong>。</li><li>保存および服薬前に、必ずご自身で薬品名や用量をご確認ください。</li><li>パスワードや暗証番号などの機密情報を AI に入力しないでください。</li></ul>", "h2_sub6_title": "(6) お客様の権利・同意の撤回およびデータ削除", "h2_sub6_text": "<ul><li><strong>完全任意：</strong>AI 機能の利用は完全に任意であり、手動登録もいつでもご利用いただけます。</li><li><strong>同意の撤回：</strong>AI 機能の利用を中止することで、いつでもデータの送信を停止できます。</li><li><strong>削除申請：</strong>AI サービスに関連するデータの削除をご希望の場合は、<a href=\"mailto:GL.Tech@icloud.com\">GL.Tech@icloud.com</a> までご連絡ください。30日以内に対応いたします。</li></ul>", "h3": "3. データの保存と iCloud 同期", "h3_local": "<strong>ローカルファースト保存：</strong>主要データは Apple SwiftData フレームワークを通じて端末内に直接保存されます。", "h3_icloud": "<strong>Apple iCloud 同期：</strong>iCloud 同期を有効にすると、Apple CloudKit を通じてお客様の個人 Apple ID に紐づく Apple デバイス間で暗号化同期されます。当社がお客様の健康データを保管する独自サーバーを運用することはありません。", "h4": "4. 医薬品リファレンス検索", "h4_p": "PillPilot では医薬品の参考情報（openFDA 等）を提供しています。検索時は薬品名または標準コードのみを用いた匿名リクエストが送信され、個人識別情報や服薬履歴が送信されることはありません。", "h5": "5. アプリ内課金と定期購読", "h5_p": "PillPilot Pro の定期購読およびアプリ内課金は Apple StoreKit 2 を通じて安全に処理されます。当社がクレジットカード番号や請求先情報にアクセス・保存することはありません。", "h6": "6. サードパーティによる追跡および広告の排除", "h6_p": "PillPilot にはサードパーティ製の広告 SDK や行動追跡トラッカーは<strong>一切含まれていません</strong>。他のアプリや Web サイトにまたがったトラッキングは行いません。", "h7": "7. お客様のデータ管理権と削除", "h7_p1": "お客様はご自身の服薬データに対して完全な管理権を有しています：", "h7_li1": "アプリ内ですべての医薬品、スケジュール、服用履歴をいつでも編集・完全削除できます。", "h7_li2": "アプリをアンインストールすると、端末上のすべてのローカルデータが即座に消去されます。", "h7_li3": "iCloud 同期を使用している場合は、iOS の <em>設定 &gt; [Apple アカウント] &gt; iCloud &gt; ストレージを管理</em> からクラウドデータを削除できます。", "h8": "8. お子様のプライバシー", "h8_p": "本アプリは13歳未満のお子様による単独利用を対象としていません。保護者がご家族の服薬を管理するために利用することは可能ですが、お子様の個人情報を意図的に収集することはありません。", "h9": "9. ポリシーの改定", "h9_p": "本プライバシーポリシーは機能追加や法改正等に応じて更新されることがあります。更新内容は本ページに掲示されます。", "h10": "10. お問い合わせ", "h10_p": "本プライバシーポリシーに関するご質問やご意見は、以下までご連絡ください：", "footer": "&copy; 2026 GL Technologies. All rights reserved.", "tab_privacy": "プライバシー", "tab_terms": "利用規約", "tab_faq": "サポート＆FAQ", "btn_back": "← Pill Reminder"}, "es": {"nav_overview": "← Resumen de PillPilot", "nav_terms": "Términos de Uso", "nav_faq": "Soporte y FAQ", "badge": "Política de Privacidad", "title": "Política de Privacidad de PillPilot", "meta": "<strong>Fecha de entrada en vigor:</strong> 20 de agosto de 2026 | <strong>Última actualización:</strong> 20 de agosto de 2026", "intro1": "Bienvenido a <strong>PillPilot</strong> (\"nosotros\" o \"nuestro\"), desarrollada y operada por <strong>GL Technologies</strong>. PillPilot es una aplicación para iOS diseñada para ayudar a personas y cuidadores a organizar horarios de medicación, registrar tomas, controlar el inventario y recibir recordatorios oportunos.", "intro2": "Creemos firmemente que sus registros de salud y tratamientos médicos son información estrictamente privada. Esta Política de Privacidad describe cómo PillPilot recopila, procesa y protege su información según las directrices de la App Store de Apple y las normativas internacionales de privacidad.", "notice": "🛡️ <strong>Nuestro compromiso:</strong> PillPilot se basa en la \"Privacidad por Diseño\". No requiere registro de cuentas, no incluye anuncios de terceros, no vende sus datos personales y almacena sus registros médicos localmente en su dispositivo por defecto.", "h1": "1. Información que procesamos y permisos requeridos", "h1_intro": "Seguimos estrictamente el principio de <strong>Minimización de Datos</strong>. Solo procesamos los datos necesarios para brindar los servicios de recordatorio:", "h1_meds": "<strong>Registros de Medicación:</strong> Toda la información creada (nombres de fármacos, dosis, horarios, inventario y notas) se almacena de forma segura en su dispositivo local.", "h1_camera": "<strong>Cámara y Fotos (NSCameraUsageDescription / NSPhotoLibraryUsageDescription):</strong> Al escanear etiquetas o recetas médicas mediante OCR, se solicita acceso a la cámara o fotos. Las imágenes se procesan de forma efímera para facilitarle el registro, permitiéndole revisar y editar todo antes de guardar.", "h1_mic": "<strong>Micrófono y Reconocimiento de Voz (NSMicrophoneUsageDescription / NSSpeechRecognitionUsageDescription):</strong> Al dictar horarios por voz, se utiliza el reconocimiento nativo de Apple. El audio no se graba de forma permanente en servidores externos.", "h1_faceid": "<strong>Face ID / Touch ID (NSFaceIDUsageDescription):</strong> Si activa el bloqueo de la app, la autenticación biométrica se gestiona en el Secure Enclave de su dispositivo sin que la app tenga acceso a sus datos biométricos.", "h1_notif": "<strong>Notificaciones y Alarmas (NSAlarmKitUsageDescription):</strong> Programadas localmente para emitir avisos y alarmas sin depender de servidores remotos.", "h1_live": "<strong>Actividades en Vivo y Widgets:</strong> Muestran la cuenta regresiva de su próxima toma en la Isla Dinámica y Pantalla de Bloqueo.", "h2": "2. Servicios de IA y Procesamiento de Datos (Conforme a Directrices de Apple)", "h2_intro": "Nuestra aplicación ofrece funciones asistidas por Inteligencia Artificial para el escaneo de etiquetas, transcripción de voz y asistente de registro. Esta sección describe cómo se procesan estos datos.", "h2_sub1_title": "(1) Tecnología de IA e Infraestructura", "h2_sub1_text": "Utilizamos:<ul><li><strong>Google Gemini AI (google/gemini-2.5-flash):</strong> A través de nuestra infraestructura segura de API Gateway para estructurar dosis y horarios.</li><li><strong>Procesamiento en el dispositivo:</strong> Detección previa con el framework Vision nativo de Apple.</li></ul>", "h2_sub2_title": "(2) Datos compartidos con la IA", "h2_sub2_text": "Solo se envían los datos indispensables:<ul><li>Texto extraído de recetas o transcripciones de voz.</li><li>Imágenes temporales del medicamento.</li><li>Contexto inmediato de la conversación.</li><li><strong>🚫 Filtrado de Privacidad:</strong> Se eliminan automáticamente nombres de pacientes, direcciones y números de póliza. No se comparten datos biométricos, cuentas de Apple ID ni información de pago.</li></ul>", "h2_sub3_title": "(3) Cómo procesa la IA sus datos", "h2_sub3_text": "<ul><li><strong>Cifrado TLS/HTTPS.</strong></li><li><strong>Procesamiento efímero en tiempo real</strong> en segundos.</li><li><strong>Eliminación inmediata</strong> tras generar la respuesta.</li></ul>", "h2_sub4_title": "(4) Política de Cero Entrenamiento (Zero-Training Policy)", "h2_sub4_text": "<ul><li>Sus datos <strong>NO</strong> se utilizan para entrenar o mejorar modelos de IA.</li><li>No vendemos ni compartimos sus datos con anunciantes ni terceros.</li></ul>", "h2_sub5_title": "(5) Descargo de Responsabilidad de IA", "h2_sub5_text": "<ul><li>La IA es una ayuda y puede contener errores. <strong>No constituye asesoramiento médico.</strong></li><li>Verifique siempre dosis y horarios antes de medicarse.</li></ul>", "h2_sub6_title": "(6) Control del Usuario y Eliminación", "h2_sub6_text": "<ul><li>El uso de IA es 100% opcional. Puede ingresar medicamentos manualmente.</li><li>Para solicitar la eliminación de datos, escriba a <a href=\"mailto:GL.Tech@icloud.com\">GL.Tech@icloud.com</a>.</li></ul>", "h3": "3. Almacenamiento y Sincronización con iCloud", "h3_local": "<strong>Almacenamiento Local:</strong> Los datos se guardan en el almacenamiento local de iOS mediante SwiftData.", "h3_icloud": "<strong>Sincronización iCloud:</strong> Si se habilita, Apple CloudKit sincroniza sus datos de manera cifrada entre sus propios dispositivos Apple.", "h4": "4. Consultas de Referencia Farmacológica", "h4_p": "Las consultas de información farmacológica pública (ej. openFDA) se realizan de forma anónima sin transmitir información del usuario.", "h5": "5. Compras dentro de la App y Suscripciones", "h5_p": "Las suscripciones a PillPilot Pro se gestionan a través de Apple StoreKit 2. No almacenamos ni tenemos acceso a sus datos de tarjetas bancarias.", "h6": "6. Sin Rastreadores de Publicidad", "h6_p": "PillPilot <strong>no</strong> incluye redes publicitarias ni rastreadores entre apps.", "h7": "7. Sus Derechos y Eliminación de Datos", "h7_p1": "Usted tiene control total sobre sus datos:", "h7_li1": "Puede editar o eliminar cualquier medicamento o registro en cualquier momento.", "h7_li2": "Al desinstalar la app se eliminan todos los datos locales de su dispositivo.", "h7_li3": "Puede gestionar o borrar los datos de iCloud desde los Ajustes de iOS de su cuenta Apple.", "h8": "8. Privacidad de Menores", "h8_p": "PillPilot no está dirigida a menores de 13 años sin supervisión de sus tutores.", "h9": "9. Cambios a esta Política", "h9_p": "Nos reservamos el derecho de actualizar esta política. Los cambios se publicarán en esta página.", "h10": "10. Contacto", "h10_p": "Para cualquier consulta sobre privacidad, contáctenos en:", "footer": "&copy; 2026 GL Technologies. Todos los derechos reservados.", "tab_privacy": "Privacidad", "tab_terms": "Términos", "tab_faq": "Soporte y FAQ", "btn_back": "← Pill Reminder"}, "de": {"nav_overview": "← PillPilot Übersicht", "nav_terms": "Nutzungsbedingungen", "nav_faq": "Support & FAQ", "badge": "Datenschutzerklärung", "title": "PillPilot Datenschutzerklärung", "meta": "<strong>Gültig ab:</strong> 20. August 2026 | <strong>Letzte Aktualisierung:</strong> 20. August 2026", "intro1": "Willkommen bei <strong>PillPilot</strong> („wir“, „uns“), entwickelt und betrieben von <strong>GL Technologies</strong>. PillPilot ist eine iOS-App zur Organisation von Medikamentenplänen, Einnahmedokumentation, Bestandsverwaltung und zuverlässigen Erinnerungen.", "intro2": "Ihre Gesundheitsdaten sind streng vertraulich. Diese Datenschutzerklärung erläutert, wie PillPilot Ihre Daten im Einklang mit den Apple App Store Richtlinien und internationalen Datenschutzstandards schützt.", "notice": "🛡️ <strong>Unser Datenschutzversprechen:</strong> PillPilot basiert auf „Privacy by Design“. Keine Benutzerkontenpflicht, keine Werbung, kein Verkauf persönlicher Daten und standardmäßig vollständige lokale Speicherung auf Ihrem Gerät.", "h1": "1. Verarbeitete Daten & Berechtigungen", "h1_intro": "Wir folgen dem Grundsatz der <strong>Datenminimierung</strong>:", "h1_meds": "<strong>Medikamentendaten:</strong> Alle erfassten Medikamentennamen, Dosierungen, Zeiten und Bestände verbleiben lokal auf Ihrem Gerät.", "h1_camera": "<strong>Kamera & Fotos:</strong> Dienen ausschließlich dem Scannen von Verpackungen oder Rezepten per OCR. Bilder werden flüchtig verarbeitet und vor dem Speichern durch Sie überprüft.", "h1_mic": "<strong>Mikrofon & Spracherkennung:</strong> Ermöglicht Spracheingabe von Einnahmeplänen über Apples On-Device-Framework.", "h1_faceid": "<strong>Face ID / Touch ID:</strong> Schützt den App-Zugriff über die Secure Enclave Ihres Geräts.", "h1_notif": "<strong>Mitteilungen & Alarme:</strong> Lokale Alarme zur zuverlässigen Erinnerung an Ihre Einnahmezeiten.", "h1_live": "<strong>Live-Aktivitäten & Widgets:</strong> Zeigen die nächste Einnahme auf dem Sperrbildschirm und der Dynamic Island an.", "h2": "2. KI-Dienste und Datenverarbeitung (Gemäß Apple App Store Richtlinien)", "h2_intro": "Die App bietet optionale KI-Funktionen zur Texterfassung, Spracheingabe und Unterstützung bei der Medikamentenerfassung.", "h2_sub1_title": "(1) Eingesetzte KI-Technologie", "h2_sub1_text": "Wir nutzen:<ul><li><strong>Google Gemini AI (google/gemini-2.5-flash Modell):</strong> Über unser sicheres KI-Gateway zur Erkennung von Rezepten, Dosierungen und Sprachbefehlen.</li><li><strong>Lokale Vorverarbeitung:</strong> Über Apples Vision-Framework direkt auf Ihrem Gerät.</li></ul>", "h2_sub2_title": "(2) An die KI übermittelte Daten", "h2_sub2_text": "Es werden nur unbedingt erforderliche Daten übermittelt:<ul><li>OCR-Text oder Sprachprotokolle.</li><li>Temporäre Bilder von Verpackungen.</li><li><strong>🚫 Anonymisierung:</strong> Patientennamen, Adressen und persönliche Nummern werden vorab unkenntlich gemacht. Keine Weitergabe von Passwörtern, Zahlungsdaten oder Gerätekennungen.</li></ul>", "h2_sub3_title": "(3) Datenverarbeitung", "h2_sub3_text": "<ul><li>Verschlüsselt über HTTPS/TLS.</li><li>Flüchtige Echtzeit-Verarbeitung in Sekunden.</li><li>Sofortige Löschung nach der Antwort.</li></ul>", "h2_sub4_title": "(4) Kein Modelltraining (Zero-Training Policy)", "h2_sub4_text": "<ul><li>Ihre Daten werden <strong>NICHT</strong> zum Trainieren von KI-Modellen verwendet.</li><li>Kein Verkauf oder Weitergabe an Werbetreibende.</li></ul>", "h2_sub5_title": "(5) Haftungsausschluss für KI-Inhalte", "h2_sub5_text": "<ul><li>KI-Ergebnisse können Fehler enthalten. <strong>Keine medizinische Beratung.</strong></li><li>Überprüfen Sie alle Angaben vor der Einnahme stets eigenverantwortlich.</li></ul>", "h2_sub6_title": "(6) Nutzerkontrolle und Datenlöschung", "h2_sub6_text": "<ul><li>KI-Nutzung ist vollständig optional.</li><li>Löschanfragen richten Sie an <a href=\"mailto:GL.Tech@icloud.com\">GL.Tech@icloud.com</a>.</li></ul>", "h3": "3. Speicherung & iCloud-Synchronisation", "h3_local": "<strong>Lokal auf dem Gerät:</strong> Nutzung von Apples SwiftData zur lokalen Speicherung.", "h3_icloud": "<strong>iCloud Sync:</strong> Sichere Synchronisierung über Apple CloudKit zwischen Ihren Apple-Geräten.", "h4": "4. Arzneimittelreferenzdaten", "h4_p": "Abfragen in öffentlichen Datenbanken (z.B. openFDA) erfolgen vollkommen anonym.", "h5": "5. In-App-Käufe & Abonnements", "h5_p": "Abgewickelt über Apple StoreKit 2. Wir erhalten keinen Zugriff auf Bank- oder Kreditkartendaten.", "h6": "6. Keine Werbetracker von Drittanbietern", "h6_p": "PillPilot enthält <strong>keine</strong> Werbenetzwerke oder Tracking-Dienste.", "h7": "7. Ihre Rechte & Datenlöschung", "h7_p1": "Sie haben die volle Kontrolle über Ihre Daten:", "h7_li1": "Einträge können jederzeit in der App geändert oder gelöscht werden.", "h7_li2": "Das Löschen der App entfernt alle lokalen Daten.", "h7_li3": "iCloud-Daten können in den iOS-Einstellungen verwaltet werden.", "h8": "8. Schutz von Minderjährigen", "h8_p": "Die App richtet sich nicht an Kinder unter 13 Jahren ohne elterliche Aufsicht.", "h9": "9. Änderungen", "h9_p": "Aktualisierungen werden auf dieser Seite veröffentlicht.", "h10": "10. Kontakt", "h10_p": "Bei Fragen zum Datenschutz kontaktieren Sie uns unter:", "footer": "&copy; 2026 GL Technologies. Alle Rechte vorbehalten.", "tab_privacy": "Datenschutz", "tab_terms": "Bedingungen", "tab_faq": "Support & FAQ", "btn_back": "← Pill Reminder"}, "fr": {"nav_overview": "← Aperçu de PillPilot", "nav_terms": "Conditions d'Utilisation", "nav_faq": "Support & FAQ", "badge": "Politique de Confidentialité", "title": "Politique de Confidentialité de PillPilot", "meta": "<strong>Date d'effet :</strong> 20 août 2026 | <strong>Dernière mise à jour :</strong> 20 août 2026", "intro1": "Bienvenue sur <strong>PillPilot</strong> (« nous », « notre »), développé et exploité par <strong>GL Technologies</strong>. PillPilot est une application iOS conçue pour aider les utilisateurs et soignants à organiser les prises de médicaments, suivre les stocks et recevoir des rappels fiables.", "intro2": "Nous considérons que vos données médicales sont strictement personnelles et confidentielles. Cette Politique explique comment vos données sont protégées conformément aux directives de l'App Store d'Apple et aux règles internationales de confidentialité.", "notice": "🛡️ <strong>Notre engagement :</strong> PillPilot repose sur le principe de « Confidentialité dès la conception ». Pas de compte obligatoire, aucune publicité tierce, aucune vente de données et stockage local par défaut.", "h1": "1. Données traitées et autorisations requises", "h1_intro": "Nous respectons le principe de <strong>Minimisation des Données</strong> :", "h1_meds": "<strong>Dossier de Médication :</strong> Vos noms de médicaments, posologies, heures de prise et stocks sont stockés localement sur votre appareil.", "h1_camera": "<strong>Appareil photo et Photos :</strong> Utilisés pour la reconnaissance de boîtes ou ordonnances par OCR. Traitement éphémère avec validation manuelle obligatoire.", "h1_mic": "<strong>Microphone et Reconnaissance Vocale :</strong> Transcription vocale de vos horaires via les outils natifs d'Apple, sans enregistrement permanent.", "h1_faceid": "<strong>Face ID / Touch ID :</strong> Protection de l'accès à l'application via la Secure Enclave de votre appareil.", "h1_notif": "<strong>Notifications et Alarmes :</strong> Programmées localement pour garantir la ponctualité de vos prises de médicaments.", "h1_live": "<strong>Activités en Direct & Widgets :</strong> Affichage du compte à rebours sur l'écran verrouillé et la Dynamic Island.", "h2": "2. Services IA et Traitement des Données (Conforme aux Directives Apple)", "h2_intro": "Notre application propose des fonctionnalités optionnelles basées sur l'Intelligence Artificielle pour la reconnaissance d'ordonnances, la saisie vocale et l'aide à la saisie de médicaments.", "h2_sub1_title": "(1) Technologie IA et Infrastructure", "h2_sub1_text": "Nous utilisons :<ul><li><strong>Google Gemini AI (modèle google/gemini-2.5-flash) :</strong> Via notre passerelle API sécurisée pour structurer posologies et horaires.</li><li><strong>Prétraitement local :</strong> Détection de texte via le framework Vision d'Apple sur l'appareil.</li></ul>", "h2_sub2_title": "(2) Données partagées avec l'IA", "h2_sub2_text": "Seules les données strictement nécessaires sont transmises :<ul><li>Texte extrait des ordonnances ou transcriptions vocales.</li><li>Photos temporaires de boîtes de médicaments.</li><li><strong>🚫 Masquage de Confidentialité :</strong> Les noms de patients, adresses et identifiants sont automatiquement masqués. Aucun partage de données biométriques, bancaires ou identifiants d'appareil.</li></ul>", "h2_sub3_title": "(3) Traitement des données par l'IA", "h2_sub3_text": "<ul><li>Chiffrement TLS/HTTPS de bout en bout.</li><li>Traitement éphémère en temps réel.</li><li>Suppression immédiate après génération de la réponse.</li></ul>", "h2_sub4_title": "(4) Politique de Non-Entraînement (Zero-Training Policy)", "h2_sub4_text": "<ul><li>Vos données ne sont <strong>JAMAIS</strong> utilisées pour entraîner des modèles d'IA.</li><li>Aucune revente à des régies publicitaires.</li></ul>", "h2_sub5_title": "(5) Avertissement sur les Contenus IA", "h2_sub5_text": "<ul><li>L'IA est une aide et peut comporter des erreurs. <strong>Ne constitue aucun avis médical.</strong></li><li>Vérifiez toujours vos posologies avant toute prise.</li></ul>", "h2_sub6_title": "(6) Contrôle Utilisateur et Suppression", "h2_sub6_text": "<ul><li>L'utilisation de l'IA est entièrement facultative.</li><li>Pour toute demande de suppression, écrivez à <a href=\"mailto:GL.Tech@icloud.com\">GL.Tech@icloud.com</a>.</li></ul>", "h3": "3. Stockage et Synchronisation iCloud", "h3_local": "<strong>Stockage Local Prioritaire :</strong> Utilisation de SwiftData directement sur votre appareil iOS.", "h3_icloud": "<strong>Synchronisation iCloud :</strong> Chiffrement et synchronisation via Apple CloudKit rattachés à votre identifiant Apple.", "h4": "4. Référence Médicamenteuse", "h4_p": "Les recherches dans les bases de données publiques (ex. openFDA) sont totalement anonymes.", "h5": "5. Achats Intégrés et Abonnements", "h5_p": "Gérés par Apple StoreKit 2. Nous ne collectons aucune coordonnée bancaire.", "h6": "6. Aucun Traqueur Publicitaire", "h6_p": "PillPilot ne comporte <strong>aucun</strong> SDK publicitaire ou traqueur tiers.", "h7": "7. Vos Droits et Suppression", "h7_p1": "Vous conservez le contrôle total :", "h7_li1": "Modification ou suppression possible à tout moment dans l'application.", "h7_li2": "La suppression de l'application efface toutes les données locales.", "h7_li3": "Gestion des données iCloud dans les Réglages iOS de votre compte Apple.", "h8": "8. Protection des Enfants", "h8_p": "L'application n'est pas destinée aux enfants de moins de 13 ans sans supervision parentale.", "h9": "9. Mises à Jour de la Politique", "h9_p": "Toute mise à jour sera publiée sur cette page.", "h10": "10. Nous Contacter", "h10_p": "Pour toute question relative à la confidentialité, écrivez-nous à :", "footer": "&copy; 2026 GL Technologies. Tous droits réservés.", "tab_privacy": "Confidentialité", "tab_terms": "Conditions", "tab_faq": "Support & FAQ", "btn_back": "← Pill Reminder"}};
+        const langNames = {"en": "English", "zh-Hans": "简体中文", "zh-Hant": "繁體中文", "ja": "日本語", "es": "Español", "de": "Deutsch", "fr": "Français"};
 
         function getInitialLanguage() {
             try {
@@ -439,6 +637,9 @@
             
             const select = document.getElementById('langSelect');
             if (select) select.value = lang;
+            const label = document.getElementById('currentLangLabel');
+            if (label && langNames[lang]) label.textContent = langNames[lang];
+
             document.documentElement.lang = lang;
 
             const data = i18n[lang];
@@ -455,9 +656,7 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             const lang = getInitialLanguage();
-            if (lang !== 'en') {
-                changeLanguage(lang);
-            }
+            changeLanguage(lang);
         });
     </script>
 </body>
