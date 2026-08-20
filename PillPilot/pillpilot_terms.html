@@ -41,7 +41,7 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 820px;
             margin: 0 auto;
             background: var(--card-bg);
             padding: 40px;
@@ -49,21 +49,52 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.06);
         }
 
-        .nav-bar {
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 16px;
+        }
+
+        .nav-links {
             display: flex;
             gap: 16px;
-            margin-bottom: 24px;
             font-size: 14px;
         }
 
-        .nav-bar a {
+        .nav-links a {
             color: var(--primary-color);
             text-decoration: none;
             font-weight: 500;
         }
 
-        .nav-bar a:hover {
+        .nav-links a:hover {
             text-decoration: underline;
+        }
+
+        .lang-picker {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--bg-color);
+            padding: 5px 10px;
+            border-radius: 18px;
+            border: 1px solid var(--border-color);
+        }
+
+        .lang-picker select {
+            background: transparent;
+            border: none;
+            color: var(--text-color);
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            outline: none;
+            font-family: inherit;
         }
 
         h1 {
@@ -114,7 +145,7 @@
             border-radius: 6px;
             font-size: 13px;
             font-weight: 600;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
 
         .warning-box {
@@ -160,6 +191,10 @@
                 padding: 24px 18px;
                 border-radius: 12px;
             }
+            .top-bar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
             h1 {
                 font-size: 22px;
             }
@@ -171,75 +206,135 @@
 </head>
 <body>
     <div class="container">
-        <div class="nav-bar">
-            <a href="index.html">← PillPilot Overview</a>
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="faq.html">Support & FAQ</a>
+        <div class="top-bar">
+            <div class="nav-links">
+                <a href="index.html" id="nav_overview">← PillPilot Overview</a>
+                <a href="privacy.html" id="nav_privacy">Privacy Policy</a>
+                <a href="faq.html" id="nav_faq">Support & FAQ</a>
+            </div>
+            
+        <div class="lang-picker">
+            <span>🌐</span>
+            <select id="langSelect" onchange="changeLanguage(this.value)">
+                <option value="en">English (US)</option>
+                <option value="zh-Hans">简体中文</option>
+                <option value="zh-Hant">繁體中文</option>
+                <option value="ja">日本語</option>
+                <option value="es">Español</option>
+                <option value="de">Deutsch</option>
+                <option value="fr">Français</option>
+            </select>
+        </div>
+    
         </div>
 
-        <div class="badge">Terms of Use</div>
-        <h1>PillPilot Terms of Use</h1>
-        <p class="meta-info"><strong>Effective Date:</strong> August 20, 2026 | <strong>Last Updated:</strong> August 20, 2026</p>
+        <div class="badge" id="badge">Terms of Use</div>
+        <h1 id="title">PillPilot Terms of Use</h1>
+        <p class="meta-info" id="meta"></p>
 
-        <p>Please read these Terms of Use ("Terms") carefully before downloading, installing, or using the <strong>PillPilot</strong> mobile application ("App") operated by <strong>GL Technologies</strong> ("we", "us", or "our").</p>
-
-        <p>By downloading, accessing, or using PillPilot, you agree to be bound by these Terms. If you do not agree to these Terms, do not use the application.</p>
+        <p id="intro1"></p>
+        <p id="intro2"></p>
 
         <div class="warning-box">
-            <div class="warning-title">⚠️ CRITICAL MEDICAL & SAFETY DISCLAIMER</div>
-            <p><strong>1. NOT A MEDICAL DEVICE OR MEDICAL ADVICE:</strong> PillPilot is designed solely as an informational organization and reminder tool. PillPilot does NOT provide medical advice, diagnosis, treatment, prescription management, or clinical decision support.</p>
-            <p><strong>2. ALWAYS CONSULT HEALTHCARE PROFESSIONALS:</strong> Never rely on PillPilot as a replacement for professional medical judgment. Always consult a qualified physician, pharmacist, or licensed healthcare provider regarding your medications, dosages, contraindications, and schedules.</p>
-            <p><strong>3. EMERGENCY SITUATIONS:</strong> In case of a medical emergency, immediately call your local emergency services (e.g., 911, 112, 120, or local equivalent) or proceed to the nearest emergency department. Do not rely on PillPilot in emergency situations.</p>
+            <div class="warning-title" id="warning_title"></div>
+            <p id="warning_p1"></p>
+            <p id="warning_p2"></p>
+            <p id="warning_p3"></p>
         </div>
 
-        <h2>1. User Responsibilities & Verification of Data</h2>
+        <h2 id="h1"></h2>
         <ul>
-            <li><strong>Verification of AI and OCR Extractions:</strong> PillPilot provides automated tools such as camera label recognition, prescription OCR, and voice input. These features are assistive technologies and may occasionally produce errors or misinterpretations. You are solely responsible for reviewing, verifying, and confirming all medication names, dosages, strengths, frequencies, and scheduled reminder times before saving them or taking any medication.</li>
-            <li><strong>Accuracy of Input:</strong> You agree to provide accurate medication and schedule details. We are not responsible for any adverse consequences resulting from inaccurate user inputs or unverified automated extractions.</li>
+            <li id="h1_ai"></li>
+            <li id="h1_input"></li>
         </ul>
 
-        <h2>2. Reminders & System Notifications</h2>
-        <p>PillPilot utilizes Apple iOS local notifications, AlarmKit, and Live Activities to deliver reminders. However, notification delivery can be affected by factors beyond our control, including but not limited to:</p>
+        <h2 id="h2"></h2>
+        <p id="h2_p"></p>
         <ul>
-            <li>Device power status (low battery, power saving mode, or shutdown).</li>
-            <li>System Focus / Do Not Disturb modes and notification permission configurations.</li>
-            <li>iOS background execution limits or system upgrades.</li>
+            <li id="h2_li1"></li>
+            <li id="h2_li2"></li>
+            <li id="h2_li3"></li>
         </ul>
-        <p>While PillPilot strives to provide timely alerts, you remain ultimately responsible for taking your medications at the appropriate times prescribed by your doctor.</p>
+        <p id="h2_foot"></p>
 
-        <h2>3. In-App Purchases & Subscriptions</h2>
-        <p>PillPilot offers optional premium features through auto-renewable subscriptions ("PillPilot Pro"):</p>
+        <h2 id="h3"></h2>
+        <p id="h3_intro"></p>
         <ul>
-            <li><strong>Subscription Plans:</strong> Available on weekly, monthly, or yearly terms as displayed in the app's paywall.</li>
-            <li><strong>Payment & Billing:</strong> Payment will be charged to your Apple ID Account at confirmation of purchase.</li>
-            <li><strong>Auto-Renewal:</strong> Subscriptions automatically renew unless canceled at least 24 hours before the end of the current billing period. Your account will be charged for renewal within 24 hours prior to the end of the current period.</li>
-            <li><strong>Managing Subscriptions:</strong> You can manage and cancel subscriptions in your Apple ID Account Settings (iOS <em>Settings &gt; [Your Apple Account] &gt; Subscriptions</em>) at any time.</li>
-            <li><strong>Standard EULA:</strong> In addition to these Terms, subscriptions and app usage are subject to Apple's Standard Licensed Application End User License Agreement (<a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank">Apple Standard EULA</a>).</li>
+            <li id="h3_li1"></li>
+            <li id="h3_li2"></li>
+            <li id="h3_li3"></li>
+            <li id="h3_li4"></li>
+            <li id="h3_li5"></li>
         </ul>
 
-        <h2>4. Intellectual Property</h2>
-        <p>The PillPilot application, including but not limited to its software code, user interface design, logos, icons, graphics, and documentation, is the exclusive intellectual property of GL Technologies and is protected by copyright and intellectual property laws. You may not reverse engineer, decompile, disassemble, or extract the source code of the app.</p>
+        <h2 id="h4"></h2>
+        <p id="h4_p"></p>
 
-        <h2>5. Disclaimer of Warranties</h2>
-        <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, PILLPILOT IS PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT.</p>
+        <h2 id="h5"></h2>
+        <p id="h5_p"></p>
 
-        <h2>6. Limitation of Liability</h2>
-        <p>TO THE FULLEST EXTENT PERMITTED BY LAW, GL TECHNOLOGIES, ITS DIRECTORS, EMPLOYEES, AND AFFILIATES SHALL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO HEALTH COMPLICATIONS, MISSED DOSES, PERSONAL INJURY, LOSS OF DATA, OR SERVICE INTERRUPTIONS, ARISING OUT OF OR IN CONNECTION WITH YOUR USE OR INABILITY TO USE THE APP.</p>
+        <h2 id="h6"></h2>
+        <p id="h6_p"></p>
 
-        <h2>7. Modifications to Terms & Service</h2>
-        <p>We reserve the right to modify or replace these Terms or update application features at any time. Continued use of the app after any changes constitutes your acceptance of the new Terms.</p>
+        <h2 id="h7"></h2>
+        <p id="h7_p"></p>
 
-        <h2>8. Contact Us</h2>
-        <p>If you have any questions or concerns regarding these Terms of Use, please contact us at:</p>
+        <h2 id="h8"></h2>
+        <p id="h8_p"></p>
         <p>
             <strong>GL Technologies</strong><br>
             <strong>Email:</strong> <a href="mailto:GL.Tech@icloud.com">GL.Tech@icloud.com</a><br>
-            <strong>Support & FAQ:</strong> <a href="faq.html">PillPilot Support Center</a>
+            <strong>Support:</strong> <a href="faq.html" id="link_faq_bottom">PillPilot Support & FAQ</a>
         </p>
     </div>
 
-    <div class="footer">
+    <div class="footer" id="footer">
         &copy; 2026 GL Technologies. All rights reserved.
     </div>
+
+    <script>
+        const i18n = {"en": {"nav_overview": "← PillPilot Overview", "nav_privacy": "Privacy Policy", "nav_faq": "Support & FAQ", "badge": "Terms of Use", "title": "PillPilot Terms of Use", "meta": "<strong>Effective Date:</strong> August 20, 2026 | <strong>Last Updated:</strong> August 20, 2026", "intro1": "Please read these Terms of Use (\"Terms\") carefully before downloading, installing, or using the <strong>PillPilot</strong> mobile application (\"App\") operated by <strong>GL Technologies</strong> (\"we\", \"us\", or \"our\").", "intro2": "By downloading, accessing, or using PillPilot, you agree to be bound by these Terms. If you do not agree to these Terms, do not use the application.", "warning_title": "⚠️ CRITICAL MEDICAL & SAFETY DISCLAIMER", "warning_p1": "<strong>1. NOT A MEDICAL DEVICE OR MEDICAL ADVICE:</strong> PillPilot is designed solely as an informational organization and reminder tool. PillPilot does NOT provide medical advice, diagnosis, treatment, prescription management, or clinical decision support.", "warning_p2": "<strong>2. ALWAYS CONSULT HEALTHCARE PROFESSIONALS:</strong> Never rely on PillPilot as a replacement for professional medical judgment. Always consult a qualified physician, pharmacist, or licensed healthcare provider regarding your medications, dosages, contraindications, and schedules.", "warning_p3": "<strong>3. EMERGENCY SITUATIONS:</strong> In case of a medical emergency, immediately call your local emergency services (e.g., 911, 112, 120, or local equivalent) or proceed to the nearest emergency department. Do not rely on PillPilot in emergency situations.", "h1": "1. User Responsibilities & Verification of Data", "h1_ai": "<strong>Verification of AI and OCR Extractions:</strong> PillPilot provides automated tools such as camera label recognition, prescription OCR, and voice input. These features are assistive technologies and may occasionally produce errors or misinterpretations. You are solely responsible for reviewing, verifying, and confirming all medication names, dosages, strengths, frequencies, and scheduled reminder times before saving them or taking any medication.", "h1_input": "<strong>Accuracy of Input:</strong> You agree to provide accurate medication and schedule details. We are not responsible for any adverse consequences resulting from inaccurate user inputs or unverified automated extractions.", "h2": "2. Reminders & System Notifications", "h2_p": "PillPilot utilizes Apple iOS local notifications, AlarmKit, and Live Activities to deliver reminders. However, notification delivery can be affected by factors beyond our control, including but not limited to:", "h2_li1": "Device power status (low battery, power saving mode, or shutdown).", "h2_li2": "System Focus / Do Not Disturb modes and notification permission configurations.", "h2_li3": "iOS background execution limits or system upgrades.", "h2_foot": "While PillPilot strives to provide timely alerts, you remain ultimately responsible for taking your medications at the appropriate times prescribed by your doctor.", "h3": "3. In-App Purchases & Subscriptions", "h3_intro": "PillPilot offers optional premium features through auto-renewable subscriptions (\"PillPilot Pro\"):", "h3_li1": "<strong>Subscription Plans:</strong> Available on weekly, monthly, or yearly terms as displayed in the app's paywall.", "h3_li2": "<strong>Payment & Billing:</strong> Payment will be charged to your Apple ID Account at confirmation of purchase.", "h3_li3": "<strong>Auto-Renewal:</strong> Subscriptions automatically renew unless canceled at least 24 hours before the end of the current billing period. Your account will be charged for renewal within 24 hours prior to the end of the current period.", "h3_li4": "<strong>Managing Subscriptions:</strong> You can manage and cancel subscriptions in your Apple ID Account Settings (iOS <em>Settings &gt; [Your Apple Account] &gt; Subscriptions</em>) at any time.", "h3_li5": "<strong>Standard EULA:</strong> In addition to these Terms, subscriptions and app usage are subject to Apple's Standard Licensed Application End User License Agreement (<a href=\"https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\" target=\"_blank\">Apple Standard EULA</a>).", "h4": "4. Intellectual Property", "h4_p": "The PillPilot application, including but not limited to its software code, user interface design, logos, icons, graphics, and documentation, is the exclusive intellectual property of GL Technologies and is protected by copyright and intellectual property laws. You may not reverse engineer, decompile, disassemble, or extract the source code of the app.", "h5": "5. Disclaimer of Warranties", "h5_p": "TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, PILLPILOT IS PROVIDED ON AN \"AS IS\" AND \"AS AVAILABLE\" BASIS WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT.", "h6": "6. Limitation of Liability", "h6_p": "TO THE FULLEST EXTENT PERMITTED BY LAW, GL TECHNOLOGIES, ITS DIRECTORS, EMPLOYEES, AND AFFILIATES SHALL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO HEALTH COMPLICATIONS, MISSED DOSES, PERSONAL INJURY, LOSS OF DATA, OR SERVICE INTERRUPTIONS, ARISING OUT OF OR IN CONNECTION WITH YOUR USE OR INABILITY TO USE THE APP.", "h7": "7. Modifications to Terms & Service", "h7_p": "We reserve the right to modify or replace these Terms or update application features at any time. Continued use of the app after any changes constitutes your acceptance of the new Terms.", "h8": "8. Contact Us", "h8_p": "If you have any questions or concerns regarding these Terms of Use, please contact us at:", "footer": "&copy; 2026 GL Technologies. All rights reserved."}, "zh-Hans": {"nav_overview": "← PillPilot 概览", "nav_privacy": "隐私政策", "nav_faq": "支持与常见问题", "badge": "服务条款", "title": "PillPilot 服务条款与用户协议", "meta": "<strong>生效日期：</strong>2026年8月20日 | <strong>最近更新：</strong>2026年8月20日", "intro1": "在下载、安装或使用由 <strong>GL Technologies</strong>（以下简称“我们”）运营的 <strong>PillPilot</strong> 移动应用程序（以下简称“本应用”）之前，请仔细阅读本服务条款（以下简称“本条款”）。", "intro2": "下载、访问或使用本应用即表示您已阅读并同意接受本条款的约束。如果您不同意本条款，请勿使用本应用。", "warning_title": "⚠️ 重要医疗与安全免责声明", "warning_p1": "<strong>1. 非医疗器械且不提供医疗建议：</strong>PillPilot 仅作为个人及家庭用药信息的记录与日程提醒辅助工具。本应用<strong>不提供</strong>任何形式的医疗诊断、治疗建议、处方开具或临床医疗决策。", "warning_p2": "<strong>2. 必须遵循专业医嘱：</strong>绝不可将本应用作为专业医学判断的替代品。关于用药方案、药品用量、禁忌症及服用时间，您必须始终咨询具备执业资质的医生、药剂师或医疗机构。", "warning_p3": "<strong>3. 紧急医疗情况：</strong>如遇突发医疗急症，请立即拨打当地急救电话（如 120、911、112 等）或前往最近的医院急诊科。在紧急情况下切勿依赖本应用。", "h1": "1. 用户责任与数据人工核对", "h1_ai": "<strong>AI 与 OCR 提取核对：</strong>PillPilot 提供了药盒扫描、处方 OCR 识别及语音输入等智能化工具。这些功能属于自动化辅助技术，可能因图像光线、印刷字体等原因产生识别偏差。在保存数据或实际服药前，您有责任仔细核对并确认药品名称、剂量单位、用药频次及提醒时间。", "h1_input": "<strong>输入准确性：</strong>您同意确保录入信息的真实性与准确性。对于因错误输入或未经核对的识别结果所导致的任何不良后果，我们不承担任何责任。", "h2": "2. 提醒通知与系统环境依赖", "h2_p": "PillPilot 依靠 iOS 本地通知、AlarmKit 闹钟及实时活动推送提醒。然而，提醒能否准时送达可能受制于不可控的系统因素，包括但不限于：", "h2_li1": "设备电源状态（电量不足、低电量模式或设备关机）。", "h2_li2": "系统专注模式、勿扰模式及通知权限设置。", "h2_li3": "iOS 系统后台限制或操作系统版本更新。", "h2_foot": "尽管本应用竭力提供可靠准时的提醒，按时按量服药的最终责任仍在您自身。", "h3": "3. 应用内购买与订阅服务（StoreKit）", "h3_intro": "PillPilot 提供可选的“PillPilot Pro”自动续费高级会员订阅服务：", "h3_li1": "<strong>订阅周期：</strong>提供周订阅、月订阅、年订阅等多种方案，具体价格以应用内购买页面展示为准。", "h3_li2": "<strong>扣费与结算：</strong>在确认购买后，款项将直接通过您的 Apple ID 账户扣除。", "h3_li3": "<strong>自动续订：</strong>除非在当前计费周期结束前至少 24 小时取消订阅，否则系统将在到期前 24 小时内自动从您的账户扣费并顺延下一周期。", "h3_li4": "<strong>管理与取消：</strong>您可以随时通过 iOS <em>设置 &gt; [您的 Apple 账户] &gt; 订阅</em> 自主管理或取消订阅。", "h3_li5": "<strong>Apple 标准 EULA：</strong>除本条款外，订阅服务亦严格遵守 Apple 标准许可应用程序最终用户许可协议（<a href=\"https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\" target=\"_blank\">Apple Standard EULA</a>）。", "h4": "4. 知识产权保护", "h4_p": "PillPilot 应用程序的所有权、源代码、交互设计、图形图标、标志及相关文档均为 GL Technologies 的独家专有财产，受国际版权及知识产权法保护。严禁对本应用进行逆向工程、反编译、反汇编或提取源代码。", "h5": "5. 免责与保证声明", "h5_p": "在适用法律允许的最大范围内，PILLPILOT 按“现状（AS IS）”和“现有（AS AVAILABLE）”提供，不包含任何明示或暗示的保证，包括但不限于对适销性、特定用途适用性及不侵权的暗示保证。", "h6": "6. 责任限制", "h6_p": "在法律允许的全部范围内，GL TECHNOLOGIES 及其关联方对因使用或无法使用本应用引起的任何直接、间接、附带、特殊、惩罚性损失（包括但不限于服药延误、健康并发症、人身伤害、数据丢失或业务中断）均不承担赔偿责任。", "h7": "7. 条款与服务变更", "h7_p": "我们保留随时修改本条款或调整产品功能的权利。若您在修改后继续使用本应用，即视为您接受修订后的条款。", "h8": "8. 联系我们", "h8_p": "如对本服务条款有任何问题，请联系我们：", "footer": "&copy; 2026 GL Technologies. 保留所有权利。"}, "zh-Hant": {"nav_overview": "← PillPilot 概覽", "nav_privacy": "隱私權政策", "nav_faq": "支援與常見問題", "badge": "服務條款", "title": "PillPilot 服務條款與使用者協議", "meta": "<strong>生效日期：</strong>2026年8月20日 | <strong>最近更新：</strong>2026年8月20日", "intro1": "在下載、安裝或使用由 <strong>GL Technologies</strong>（以下簡稱「我們」）營運的 <strong>PillPilot</strong> 行動應用程式（以下簡稱「本應用程式」）前，請詳細閱讀本服務條款（以下簡稱「本條款」）。", "intro2": "下載、存取或使用本應用程式即表示您已閱讀並同意受本條款拘束。若您不同意本條款，請勿使用本應用程式。", "warning_title": "⚠️ 重要醫療與安全免責聲明", "warning_p1": "<strong>1. 非醫療器材且不提供醫療建議：</strong>PillPilot 僅作為個人及家庭用藥資訊記錄與排程提醒輔助工具。本應用程式<strong>不提供</strong>任何醫療診斷、治療建議、處方開立或臨床決策支援。", "warning_p2": "<strong>2. 必須遵循專業醫囑：</strong>切勿將本應用程式作為專業醫學判斷之替代。關於用藥劑量、適應症、禁忌及服用時間，請務必諮詢合格執業醫師或藥師。", "warning_p3": "<strong>3. 緊急醫療狀況：</strong>如遇突發急症，請立即撥打當地緊急救護電話（如 119、911、112 等）或前往鄰近醫院急診，切勿於緊急情況下依賴本應用程式。", "h1": "1. 使用者責任與資料人工核對", "h1_ai": "<strong>AI 與 OCR 辨識核對：</strong>PillPilot 具備藥盒掃描、處方箋 OCR 辨識及語音輸入等智慧工具。此類功能為輔助性質，可能因印刷品質或光源而產生誤差。儲存資料或服藥前，您有責任自行確認藥名、劑量、服用頻率及時間。", "h1_input": "<strong>輸入準確性：</strong>您同意確保輸入資料之正確性，因錯誤輸入所衍生之任何後果，我們概不負責。", "h2": "2. 提醒通知與系統環境依賴", "h2_p": "PillPilot 仰賴 iOS 本地通知、AlarmKit 鬧鐘與即時動態發送提醒，提醒是否送達可能受下列系統因素影響：", "h2_li1": "裝置電源狀況（低電量模式、無電關機）。", "h2_li2": "系統專注模式、勿擾模式及通知權限設定。", "h2_li3": "iOS 背景執行限制或系統升級。", "h2_foot": "儘管本應用程式力求準時提醒，按時服藥之最終責任仍在使用者自身。", "h3": "3. 應用程式內購買與訂閱服務", "h3_intro": "PillPilot 提供可選的「PillPilot Pro」自動續訂訂閱服務：", "h3_li1": "<strong>訂閱方案：</strong>提供週訂閱、月訂閱、年訂閱方案，詳細價格以購買頁面為準。", "h3_li2": "<strong>扣款機制：</strong>確認購買後將透過您的 Apple ID 帳號進行扣款。", "h3_li3": "<strong>自動續訂：</strong>若未於當期結束前 24 小時取消，系統將自動續訂並扣款。", "h3_li4": "<strong>管理訂閱：</strong>可隨時至 iOS <em>設定 &gt; [您的 Apple 帳號] &gt; 訂閱項目</em> 管理或取消訂閱。", "h3_li5": "<strong>標準 EULA：</strong>訂閱服務嚴格遵循 Apple 標準使用者授權協議（<a href=\"https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\" target=\"_blank\">Apple Standard EULA</a>）。", "h4": "4. 智慧財產權", "h4_p": "PillPilot 應用程式之原始碼、介面設計、圖示及文件均為 GL Technologies 之專有財產，受智慧財產權法律保護。嚴禁進行反向工程或提取原始碼。", "h5": "5. 免責聲明", "h5_p": "在法律允許的最大範圍內，本應用程式按「現狀」提供，不包含任何明示或暗示之擔保。", "h6": "6. 責任限制", "h6_p": "在法律允許之最大範圍內，GL TECHNOLOGIES 對因使用或無法使用本應用程式所致之任何損害（包含漏服藥物或健康影響）均不負擔賠償責任。", "h7": "7. 條款變更", "h7_p": "我們保留隨時修改本條款之權利，修改後繼續使用即表示接受修訂條款。", "h8": "8. 聯絡我們", "h8_p": "如有任何疑問，請與我們聯絡：", "footer": "&copy; 2026 GL Technologies. 版權所有。"}, "ja": {"nav_overview": "← PillPilot 概要", "nav_privacy": "プライバシーポリシー", "nav_faq": "サポート＆FAQ", "badge": "利用規約", "title": "PillPilot 利用規約", "meta": "<strong>発効日：</strong>2026年8月20日 | <strong>最終更新日：</strong>2026年8月20日", "intro1": "<strong>GL Technologies</strong>（以下「当社」）が提供する <strong>PillPilot</strong> モバイルアプリ（以下「本アプリ」）のご利用にあたり、本利用規約（以下「本規約」）をよくお読みください。", "intro2": "本アプリをダウンロードまたは利用することにより、本規約に同意したものとみなされます。同意されない場合は本アプリをご利用いただけません。", "warning_title": "⚠️ 重要な医療・安全免責事項", "warning_p1": "<strong>1. 医療機器・医療アドバイスではありません：</strong>PillPilot は服薬情報の整理およびリマインダーを目的とした補助ツールです。医療診断、治療助言、処方箋の発行等の医療行為は<strong>一切提供いたしません</strong>。", "warning_p2": "<strong>2. 専門医の指導に従ってください：</strong>本アプリを医師や薬剤師の医学的判断の代替として使用しないでください。服用量や服用時間については必ず医療従事者の指示に従ってください。", "warning_p3": "<strong>3. 緊急時：</strong>急病や緊急の医療事態が発生した場合は、直ちに緊急通報（119番等）を行うか最寄りの救急病院を受診してください。緊急時に本アプリに依存しないでください。", "h1": "1. ユーザーの責任およびデータの手動確認", "h1_ai": "<strong>AI・OCR 認識結果の確認義務：</strong>AI や OCR スキャンによる抽出は補助機能であり、誤認識が生じる可能性があります。保存および実際の服用前に、医薬品名、用量、服用時刻等を必ずご自身で確認・検証してください。", "h1_input": "<strong>入力の正確性：</strong>誤った入力や未確認の認識結果によって生じた不利益について、当社は責任を負いかねます。", "h2": "2. リマインダー通知とシステム環境依存", "h2_p": "PillPilot は iOS のローカル通知、AlarmKit、ライブアクティビティを使用します。通知は以下のシステム要因によって遅延・不達となる場合があります：", "h2_li1": "バッテリー残量不足、低電力モード、端末の電源オフ。", "h2_li2": "集中モード、おやすみモード、通知設定。", "h2_li3": "iOS のバックグラウンド動作制限やシステムアップデート。", "h2_foot": "適切な時間に服薬する最終的な責任はお客様自身にあります。", "h3": "3. アプリ内課金とサブスクリプション", "h3_intro": "自動更新型サブスクリプション「PillPilot Pro」を提供しています：", "h3_li1": "<strong>プラン：</strong>週額、月額、年額プラン等、価格は購入画面に表示されます。", "h3_li2": "<strong>請求：</strong>購入確定時に Apple ID アカウントへ請求されます。", "h3_li3": "<strong>自動更新：</strong>期間終了の24時間前までに解約しない限り自動更新されます。", "h3_li4": "<strong>解約方法：</strong>iOS <em>設定 &gt; [Apple アカウント] &gt; サブスクリプション</em> からいつでも解約可能です。", "h3_li5": "<strong>標準 EULA：</strong>Apple の標準使用許諾契約（<a href=\"https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\" target=\"_blank\">Apple Standard EULA</a>）が適用されます。", "h4": "4. 知的財産権", "h4_p": "本アプリのソースコード、UI デザイン、アイコン等の知的財産権は GL Technologies に帰属します。リバースエンジニアリングやコード抽出を禁じます。", "h5": "5. 保証の否認", "h5_p": "本アプリは「現状有姿」で提供され、商品性や特定目的への適合性を含め明示・黙示の保証を行いません。", "h6": "6. 責任の制限", "h6_p": "当社は本アプリの使用または使用不能から生じるいかなる損害（服薬遅延や健康被害を含む）についても責任を負いません。", "h7": "7. 規約の変更", "h7_p": "当社は本規約を随時変更する権利を有します。変更後も本アプリを継続利用した場合、変更に同意したものとみなされます。", "h8": "8. お問い合わせ", "h8_p": "本規約に関するお問い合わせは以下までご連絡ください：", "footer": "&copy; 2026 GL Technologies. All rights reserved."}, "es": {"nav_overview": "← Resumen de PillPilot", "nav_privacy": "Política de Privacidad", "nav_faq": "Soporte y FAQ", "badge": "Términos de Uso", "title": "Términos de Uso de PillPilot", "meta": "<strong>Fecha de entrada en vigor:</strong> 20 de agosto de 2026 | <strong>Última actualización:</strong> 20 de agosto de 2026", "intro1": "Lea atentamente estos Términos de Uso antes de utilizar la aplicación <strong>PillPilot</strong> operada por <strong>GL Technologies</strong>.", "intro2": "Al descargar o usar la aplicación, usted acepta estos términos. Si no está de acuerdo, absténgase de usarla.", "warning_title": "⚠️ DESCARGO DE RESPONSABILIDAD MÉDICA Y DE SEGURIDAD", "warning_p1": "<strong>1. NO ES UN DISPOSITIVO NI CONSEJO MÉDICO:</strong> PillPilot es únicamente una herramienta organizativa. NO proporciona diagnósticos, tratamientos ni prescripciones médicas.", "warning_p2": "<strong>2. CONSULTE A PROFESIONALES DE LA SALUD:</strong> No utilice la app en sustitución del criterio médico. Siempre consulte a su médico o farmacéutico.", "warning_p3": "<strong>3. EMERGENCIAS MÉDICAS:</strong> En caso de emergencia, llame inmediatamente a los servicios de urgencias (112, 911 o número local). No dependa de la app en emergencias.", "h1": "1. Responsabilidad del Usuario y Verificación", "h1_ai": "<strong>Verificación de IA y OCR:</strong> Las lecturas automáticas por cámara son asistencias y pueden contener errores. Es su responsabilidad revisar y verificar dosis, horarios y nombres de fármacos antes de guardarlos o tomar cualquier medicamento.", "h1_input": "<strong>Exactitud de Datos:</strong> No nos hacemos responsables de las consecuencias de ingresos incorrectos.", "h2": "2. Notificaciones y Factores del Sistema", "h2_p": "La entrega de recordatorios puede verse afectada por batería baja, modos de concentración o restricciones de iOS. La responsabilidad de tomar sus medicamentos a tiempo corresponde al usuario.", "h2_li1": "Batería baja o apagado del dispositivo.", "h2_li2": "Modos de No Molestar / Concentración.", "h2_li3": "Restricciones en segundo plano de iOS.", "h2_foot": "Usted es el responsable final de su propia administración médica.", "h3": "3. Suscripciones y Compras dentro de la App", "h3_intro": "PillPilot Pro ofrece suscripciones autorrenovables:", "h3_li1": "<strong>Planes:</strong> Semanales, mensuales o anuales.", "h3_li2": "<strong>Cobro:</strong> A través de su cuenta de Apple ID.", "h3_li3": "<strong>Cancelación:</strong> Gestione o cancele en Ajustes de iOS > Cuenta Apple > Suscripciones con al menos 24 horas de antelación.", "h3_li4": "<strong>EULA Estándar:</strong> Rige el acuerdo estándar de Apple (<a href=\"https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\" target=\"_blank\">Apple Standard EULA</a>).", "h3_li5": "Sujeto a las normas de StoreKit.", "h4": "4. Propiedad Intelectual", "h4_p": "El código, diseño e interfaz de PillPilot pertenecen en exclusiva a GL Technologies.", "h5": "5. Exclusión de Garantías", "h5_p": "La aplicación se proporciona \"tal cual\" sin garantías de ningún tipo.", "h6": "6. Limitación de Responsabilidad", "h6_p": "GL Technologies no será responsable de daños derivados del uso o imposibilidad de uso de la app.", "h7": "7. Modificaciones", "h7_p": "Nos reservamos el derecho de modificar estos términos en cualquier momento.", "h8": "8. Contacto", "h8_p": "Para cualquier consulta sobre estos términos:", "footer": "&copy; 2026 GL Technologies. Todos los derechos reservados."}, "de": {"nav_overview": "← PillPilot Übersicht", "nav_privacy": "Datenschutzerklärung", "nav_faq": "Support & FAQ", "badge": "Nutzungsbedingungen", "title": "PillPilot Nutzungsbedingungen", "meta": "<strong>Gültig ab:</strong> 20. August 2026 | <strong>Letzte Aktualisierung:</strong> 20. August 2026", "intro1": "Bitte lesen Sie diese Nutzungsbedingungen vor der Nutzung von <strong>PillPilot</strong> (betrieben von <strong>GL Technologies</strong>) aufmerksam durch.", "intro2": "Mit der Nutzung der App erklären Sie sich mit diesen Bedingungen einverstanden.", "warning_title": "⚠️ WICHTIGER MEDIZINISCHER HAFTUNGSAUSSCHLUSS", "warning_p1": "<strong>1. KEIN MEDIZINPRODUKT & KEINE MEDIZINISCHE BERATUNG:</strong> PillPilot dient ausschließlich der Erinnerung und Organisation. Die App stellt KEINE Diagnosen oder Therapieempfehlungen dar.", "warning_p2": "<strong>2. ÄRZTLICHEN RAT EINHOLEN:</strong> Befolgen Sie stets die Anweisungen Ihrer Ärzte und Apotheker.", "warning_p3": "<strong>3. NOTFÄLLE:</strong> Rufen Sie im Notfall sofort den Notruf (112, 911). Verlassen Sie sich in Notfällen keinesfalls auf die App.", "h1": "1. Eigenverantwortung & Überprüfung der Daten", "h1_ai": "<strong>Überprüfung von KI-Ergebnissen:</strong> Automatische OCR-Erfassungen sind unverbindliche Hilfsmittel. Überprüfen Sie alle Dosierungen und Zeiten stets eigenverantwortlich.", "h1_input": "<strong>Richtigkeit:</strong> Für fehlerhafte Eingaben wird keine Haftung übernommen.", "h2": "2. Zuverlässigkeit von Benachrichtigungen", "h2_p": "Alarme können durch Systemzustände (Energiesparmodus, Fokus/Nicht-Stören) beeinflusst werden. Die Einnahmeverantwortung verbleibt beim Anwender.", "h2_li1": "Niedriger Akkustand oder ausgeschaltetes Gerät.", "h2_li2": "Fokus- und Nicht-Stören-Modi.", "h2_li3": "Hintergrundbeschränkungen von iOS.", "h2_foot": "Sie tragen die Letztverantwortung für Ihre pünktliche Einnahme.", "h3": "3. Abonnements (PillPilot Pro)", "h3_intro": "Automatisch verlängernde Abonnements:", "h3_li1": "<strong>Laufzeiten:</strong> Wöchentlich, monatlich, jährlich.", "h3_li2": "<strong>Abrechnung:</strong> Über Ihren Apple-Account.", "h3_li3": "<strong>Kündigung:</strong> Jederzeit bis 24 Std. vor Ablauf in den iOS-Einstellungen kündbar.", "h3_li4": "<strong>Standard-EULA:</strong> Es gilt Apples Standard-Lizenzvertrag (<a href=\"https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\" target=\"_blank\">Apple Standard EULA</a>).", "h3_li5": "Abwicklung über StoreKit 2.", "h4": "4. Urheberrecht", "h4_p": "Sämtliche Rechte an Code und Design liegen bei GL Technologies.", "h5": "5. Gewährleistungsausschluss", "h5_p": "Die Bereitstellung erfolgt „wie besehen“ ohne ausdrückliche Gewährleistung.", "h6": "6. Haftungsbeschränkung", "h6_p": "GL Technologies haftet nicht für Schäden oder verpasste Dosen infolge der App-Nutzung.", "h7": "7. Änderungen", "h7_p": "Änderungen werden mit Veröffentlichung wirksam.", "h8": "8. Kontakt", "h8_p": "Kontaktieren Sie uns bei Fragen unter:", "footer": "&copy; 2026 GL Technologies. Alle Rechte vorbehalten."}, "fr": {"nav_overview": "← Aperçu de PillPilot", "nav_privacy": "Politique de Confidentialité", "nav_faq": "Support & FAQ", "badge": "Conditions d'Utilisation", "title": "Conditions d'Utilisation de PillPilot", "meta": "<strong>Date d'effet :</strong> 20 août 2026 | <strong>Dernière mise à jour :</strong> 20 août 2026", "intro1": "Veuillez lire attentivement ces Conditions d'Utilisation avant d'utiliser <strong>PillPilot</strong>, exploité par <strong>GL Technologies</strong>.", "intro2": "L'utilisation de l'application implique votre acceptation sans réserve de ces conditions.", "warning_title": "⚠️ AVERTISSEMENT MÉDICAL ET DE SÉCURITÉ CRITIQUE", "warning_p1": "<strong>1. PAS UN DISPOSITIF MÉDICAL NI UN AVIS MÉDICAL :</strong> PillPilot est un simple outil de rappel. L'application ne fournit aucun diagnostic ni traitement.", "warning_p2": "<strong>2. CONSULTEZ DES PROFESSIONNELS DE SANTÉ :</strong> Ne substituez pas l'application à un avis médical. Respectez toujours les prescriptions de votre médecin.", "warning_p3": "<strong>3. URGENCES :</strong> En cas d'urgence, contactez immédiatement le 15, le 112 ou le 911. Ne comptez pas sur l'application en situation d'urgence.", "h1": "1. Responsabilité de l'Utilisateur et Validation", "h1_ai": "<strong>Vérification de l'OCR et de l'IA :</strong> L'analyse automatique est une aide et peut comporter des erreurs. Vous devez obligatoirement vérifier les noms, dosages et heures avant de valider ou de prendre un médicament.", "h1_input": "<strong>Exactitude :</strong> Nous déclinons toute responsabilité en cas de mauvaise saisie.", "h2": "2. Notifications et Environnement Système", "h2_p": "Les rappels peuvent être perturbés par la batterie faible, les modes Ne pas déranger ou les restrictions système iOS. La prise ponctuelle relève de votre seule responsabilité.", "h2_li1": "Batterie faible ou appareil éteint.", "h2_li2": "Modes Concentration / Ne pas déranger.", "h2_li3": "Restrictions d'arrière-plan iOS.", "h2_foot": "Vous êtes seul responsable du respect de vos prises de médicaments.", "h3": "3. Abonnements (PillPilot Pro)", "h3_intro": "Abonnements avec renouvellement automatique :", "h3_li1": "<strong>Formules :</strong> Hebdomadaire, mensuelle ou annuelle.", "h3_li2": "<strong>Facturation :</strong> Via votre compte Apple ID.", "h3_li3": "<strong>Résiliation :</strong> Dans Réglages iOS > Identifiant Apple > Abonnements au moins 24h avant l'échéance.", "h3_li4": "<strong>CLUF Standard :</strong> Soumis au contrat Apple standard (<a href=\"https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\" target=\"_blank\">Apple Standard EULA</a>).", "h3_li5": "Géré via Apple StoreKit 2.", "h4": "4. Propriété Intellectuelle", "h4_p": "Tous les droits relatifs au code, au design et aux marques sont réservés à GL Technologies.", "h5": "5. Exclusion de Garanties", "h5_p": "L'application est fournie « en l'état » sans garantie expresse ou tacite.", "h6": "6. Limitation de Responsabilité", "h6_p": "GL Technologies décline toute responsabilité pour tout dommage découlant de l'utilisation de l'application.", "h7": "7. Modifications", "h7_p": "Les modifications prennent effet dès leur publication sur cette page.", "h8": "8. Nous Contacter", "h8_p": "Pour toute question concernant les conditions :", "footer": "&copy; 2026 GL Technologies. Tous droits réservés."}};
+
+        function getInitialLanguage() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const paramLang = urlParams.get('lang');
+            if (paramLang && i18n[paramLang]) return paramLang;
+
+            const saved = localStorage.getItem('pillpilot_lang');
+            if (saved && i18n[saved]) return saved;
+
+            const browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+            if (browserLang.startsWith('zh-tw') || browserLang.startsWith('zh-hk') || browserLang.startsWith('zh-hant')) return 'zh-Hant';
+            if (browserLang.startsWith('zh')) return 'zh-Hans';
+            if (browserLang.startsWith('ja')) return 'ja';
+            if (browserLang.startsWith('es')) return 'es';
+            if (browserLang.startsWith('de')) return 'de';
+            if (browserLang.startsWith('fr')) return 'fr';
+            return 'en';
+        }
+
+        function changeLanguage(lang) {
+            if (!i18n[lang]) lang = 'en';
+            localStorage.setItem('pillpilot_lang', lang);
+            document.getElementById('langSelect').value = lang;
+            document.documentElement.lang = lang;
+
+            const data = i18n[lang];
+            document.title = data.title;
+
+            for (const [key, val] of Object.entries(data)) {
+                const el = document.getElementById(key);
+                if (el) el.innerHTML = val;
+            }
+
+            const linkFaq = document.getElementById('link_faq_bottom');
+            if (linkFaq && data.nav_faq) linkFaq.textContent = data.nav_faq;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const lang = getInitialLanguage();
+            changeLanguage(lang);
+        });
+    </script>
 </body>
 </html>

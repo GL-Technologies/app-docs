@@ -42,7 +42,34 @@
             max-width: 480px;
             width: 100%;
             text-align: center;
-            padding: 40px 20px;
+            padding: 30px 20px;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+        }
+
+        .lang-picker {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--card-bg);
+            padding: 5px 12px;
+            border-radius: 18px;
+            border: 1px solid var(--border-color);
+        }
+
+        .lang-picker select {
+            background: transparent;
+            border: none;
+            color: var(--text-color);
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            outline: none;
+            font-family: inherit;
         }
 
         .logo {
@@ -56,10 +83,11 @@
             margin-bottom: 8px;
         }
 
-        p {
+        p.subtitle {
             color: var(--secondary-text);
-            margin-bottom: 32px;
+            margin-bottom: 28px;
             font-size: 15px;
+            line-height: 1.5;
         }
 
         .links {
@@ -107,14 +135,14 @@
         }
 
         footer {
-            margin-top: 50px;
+            margin-top: 40px;
             font-size: 13px;
             color: var(--secondary-text);
         }
 
         .back-link {
             display: inline-block;
-            margin-top: 20px;
+            margin-top: 24px;
             font-size: 13px;
             color: var(--primary-color);
             text-decoration: none;
@@ -127,42 +155,98 @@
 <body>
 
 <div class="container">
+    <div class="top-bar">
+        
+        <div class="lang-picker">
+            <span>🌐</span>
+            <select id="langSelect" onchange="changeLanguage(this.value)">
+                <option value="en">English (US)</option>
+                <option value="zh-Hans">简体中文</option>
+                <option value="zh-Hant">繁體中文</option>
+                <option value="ja">日本語</option>
+                <option value="es">Español</option>
+                <option value="de">Deutsch</option>
+                <option value="fr">Français</option>
+            </select>
+        </div>
+    
+    </div>
+
     <div class="logo">💊</div>
-    <h1>PillPilot</h1>
-    <p>Smart Medication Reminders & Health Tracker<br>Legal & Support Documentation</p>
+    <h1 id="title">PillPilot</h1>
+    <p class="subtitle" id="subtitle"></p>
 
     <div class="links">
         <a href="privacy.html" class="link-card">
             <span>
                 <span class="icon">🔒</span>
-                Privacy Policy
+                <span id="privacy"></span>
             </span>
             <span class="chevron">›</span>
         </a>
         <a href="terms.html" class="link-card">
             <span>
                 <span class="icon">📄</span>
-                Terms of Use
+                <span id="terms"></span>
             </span>
             <span class="chevron">›</span>
         </a>
         <a href="faq.html" class="link-card">
             <span>
                 <span class="icon">❓</span>
-                Support Center & FAQ
+                <span id="faq"></span>
             </span>
             <span class="chevron">›</span>
         </a>
     </div>
 
     <div>
-        <a href="../index.html" class="back-link">← GL Technologies Home</a>
+        <a href="../index.html" class="back-link" id="back"></a>
     </div>
 
-    <footer>
+    <footer id="footer">
         &copy; 2026 GL Technologies. All rights reserved.
     </footer>
 </div>
 
+<script>
+    const i18n = {"en": {"title": "PillPilot", "subtitle": "Smart Medication Reminders & Health Tracker<br>Legal & Support Documentation", "privacy": "Privacy Policy", "terms": "Terms of Use", "faq": "Support Center & FAQ", "back": "← GL Technologies Home", "footer": "&copy; 2026 GL Technologies. All rights reserved."}, "zh-Hans": {"title": "PillPilot", "subtitle": "智能用药提醒与健康管理助手<br>法律协议与支持文档中心", "privacy": "隐私政策", "terms": "服务条款与用户协议", "faq": "支持中心与常见问题", "back": "← 返回 GL Technologies 首页", "footer": "&copy; 2026 GL Technologies. 保留所有权利。"}, "zh-Hant": {"title": "PillPilot", "subtitle": "智慧用藥提醒與健康管理助手<br>法律協議與支援文件中心", "privacy": "隱私權政策", "terms": "服務條款與使用者協議", "faq": "支援中心與常見問題", "back": "← 返回 GL Technologies 首頁", "footer": "&copy; 2026 GL Technologies. 版權所有。"}, "ja": {"title": "PillPilot", "subtitle": "スマート服薬リマインダー＆健康管理<br>利用規約・プライバシー・サポート窓口", "privacy": "プライバシーポリシー", "terms": "利用規約", "faq": "サポート＆FAQ", "back": "← GL Technologies ホームへ", "footer": "&copy; 2026 GL Technologies. All rights reserved."}, "es": {"title": "PillPilot", "subtitle": "Recordatorio Inteligente de Medicamentos<br>Documentación Legal y de Soporte", "privacy": "Política de Privacidad", "terms": "Términos de Uso", "faq": "Centro de Ayuda y FAQ", "back": "← Inicio de GL Technologies", "footer": "&copy; 2026 GL Technologies. Todos los derechos reservados."}, "de": {"title": "PillPilot", "subtitle": "Intelligente Medikamentenerinnerung<br>Rechtliche Dokumentation & Hilfe-Center", "privacy": "Datenschutzerklärung", "terms": "Nutzungsbedingungen", "faq": "Support & FAQ", "back": "← GL Technologies Startseite", "footer": "&copy; 2026 GL Technologies. Alle Rechte vorbehalten."}, "fr": {"title": "PillPilot", "subtitle": "Rappel Intelligent de Médicaments<br>Documentation Juridique et Support", "privacy": "Politique de Confidentialité", "terms": "Conditions d'Utilisation", "faq": "Centre d'Aide & FAQ", "back": "← Accueil GL Technologies", "footer": "&copy; 2026 GL Technologies. Tous droits réservés."}};
+
+    function getInitialLanguage() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const paramLang = urlParams.get('lang');
+        if (paramLang && i18n[paramLang]) return paramLang;
+
+        const saved = localStorage.getItem('pillpilot_lang');
+        if (saved && i18n[saved]) return saved;
+
+        const browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+        if (browserLang.startsWith('zh-tw') || browserLang.startsWith('zh-hk') || browserLang.startsWith('zh-hant')) return 'zh-Hant';
+        if (browserLang.startsWith('zh')) return 'zh-Hans';
+        if (browserLang.startsWith('ja')) return 'ja';
+        if (browserLang.startsWith('es')) return 'es';
+        if (browserLang.startsWith('de')) return 'de';
+        if (browserLang.startsWith('fr')) return 'fr';
+        return 'en';
+    }
+
+    function changeLanguage(lang) {
+        if (!i18n[lang]) lang = 'en';
+        localStorage.setItem('pillpilot_lang', lang);
+        document.getElementById('langSelect').value = lang;
+        document.documentElement.lang = lang;
+
+        const data = i18n[lang];
+        for (const [key, val] of Object.entries(data)) {
+            const el = document.getElementById(key);
+            if (el) el.innerHTML = val;
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const lang = getInitialLanguage();
+        changeLanguage(lang);
+    });
+</script>
 </body>
 </html>
