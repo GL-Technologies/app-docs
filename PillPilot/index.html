@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GL Technologies - Support & Legal</title>
+    <title>PillPilot - Legal & Support</title>
     <style>
         :root {
             --primary-color: #007AFF;
@@ -34,53 +34,44 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            padding: 30px 16px;
+            padding: 20px;
             box-sizing: border-box;
         }
 
         .container {
-            max-width: 520px;
+            max-width: 480px;
             width: 100%;
             text-align: center;
+            padding: 40px 20px;
         }
 
         .logo {
-            font-size: 56px;
-            margin-bottom: 12px;
+            font-size: 64px;
+            margin-bottom: 16px;
         }
 
         h1 {
             font-size: 28px;
             font-weight: 700;
-            margin: 0 0 6px 0;
+            margin-bottom: 8px;
         }
 
-        p.desc {
+        p {
             color: var(--secondary-text);
-            margin: 0 0 28px 0;
+            margin-bottom: 32px;
             font-size: 15px;
-        }
-
-        .section-title {
-            text-align: left;
-            font-size: 13px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: var(--secondary-text);
-            margin: 20px 4px 8px 4px;
         }
 
         .links {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 14px;
         }
 
         .link-card {
             background-color: var(--card-bg);
-            padding: 16px 18px;
-            border-radius: 12px;
+            padding: 18px 20px;
+            border-radius: 14px;
             text-decoration: none;
             color: var(--text-color);
             font-weight: 600;
@@ -88,28 +79,20 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
             border: 1px solid var(--border-color);
             transition: transform 0.2s, background-color 0.2s;
         }
 
         .link-card:hover {
-            transform: scale(1.015);
+            transform: scale(1.02);
             background-color: rgba(0, 122, 255, 0.04);
         }
 
-        .link-card span.left {
+        .link-card span {
             display: flex;
             align-items: center;
-            gap: 12px;
-            text-align: left;
-        }
-
-        .link-card .subtitle {
-            font-size: 12px;
-            color: var(--secondary-text);
-            font-weight: 400;
-            display: block;
+            gap: 14px;
         }
 
         .icon {
@@ -124,76 +107,56 @@
         }
 
         footer {
-            margin-top: 40px;
+            margin-top: 50px;
             font-size: 13px;
             color: var(--secondary-text);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 13px;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="logo">📱</div>
-    <h1>GL Technologies</h1>
-    <p class="desc">Support & Legal Documentation Center</p>
+    <div class="logo">💊</div>
+    <h1>PillPilot</h1>
+    <p>Smart Medication Reminders & Health Tracker<br>Legal & Support Documentation</p>
 
-    <div class="section-title">Applications</div>
     <div class="links">
-        <a href="PillPilot/index.html" class="link-card">
-            <span class="left">
-                <span class="icon">💊</span>
-                <span>
-                    PillPilot
-                    <span class="subtitle">Medication Tracker & Reminder</span>
-                </span>
+        <a href="privacy.html" class="link-card">
+            <span>
+                <span class="icon">🔒</span>
+                Privacy Policy
             </span>
             <span class="chevron">›</span>
         </a>
-        <a href="travelcamera/travelcamera_privacy.html" class="link-card">
-            <span class="left">
-                <span class="icon">📷</span>
-                <span>
-                    Travel Camera
-                    <span class="subtitle">Travel Documentation & Watermark Camera</span>
-                </span>
+        <a href="terms.html" class="link-card">
+            <span>
+                <span class="icon">📄</span>
+                Terms of Use
             </span>
             <span class="chevron">›</span>
         </a>
-        <a href="AntLens/antlens_privacy.html" class="link-card">
-            <span class="left">
-                <span class="icon">🐜</span>
-                <span>
-                    AntLens
-                    <span class="subtitle">AI Ant Species Identification</span>
-                </span>
+        <a href="faq.html" class="link-card">
+            <span>
+                <span class="icon">❓</span>
+                Support Center & FAQ
             </span>
             <span class="chevron">›</span>
         </a>
     </div>
 
-    <div class="section-title">General Support & Legal</div>
-    <div class="links">
-        <a href="faq.html" class="link-card">
-            <span class="left">
-                <span class="icon">❓</span>
-                <span>General Support / FAQ</span>
-            </span>
-            <span class="chevron">›</span>
-        </a>
-        <a href="privacy.html" class="link-card">
-            <span class="left">
-                <span class="icon">🔒</span>
-                <span>General Privacy Policy</span>
-            </span>
-            <span class="chevron">›</span>
-        </a>
-        <a href="terms.html" class="link-card">
-            <span class="left">
-                <span class="icon">📄</span>
-                <span>General Terms of Service</span>
-            </span>
-            <span class="chevron">›</span>
-        </a>
+    <div>
+        <a href="../index.html" class="back-link">← GL Technologies Home</a>
     </div>
 
     <footer>
