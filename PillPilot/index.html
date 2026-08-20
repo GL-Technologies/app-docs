@@ -160,7 +160,7 @@
         <div class="lang-picker">
             <span>🌐</span>
             <select id="langSelect" onchange="changeLanguage(this.value)">
-                <option value="en">English (US)</option>
+                <option value="en" selected>English (Default)</option>
                 <option value="zh-Hans">简体中文</option>
                 <option value="zh-Hant">繁體中文</option>
                 <option value="ja">日本語</option>
@@ -174,34 +174,34 @@
 
     <div class="logo">💊</div>
     <h1 id="title">PillPilot</h1>
-    <p class="subtitle" id="subtitle"></p>
+    <p class="subtitle" id="subtitle">Smart Medication Reminders & Health Tracker<br>Legal & Support Documentation</p>
 
     <div class="links">
         <a href="privacy.html" class="link-card">
             <span>
                 <span class="icon">🔒</span>
-                <span id="privacy"></span>
+                <span id="privacy">Privacy Policy</span>
             </span>
             <span class="chevron">›</span>
         </a>
         <a href="terms.html" class="link-card">
             <span>
                 <span class="icon">📄</span>
-                <span id="terms"></span>
+                <span id="terms">Terms of Use</span>
             </span>
             <span class="chevron">›</span>
         </a>
         <a href="faq.html" class="link-card">
             <span>
                 <span class="icon">❓</span>
-                <span id="faq"></span>
+                <span id="faq">Support Center & FAQ</span>
             </span>
             <span class="chevron">›</span>
         </a>
     </div>
 
     <div>
-        <a href="../index.html" class="back-link" id="back"></a>
+        <a href="../index.html" class="back-link" id="back">← GL Technologies Home</a>
     </div>
 
     <footer id="footer">
@@ -213,27 +213,33 @@
     const i18n = {"en": {"title": "PillPilot", "subtitle": "Smart Medication Reminders & Health Tracker<br>Legal & Support Documentation", "privacy": "Privacy Policy", "terms": "Terms of Use", "faq": "Support Center & FAQ", "back": "← GL Technologies Home", "footer": "&copy; 2026 GL Technologies. All rights reserved."}, "zh-Hans": {"title": "PillPilot", "subtitle": "智能用药提醒与健康管理助手<br>法律协议与支持文档中心", "privacy": "隐私政策", "terms": "服务条款与用户协议", "faq": "支持中心与常见问题", "back": "← 返回 GL Technologies 首页", "footer": "&copy; 2026 GL Technologies. 保留所有权利。"}, "zh-Hant": {"title": "PillPilot", "subtitle": "智慧用藥提醒與健康管理助手<br>法律協議與支援文件中心", "privacy": "隱私權政策", "terms": "服務條款與使用者協議", "faq": "支援中心與常見問題", "back": "← 返回 GL Technologies 首頁", "footer": "&copy; 2026 GL Technologies. 版權所有。"}, "ja": {"title": "PillPilot", "subtitle": "スマート服薬リマインダー＆健康管理<br>利用規約・プライバシー・サポート窓口", "privacy": "プライバシーポリシー", "terms": "利用規約", "faq": "サポート＆FAQ", "back": "← GL Technologies ホームへ", "footer": "&copy; 2026 GL Technologies. All rights reserved."}, "es": {"title": "PillPilot", "subtitle": "Recordatorio Inteligente de Medicamentos<br>Documentación Legal y de Soporte", "privacy": "Política de Privacidad", "terms": "Términos de Uso", "faq": "Centro de Ayuda y FAQ", "back": "← Inicio de GL Technologies", "footer": "&copy; 2026 GL Technologies. Todos los derechos reservados."}, "de": {"title": "PillPilot", "subtitle": "Intelligente Medikamentenerinnerung<br>Rechtliche Dokumentation & Hilfe-Center", "privacy": "Datenschutzerklärung", "terms": "Nutzungsbedingungen", "faq": "Support & FAQ", "back": "← GL Technologies Startseite", "footer": "&copy; 2026 GL Technologies. Alle Rechte vorbehalten."}, "fr": {"title": "PillPilot", "subtitle": "Rappel Intelligent de Médicaments<br>Documentation Juridique et Support", "privacy": "Politique de Confidentialité", "terms": "Conditions d'Utilisation", "faq": "Centre d'Aide & FAQ", "back": "← Accueil GL Technologies", "footer": "&copy; 2026 GL Technologies. Tous droits réservés."}};
 
     function getInitialLanguage() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const paramLang = urlParams.get('lang');
-        if (paramLang && i18n[paramLang]) return paramLang;
+        try {
+            const urlParams = new URLSearchParams(window.location.search);
+            const paramLang = urlParams.get('lang');
+            if (paramLang && i18n[paramLang]) return paramLang;
 
-        const saved = localStorage.getItem('pillpilot_lang');
-        if (saved && i18n[saved]) return saved;
+            const saved = localStorage.getItem('pillpilot_lang');
+            if (saved && i18n[saved]) return saved;
 
-        const browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
-        if (browserLang.startsWith('zh-tw') || browserLang.startsWith('zh-hk') || browserLang.startsWith('zh-hant')) return 'zh-Hant';
-        if (browserLang.startsWith('zh')) return 'zh-Hans';
-        if (browserLang.startsWith('ja')) return 'ja';
-        if (browserLang.startsWith('es')) return 'es';
-        if (browserLang.startsWith('de')) return 'de';
-        if (browserLang.startsWith('fr')) return 'fr';
+            const browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+            if (browserLang.startsWith('zh-tw') || browserLang.startsWith('zh-hk') || browserLang.startsWith('zh-hant') || browserLang.startsWith('zh-mo')) return 'zh-Hant';
+            if (browserLang.startsWith('zh')) return 'zh-Hans';
+            if (browserLang.startsWith('ja')) return 'ja';
+            if (browserLang.startsWith('es')) return 'es';
+            if (browserLang.startsWith('de')) return 'de';
+            if (browserLang.startsWith('fr')) return 'fr';
+        } catch (e) {}
         return 'en';
     }
 
     function changeLanguage(lang) {
         if (!i18n[lang]) lang = 'en';
-        localStorage.setItem('pillpilot_lang', lang);
-        document.getElementById('langSelect').value = lang;
+        try {
+            localStorage.setItem('pillpilot_lang', lang);
+        } catch (e) {}
+        
+        const select = document.getElementById('langSelect');
+        if (select) select.value = lang;
         document.documentElement.lang = lang;
 
         const data = i18n[lang];
@@ -245,7 +251,9 @@
 
     document.addEventListener('DOMContentLoaded', () => {
         const lang = getInitialLanguage();
-        changeLanguage(lang);
+        if (lang !== 'en') {
+            changeLanguage(lang);
+        }
     });
 </script>
 </body>
