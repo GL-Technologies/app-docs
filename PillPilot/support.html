@@ -2,17 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PillPilot Support & FAQ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Pill Reminder Support & FAQ</title>
     <style>
+
         :root {
             --primary-color: #007AFF;
             --bg-color: #f2f2f7;
             --card-bg: #ffffff;
             --text-color: #1c1c1e;
-            --secondary-text: #666668;
+            --secondary-text: #6c6c70;
             --border-color: #e5e5ea;
+            --notice-bg: #f0f7ff;
+            --notice-border: #b3d7ff;
+            --notice-text: #004085;
+            --warning-bg: #fff8e6;
+            --warning-border: #ffd666;
+            --warning-text: #874d00;
             --accent-bg: #f8f9ff;
+            --subcard-bg: #f9f9fb;
         }
 
         @media (prefers-color-scheme: dark) {
@@ -22,9 +30,21 @@
                 --card-bg: #1c1c1e;
                 --text-color: #f2f2f7;
                 --secondary-text: #8e8e93;
-                --border-color: #38383a;
+                --border-color: #2c2c2e;
+                --notice-bg: #001f3f;
+                --notice-border: #004085;
+                --notice-text: #b3d7ff;
+                --warning-bg: #2b2100;
+                --warning-border: #594400;
+                --warning-text: #ffc53d;
                 --accent-bg: #141b2d;
+                --subcard-bg: #242426;
             }
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
         }
 
         body {
@@ -33,12 +53,18 @@
             color: var(--text-color);
             background-color: var(--bg-color);
             margin: 0;
-            padding: 24px 16px;
+            padding: 20px 12px;
+            -webkit-font-smoothing: antialiased;
+            word-wrap: break-word;
         }
 
         .container {
             max-width: 820px;
             margin: 0 auto;
+            background: var(--card-bg);
+            padding: 36px 28px;
+            border-radius: 18px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }
 
         .top-bar {
@@ -48,22 +74,25 @@
             flex-wrap: wrap;
             gap: 12px;
             margin-bottom: 24px;
-            background: var(--card-bg);
-            padding: 14px 20px;
-            border-radius: 14px;
-            border: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 14px;
         }
 
         .nav-links {
             display: flex;
-            gap: 16px;
+            flex-wrap: wrap;
+            gap: 12px 16px;
             font-size: 14px;
+            align-items: center;
         }
 
         .nav-links a {
             color: var(--primary-color);
             text-decoration: none;
             font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            min-height: 32px;
         }
 
         .nav-links a:hover {
@@ -71,13 +100,14 @@
         }
 
         .lang-picker {
-            display: flex;
+            display: inline-flex;
             align-items: center;
             gap: 6px;
             background: var(--bg-color);
-            padding: 5px 10px;
-            border-radius: 18px;
+            padding: 6px 12px;
+            border-radius: 20px;
             border: 1px solid var(--border-color);
+            min-height: 36px;
         }
 
         .lang-picker select {
@@ -91,44 +121,206 @@
             font-family: inherit;
         }
 
-        header {
-            text-align: center;
-            padding: 20px 0 28px;
+        h1 {
+            font-size: 25px;
+            font-weight: 700;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+            margin-top: 0;
+            margin-bottom: 16px;
+            color: var(--text-color);
+            line-height: 1.3;
         }
 
-        .app-icon {
-            font-size: 48px;
+        h2 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            color: var(--text-color);
+            line-height: 1.35;
+        }
+
+        h3 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-top: 18px;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+            line-height: 1.35;
+        }
+
+        p {
+            margin-bottom: 14px;
+            font-size: 15px;
+            color: var(--text-color);
+        }
+
+        ul, ol {
+            margin-bottom: 16px;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            font-size: 14.5px;
+            line-height: 1.55;
+        }
+
+        .meta-info {
+            font-size: 13.5px;
+            color: var(--secondary-text);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: rgba(0, 122, 255, 0.1);
+            color: var(--primary-color);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 12.5px;
+            font-weight: 600;
             margin-bottom: 12px;
         }
 
-        h1 {
-            font-size: 30px;
+        .notice-box {
+            background-color: var(--notice-bg);
+            border: 1px solid var(--notice-border);
+            color: var(--notice-text);
+            padding: 16px;
+            border-radius: 12px;
+            margin: 20px 0;
+            font-size: 14px;
+            line-height: 1.55;
+        }
+
+        .warning-box {
+            background-color: var(--warning-bg);
+            border: 1px solid var(--warning-border);
+            color: var(--warning-text);
+            padding: 18px;
+            border-radius: 12px;
+            margin: 22px 0;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .warning-title {
             font-weight: 700;
-            margin: 0 0 8px 0;
-            color: var(--text-color);
+            font-size: 15px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .ai-section {
+            background: var(--subcard-bg);
+            border: 1px solid var(--border-color);
+            padding: 20px 16px;
+            border-radius: 12px;
+            margin: 16px 0 24px 0;
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 13px;
+            color: var(--secondary-text);
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            padding-top: 22px;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile specific styling for small screens */
+        @media (max-width: 600px) {
+            body {
+                padding: 12px 8px;
+            }
+            .container {
+                padding: 20px 16px;
+                border-radius: 14px;
+            }
+            .top-bar {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 12px;
+                padding-bottom: 12px;
+            }
+            .nav-links {
+                justify-content: flex-start;
+                gap: 10px 14px;
+                font-size: 13px;
+            }
+            .lang-picker {
+                align-self: flex-start;
+                width: 100%;
+                justify-content: space-between;
+                padding: 8px 12px;
+            }
+            .lang-picker select {
+                width: 100%;
+                font-size: 13px;
+            }
+            h1 {
+                font-size: 21px;
+                padding-bottom: 10px;
+                margin-bottom: 14px;
+            }
+            h2 {
+                font-size: 16.5px;
+                margin-top: 24px;
+            }
+            h3 {
+                font-size: 14.5px;
+            }
+            p, li {
+                font-size: 14px;
+            }
+            .notice-box, .warning-box {
+                padding: 14px 12px;
+                border-radius: 10px;
+                font-size: 13.5px;
+            }
+            .ai-section {
+                padding: 14px 12px;
+                border-radius: 10px;
+            }
+        }
+
+        header {
+            text-align: center;
+            padding: 10px 0 20px;
+        }
+
+        .app-icon {
+            font-size: 44px;
+            margin-bottom: 8px;
         }
 
         .subtitle {
             color: var(--secondary-text);
-            font-size: 16px;
-            margin: 0 0 20px 0;
-        }
-
-        h2 {
-            font-size: 19px;
-            font-weight: 600;
-            color: var(--text-color);
-            margin-top: 36px;
-            margin-bottom: 14px;
-            padding-left: 4px;
+            font-size: 15px;
+            margin: 0 0 16px 0;
+            line-height: 1.4;
         }
 
         section {
             background-color: var(--card-bg);
             border-radius: 14px;
             overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            margin-bottom: 18px;
             border: 1px solid var(--border-color);
         }
 
@@ -141,7 +333,7 @@
         }
 
         summary {
-            padding: 16px 20px;
+            padding: 15px 18px;
             font-weight: 500;
             font-size: 15px;
             cursor: pointer;
@@ -150,6 +342,8 @@
             outline: none;
             transition: background-color 0.2s;
             color: var(--text-color);
+            line-height: 1.45;
+            padding-right: 44px;
         }
 
         summary:hover {
@@ -159,7 +353,9 @@
         summary::after {
             content: '\203A';
             position: absolute;
-            right: 20px;
+            right: 18px;
+            top: 50%;
+            transform: translateY(-50%);
             font-size: 22px;
             color: #c7c7cc;
             transition: transform 0.3s;
@@ -167,11 +363,11 @@
         }
 
         details[open] summary::after {
-            transform: rotate(90deg);
+            transform: translateY(-50%) rotate(90deg);
         }
 
         .answer {
-            padding: 0 20px 20px 20px;
+            padding: 0 18px 18px 18px;
             font-size: 14px;
             color: var(--secondary-text);
             line-height: 1.6;
@@ -181,32 +377,23 @@
             color: var(--text-color);
         }
 
-        .answer ol, .answer ul {
-            padding-left: 20px;
-            margin: 8px 0;
-        }
-
-        .answer li {
-            margin-bottom: 6px;
-        }
-
         .tip-box {
             background-color: var(--accent-bg);
             border-left: 3px solid var(--primary-color);
-            padding: 12px 16px;
+            padding: 12px 14px;
             border-radius: 6px;
-            margin-top: 12px;
+            margin-top: 10px;
             font-size: 13px;
         }
 
         .contact-card {
             background: var(--card-bg);
             border-radius: 14px;
-            padding: 32px 24px;
+            padding: 28px 20px;
             text-align: center;
-            margin-top: 40px;
+            margin-top: 36px;
             border: 1px solid var(--border-color);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
         }
 
         .contact-btn {
@@ -217,31 +404,14 @@
             border-radius: 22px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 15px;
-            margin-top: 16px;
+            font-size: 14.5px;
+            margin-top: 14px;
             transition: opacity 0.2s;
         }
 
         .contact-btn:hover {
             opacity: 0.85;
             text-decoration: none;
-        }
-
-        .footer {
-            text-align: center;
-            margin-top: 40px;
-            padding: 20px 0;
-            color: var(--secondary-text);
-            font-size: 13px;
-        }
-
-        a {
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
         }
     </style>
 </head>
@@ -250,7 +420,7 @@
 <div class="container">
     <div class="top-bar">
         <div class="nav-links">
-            <a href="index.html" id="nav_overview">← PillPilot Overview</a>
+            <a href="index.html" id="nav_overview">← Pill Reminder Overview</a>
             <a href="privacy.html" id="nav_privacy">Privacy Policy</a>
             <a href="terms.html" id="nav_terms">Terms of Use</a>
         </div>
@@ -272,27 +442,27 @@
 
     <header>
         <div class="app-icon">💊</div>
-        <h1 id="title">PillPilot Support & FAQ</h1>
+        <h1 id="title">Pill Reminder Support & FAQ</h1>
         <p class="subtitle" id="subtitle">Frequently Asked Questions and Help Center</p>
     </header>
 
     <h2 id="cat1">💊 Medication Management & Safety</h2>
     <section>
         <details>
-            <summary id="q1_1">Does PillPilot provide medical advice?</summary>
-            <div class="answer" id="a1_1"><strong>No.</strong> PillPilot is an organizational tool designed to help you remember and track medication schedules. It does not provide medical diagnoses, treatment instructions, or drug interaction checks. Always follow the advice of your licensed doctor or pharmacist.</div>
+            <summary id="q1_1">Does Pill Reminder provide medical advice?</summary>
+            <div class="answer" id="a1_1"><strong>No.</strong> Pill Reminder is an organizational tool designed to help you remember and track medication schedules. It does not provide medical diagnoses, treatment instructions, or drug interaction checks. Always follow the advice of your licensed doctor or pharmacist.</div>
         </details>
         <details>
             <summary id="q1_2">How does AI Medication Label Scanning work?</summary>
-            <div class="answer" id="a1_2">You can capture a photo of a medication box, pharmacy dispensing label, or prescription bottle. PillPilot's vision engine extracts the drug name, strength, dosage form, and directions.<div class="tip-box"><strong>Important:</strong> Always review and verify extracted details before tapping Save.</div></div>
+            <div class="answer" id="a1_2">You can capture a photo of a medication box, pharmacy dispensing label, or prescription bottle. Pill Reminder's vision engine extracts the drug name, strength, dosage form, and directions.<div class="tip-box"><strong>Important:</strong> Always review and verify extracted details before tapping Save.</div></div>
         </details>
         <details>
             <summary id="q1_3">How does Voice Intake work?</summary>
-            <div class="answer" id="a1_3">You can tap the microphone button to dictate instructions (e.g. <em>"Take 500mg Amoxicillin every 8 hours after meals"</em>). PillPilot transcribes your voice on-device and organizes it into a reminder plan.</div>
+            <div class="answer" id="a1_3">You can tap the microphone button to dictate instructions (e.g. <em>"Take 500mg Amoxicillin every 8 hours after meals"</em>). Pill Reminder transcribes your voice on-device and organizes it into a reminder plan.</div>
         </details>
         <details>
             <summary id="q1_4">Can I manage inventory and low-stock warnings?</summary>
-            <div class="answer" id="a1_4">Yes! When adding or editing a medication, you can set your current stock count and unit. As you log doses, PillPilot automatically updates your inventory and alerts you when it is time to refill.</div>
+            <div class="answer" id="a1_4">Yes! When adding or editing a medication, you can set your current stock count and unit. As you log doses, Pill Reminder automatically updates your inventory and alerts you when it is time to refill.</div>
         </details>
     </section>
 
@@ -300,15 +470,15 @@
     <section>
         <details>
             <summary id="q2_1">How do Strong Reminders and Alarms work?</summary>
-            <div class="answer" id="a2_1">PillPilot supports both gentle standard notifications and <strong>Strong Alarms</strong> (via iOS AlarmKit / Critical Reminders). Strong Reminders ensure critical doses are not missed even when your phone is in silent or Focus mode (when permitted).</div>
+            <div class="answer" id="a2_1">Pill Reminder supports both gentle standard notifications and <strong>Strong Alarms</strong> (via iOS AlarmKit / Critical Reminders). Strong Reminders ensure critical doses are not missed even when your phone is in silent or Focus mode (when permitted).</div>
         </details>
         <details>
             <summary id="q2_2">Why did I miss a medication reminder?</summary>
-            <div class="answer" id="a2_2">Please verify the following iOS settings:<ol><li>Open iOS <strong>Settings &gt; Notifications &gt; PillPilot</strong> and ensure <em>Allow Notifications</em> and <em>Time Sensitive Notifications</em> are enabled.</li><li>If you use Focus Modes (e.g. Sleep or Do Not Disturb), add PillPilot to the <strong>Allowed Apps</strong> list.</li><li>Ensure your device is not completely powered off or out of battery.</li></ol></div>
+            <div class="answer" id="a2_2">Please verify the following iOS settings:<ol><li>Open iOS <strong>Settings &gt; Notifications &gt; Pill Reminder</strong> and ensure <em>Allow Notifications</em> and <em>Time Sensitive Notifications</em> are enabled.</li><li>If you use Focus Modes (e.g. Sleep or Do Not Disturb), add Pill Reminder to the <strong>Allowed Apps</strong> list.</li><li>Ensure your device is not completely powered off or out of battery.</li></ol></div>
         </details>
         <details>
             <summary id="q2_3">How do Dynamic Island & Lock Screen Live Activities work?</summary>
-            <div class="answer" id="a2_3">When a scheduled dose window approaches, PillPilot can display an active countdown timer on your iPhone's Dynamic Island and Lock Screen, letting you log intake with a single tap.</div>
+            <div class="answer" id="a2_3">When a scheduled dose window approaches, Pill Reminder can display an active countdown timer on your iPhone's Dynamic Island and Lock Screen, letting you log intake with a single tap.</div>
         </details>
     </section>
 
@@ -319,8 +489,8 @@
             <div class="answer" id="a3_1"><strong>Yes, absolutely.</strong> Your medication records are stored locally on your device in your private database. We do not operate advertising trackers or sell your personal data.</div>
         </details>
         <details>
-            <summary id="q3_2">How do I lock PillPilot with Face ID or Passcode?</summary>
-            <div class="answer" id="a3_2">Open PillPilot, navigate to <strong>Settings &gt; App Lock</strong>, and toggle on <em>Enable Face ID / Passcode</em>. Once enabled, biometric verification will be required whenever the app is opened.</div>
+            <summary id="q3_2">How do I lock Pill Reminder with Face ID or Passcode?</summary>
+            <div class="answer" id="a3_2">Open Pill Reminder, navigate to <strong>Settings &gt; App Lock</strong>, and toggle on <em>Enable Face ID / Passcode</em>. Once enabled, biometric verification will be required whenever the app is opened.</div>
         </details>
     </section>
 
@@ -328,26 +498,26 @@
     <section>
         <details>
             <summary id="q4_1">How do I sync my medication data across devices?</summary>
-            <div class="answer" id="a4_1">Ensure you are logged into the same Apple ID on both devices and that <strong>iCloud Drive</strong> is enabled in iOS Settings. PillPilot uses Apple's CloudKit to seamlessly sync your records across your iPhone and iPad.</div>
+            <div class="answer" id="a4_1">Ensure you are logged into the same Apple ID on both devices and that <strong>iCloud Drive</strong> is enabled in iOS Settings. Pill Reminder uses Apple's CloudKit to seamlessly sync your records across your iPhone and iPad.</div>
         </details>
         <details>
             <summary id="q4_2">How do I restore my data if I switch to a new phone?</summary>
-            <div class="answer" id="a4_2">When you log into your new iPhone with your existing Apple ID and install PillPilot, your iCloud synced medication plans and logs will download automatically.</div>
+            <div class="answer" id="a4_2">When you log into your new iPhone with your existing Apple ID and install Pill Reminder, your iCloud synced medication plans and logs will download automatically.</div>
         </details>
     </section>
 
     <h2 id="cat5">💎 Subscriptions & Purchases</h2>
     <section>
         <details>
-            <summary id="q5_1">How do I restore my PillPilot Pro purchase?</summary>
-            <div class="answer" id="a5_1">If you reinstalled the app or switched devices:<ol><li>Open PillPilot and go to <strong>Settings &gt; PillPilot Pro</strong>.</li><li>Tap <strong>Restore Purchases</strong>.</li><li>Ensure you are signed in with the Apple ID used for the original purchase.</li></ol></div>
+            <summary id="q5_1">How do I restore my Pill Reminder Pro purchase?</summary>
+            <div class="answer" id="a5_1">If you reinstalled the app or switched devices:<ol><li>Open Pill Reminder and go to <strong>Settings &gt; Pill Reminder Pro</strong>.</li><li>Tap <strong>Restore Purchases</strong>.</li><li>Ensure you are signed in with the Apple ID used for the original purchase.</li></ol></div>
         </details>
         <details>
             <summary id="q5_2">How do I cancel or manage my subscription?</summary>
-            <div class="answer" id="a5_2">Subscriptions are managed directly by Apple:<ol><li>Open the iOS <strong>Settings</strong> app.</li><li>Tap your <strong>Apple Account Name</strong> at the top.</li><li>Tap <strong>Subscriptions</strong>.</li><li>Select <strong>PillPilot</strong> and tap <em>Cancel Subscription</em>.</li></ol></div>
+            <div class="answer" id="a5_2">Subscriptions are managed directly by Apple:<ol><li>Open the iOS <strong>Settings</strong> app.</li><li>Tap your <strong>Apple Account Name</strong> at the top.</li><li>Tap <strong>Subscriptions</strong>.</li><li>Select <strong>Pill Reminder</strong> and tap <em>Cancel Subscription</em>.</li></ol></div>
         </details>
         <details>
-            <summary id="q5_3">Does PillPilot Pro support Family Sharing?</summary>
+            <summary id="q5_3">Does Pill Reminder Pro support Family Sharing?</summary>
             <div class="answer" id="a5_3">Yes! Non-consumable and eligible Pro subscription tiers support Apple Family Sharing. Make sure Family Sharing is enabled under your Apple Account settings.</div>
         </details>
     </section>
@@ -355,7 +525,7 @@
     <div class="contact-card">
         <h3 id="contact_title" style="margin-top: 0;">Still need assistance?</h3>
         <p id="contact_sub" style="color: var(--secondary-text); font-size: 14px; margin-bottom: 0;">Our support team is here to assist you with any questions or technical issues.</p>
-        <a href="mailto:GL.Tech@icloud.com?subject=PillPilot%20Support%20Request" class="contact-btn" id="contact_btn">Contact Support</a>
+        <a href="mailto:GL.Tech@icloud.com?subject=Pill%20Reminder%20Support%20Request" class="contact-btn" id="contact_btn">Contact Support</a>
     </div>
 
     <div class="footer" id="footer">
@@ -364,7 +534,7 @@
 </div>
 
 <script>
-    const i18n = {"en": {"nav_overview": "← PillPilot Overview", "nav_privacy": "Privacy Policy", "nav_terms": "Terms of Use", "title": "PillPilot Support & FAQ", "subtitle": "Frequently Asked Questions and Help Center", "cat1": "💊 Medication Management & Safety", "q1_1": "Does PillPilot provide medical advice?", "a1_1": "<strong>No.</strong> PillPilot is an organizational tool designed to help you remember and track medication schedules. It does not provide medical diagnoses, treatment instructions, or drug interaction checks. Always follow the advice of your licensed doctor or pharmacist.", "q1_2": "How does AI Medication Label Scanning work?", "a1_2": "You can capture a photo of a medication box, pharmacy dispensing label, or prescription bottle. PillPilot's vision engine extracts the drug name, strength, dosage form, and directions.<div class=\"tip-box\"><strong>Important:</strong> Always review and verify extracted details before tapping Save.</div>", "q1_3": "How does Voice Intake work?", "a1_3": "You can tap the microphone button to dictate instructions (e.g. <em>\"Take 500mg Amoxicillin every 8 hours after meals\"</em>). PillPilot transcribes your voice on-device and organizes it into a reminder plan.", "q1_4": "Can I manage inventory and low-stock warnings?", "a1_4": "Yes! When adding or editing a medication, you can set your current stock count and unit. As you log doses, PillPilot automatically updates your inventory and alerts you when it is time to refill.", "cat2": "⏰ Reminders, Alarms & Live Activities", "q2_1": "How do Strong Reminders and Alarms work?", "q2_2": "Why did I miss a medication reminder?", "a2_1": "PillPilot supports both gentle standard notifications and <strong>Strong Alarms</strong> (via iOS AlarmKit / Critical Reminders). Strong Reminders ensure critical doses are not missed even when your phone is in silent or Focus mode (when permitted).", "a2_2": "Please verify the following iOS settings:<ol><li>Open iOS <strong>Settings &gt; Notifications &gt; PillPilot</strong> and ensure <em>Allow Notifications</em> and <em>Time Sensitive Notifications</em> are enabled.</li><li>If you use Focus Modes (e.g. Sleep or Do Not Disturb), add PillPilot to the <strong>Allowed Apps</strong> list.</li><li>Ensure your device is not completely powered off or out of battery.</li></ol>", "q2_3": "How do Dynamic Island & Lock Screen Live Activities work?", "a2_3": "When a scheduled dose window approaches, PillPilot can display an active countdown timer on your iPhone's Dynamic Island and Lock Screen, letting you log intake with a single tap.", "cat3": "🔒 Privacy & App Lock", "q3_1": "Is my medical data stored privately?", "a3_1": "<strong>Yes, absolutely.</strong> Your medication records are stored locally on your device in your private database. We do not operate advertising trackers or sell your personal data.", "q3_2": "How do I lock PillPilot with Face ID or Passcode?", "a3_2": "Open PillPilot, navigate to <strong>Settings &gt; App Lock</strong>, and toggle on <em>Enable Face ID / Passcode</em>. Once enabled, biometric verification will be required whenever the app is opened.", "cat4": "☁️ iCloud Sync & Backup", "q4_1": "How do I sync my medication data across devices?", "a4_1": "Ensure you are logged into the same Apple ID on both devices and that <strong>iCloud Drive</strong> is enabled in iOS Settings. PillPilot uses Apple's CloudKit to seamlessly sync your records across your iPhone and iPad.", "q4_2": "How do I restore my data if I switch to a new phone?", "a4_2": "When you log into your new iPhone with your existing Apple ID and install PillPilot, your iCloud synced medication plans and logs will download automatically.", "cat5": "💎 Subscriptions & Purchases", "q5_1": "How do I restore my PillPilot Pro purchase?", "a5_1": "If you reinstalled the app or switched devices:<ol><li>Open PillPilot and go to <strong>Settings &gt; PillPilot Pro</strong>.</li><li>Tap <strong>Restore Purchases</strong>.</li><li>Ensure you are signed in with the Apple ID used for the original purchase.</li></ol>", "q5_2": "How do I cancel or manage my subscription?", "a5_2": "Subscriptions are managed directly by Apple:<ol><li>Open the iOS <strong>Settings</strong> app.</li><li>Tap your <strong>Apple Account Name</strong> at the top.</li><li>Tap <strong>Subscriptions</strong>.</li><li>Select <strong>PillPilot</strong> and tap <em>Cancel Subscription</em>.</li></ol>", "q5_3": "Does PillPilot Pro support Family Sharing?", "a5_3": "Yes! Non-consumable and eligible Pro subscription tiers support Apple Family Sharing. Make sure Family Sharing is enabled under your Apple Account settings.", "contact_title": "Still need assistance?", "contact_sub": "Our support team is here to assist you with any questions or technical issues.", "contact_btn": "Contact Support", "footer": "&copy; 2026 GL Technologies. All rights reserved."}, "zh-Hans": {"nav_overview": "← PillPilot 概览", "nav_privacy": "隐私政策", "nav_terms": "服务条款", "title": "PillPilot 支持与常见问题 (FAQ)", "subtitle": "常见问题解答与技术支持中心", "cat1": "💊 用药管理与安全", "q1_1": "PillPilot 提供专业的医疗或用药建议吗？", "a1_1": "<strong>不提供。</strong>PillPilot 是一款帮助您规划、记录用药日程并提供提醒的辅助工具。本应用不提供医疗诊断、处方调整或药物相互作用审核。请务必遵循执业医师或药师的医嘱。", "q1_2": "AI 药盒及处方标签扫描是如何工作的？", "a1_2": "您可以拍摄药盒包装、处方签或药瓶标签。PillPilot 视觉引擎会自动提取药品名、规格剂量、用法及服用频次。<div class=\"tip-box\"><strong>重要提醒：</strong>在点击保存前，请务必核对并确认识别结果。</div>", "q1_3": "语音快速录入功能如何使用？", "a1_3": "点击麦克风按钮直接说出服药安排（如：<em>“阿莫西林每次500毫克，每天三次饭后服用”</em>），系统将在端侧完成实时听写并自动生成规范的提醒计划。", "q1_4": "支持药品库存追踪与低库存预警吗？", "a1_4": "支持！在添加或编辑药品时可输入当前库存量与包装单位。随着您日常服药打卡，系统会自动扣减库存，并在余量不足时提醒您及时补药。", "cat2": "⏰ 提醒、强提醒闹钟与实时活动", "q2_1": "强提醒闹钟（Strong Reminders）是如何工作的？", "a2_1": "PillPilot 除了提供标准通知外，还支持基于 iOS AlarmKit 的<strong>强提醒闹钟</strong>。强提醒可在允许的情况下穿透静音与部分专注模式，确保重要用药不被遗漏。", "q2_2": "为什么有时候没有收到服药提醒？", "a2_2": "请排查以下系统设置：<ol><li>进入 iOS <strong>设置 &gt; 通知 &gt; PillPilot</strong>，确保已开启<em>“允许通知”</em>和<em>“即时通知（Time Sensitive）”</em>。</li><li>若使用了睡眠模式或专注模式，请将 PillPilot 加入<strong>“允许的 App”</strong>白名单。</li><li>确保手机未处于完全关机或电量耗尽状态。</li></ol>", "q2_3": "灵动岛与锁屏实时活动（Live Activities）如何运作？", "a2_3": "在临近用药时间窗时，PillPilot 可在 iPhone 灵动岛和锁屏上呈现倒计时卡片，让您无需解锁手机即可一键快速完成服药打卡。", "cat3": "🔒 隐私保护与 Face ID 应用锁", "q3_1": "我的用药记录是否会被上传或泄露？", "a3_1": "<strong>绝对安全。</strong>您的所有用药数据默认仅保存在本地设备数据库中。我们不植入任何广告追踪代码，绝不买卖用户个人隐私数据。", "q3_2": "如何开启 Face ID / 密码锁定？", "a3_2": "打开 PillPilot，进入 <strong>设置 &gt; 应用锁（App Lock）</strong>，开启 <em>启用面容 ID / 密码</em>。开启后，每次切换或重新打开应用均需生物认证。", "cat4": "☁️ iCloud 跨设备同步与数据备份", "q4_1": "如何在 iPhone 和 iPad 之间同步数据？", "a4_1": "确保两台设备登录了相同的 Apple ID，并在系统设置中开启了 <strong>iCloud 云盘</strong>。PillPilot 将通过 Apple CloudKit 自动在后台完成加密同步。", "q4_2": "更换新手机后如何恢复用药记录？", "a4_2": "在新手机上登录原有 Apple ID 并下载 PillPilot，应用会自动从您的个人 iCloud 空间恢复所有历史数据与服药计划。", "cat5": "💎 会员订阅与购买恢复", "q5_1": "重新安装后如何恢复已购买的 Pro 会员？", "a5_1": "若您更换了设备或重装了应用：<ol><li>打开 PillPilot，进入 <strong>设置 &gt; PillPilot Pro</strong>。</li><li>点击 <strong>恢复购买（Restore Purchases）</strong>。</li><li>确保当前登录的 Apple ID 与购买时的账号一致。</li></ol>", "q5_2": "如何取消或管理我的订阅？", "a5_2": "订阅由 Apple 统一管理：<ol><li>打开 iPhone <strong>设置</strong>。</li><li>轻点顶部的 <strong>Apple 账户名称</strong>。</li><li>轻点 <strong>订阅（Subscriptions）</strong>。</li><li>找到 <strong>PillPilot</strong> 并点击 <em>取消订阅</em>。</li></ol>", "q5_3": "PillPilot Pro 支持家人共享（Family Sharing）吗？", "a5_3": "支持！支持家人共享的 Pro 订阅方案可与您的家庭群组成员共享，请在 Apple 账户设置中确认已开启家人共享购买项。", "contact_title": "仍需协助？", "contact_sub": "我们的技术支持团队随时为您解答疑问与处理反馈。", "contact_btn": "联系客服支持", "footer": "&copy; 2026 GL Technologies. 保留所有权利。"}, "zh-Hant": {"nav_overview": "← PillPilot 概覽", "nav_privacy": "隱私權政策", "nav_terms": "服務條款", "title": "PillPilot 支援與常見問題 (FAQ)", "subtitle": "常見問題解答與技術支援中心", "cat1": "💊 用藥管理與安全", "q1_1": "PillPilot 提供專業醫療或用藥建議嗎？", "a1_1": "<strong>不提供。</strong>PillPilot 僅為用藥排程與提醒輔助工具，不提供醫療診斷或處方建議。請務必遵照醫師或藥師指示。", "q1_2": "AI 藥品標籤掃描如何運作？", "a1_2": "您可拍攝藥盒、處方箋或藥瓶標籤，系統自動提取藥名、劑量與服用頻率。<div class=\"tip-box\"><strong>重要提醒：</strong>儲存前請務必確認識別內容。</div>", "q1_3": "語音快速輸入如何使用？", "a1_3": "點擊麥克風說出用藥安排，系統於端側即時轉譯並建立排程。", "q1_4": "支援庫存追蹤與低庫存警示嗎？", "a1_4": "支援！記錄服藥後系統自動扣減庫存並提醒補藥。", "cat2": "⏰ 提醒、強提醒鬧鐘與即時動態", "q2_1": "強提醒鬧鐘如何運作？", "a2_1": "支援基於 iOS AlarmKit 的強提醒鬧鐘，可在允許情況下穿透靜音確保服藥。", "q2_2": "為何未收到服藥提醒？", "a2_2": "請檢查 iOS <strong>設定 &gt; 通知 &gt; PillPilot</strong> 已開啟通知與即時通知，並於專注模式中加入允許名單。", "q2_3": "動態島與即時動態如何顯示？", "a2_3": "用藥時間接近時於動態島及鎖定畫面顯示倒數卡片，可一鍵記錄。", "cat3": "🔒 隱私與 Face ID 鎖定", "q3_1": "用藥記錄安全嗎？", "a3_1": "<strong>絕對安全。</strong>所有資料預設僅儲存於您的本機裝置，絕不販售個人隱私。", "q3_2": "如何啟用 Face ID 應用鎖？", "a3_2": "至 PillPilot <strong>設定 &gt; 應用程式鎖定</strong> 啟用即可。", "cat4": "☁️ iCloud 跨裝置同步", "q4_1": "如何跨裝置同步？", "a4_1": "兩台裝置登入相同 Apple ID 並開啟 iCloud 雲碟即可自動加密同步。", "q4_2": "換新機如何還原？", "a4_2": "登入相同 Apple ID 安裝後自動從 iCloud 還原。", "cat5": "💎 訂閱與購買還原", "q5_1": "如何還原 Pro 會員？", "a5_1": "至 <strong>設定 &gt; PillPilot Pro</strong> 點擊 <strong>還原購買</strong> 即可。", "q5_2": "如何取消訂閱？", "a5_2": "至 iOS <strong>設定 &gt; [您的 Apple 帳號] &gt; 訂閱項目</strong> 進行取消。", "q5_3": "支援家人共享嗎？", "a5_3": "支援！符合條件之方案支援 Apple 家人共享。", "contact_title": "需要協助？", "contact_sub": "支援團隊隨時為您提供協助與解答。", "contact_btn": "聯絡客戶支援", "footer": "&copy; 2026 GL Technologies. 版權所有。"}, "ja": {"nav_overview": "← PillPilot 概要", "nav_privacy": "プライバシーポリシー", "nav_terms": "利用規約", "title": "PillPilot サポート＆FAQ", "subtitle": "よくあるご質問とお問い合わせ窓口", "cat1": "💊 服薬管理と安全性", "q1_1": "PillPilot は医療アドバイスを提供しますか？", "a1_1": "<strong>いいえ。</strong>PillPilot は服薬スケジュールの整理とリマインダーを目的とした補助ツールです。医師や薬剤師の指示に必ず従ってください。", "q1_2": "AI 薬ラベルスキャンはどのように機能しますか？", "a1_2": "薬の箱や処方箋を撮影すると、薬品名や服用頻度を自動抽出します。<div class=\"tip-box\"><strong>重要：</strong>保存前に内容を必ずご確認ください。</div>", "q1_3": "音声入力の使い方", "a1_3": "マイクボタンをタップして服用指示を話すだけで、端末内でスケジュールに変換されます。", "q1_4": "残薬・在庫の管理はできますか？", "a1_4": "はい！服用を記録するたびに在庫が自動減算され、残数が少なくなると補充通知が届きます。", "cat2": "⏰ リマインダー・アラーム・ライブアクティビティ", "q2_1": "強力アラームとは何ですか？", "a2_1": "iOS AlarmKit を利用し、マナーモード時でも確実に通知を受け取れるアラーム機能です。", "q2_2": "リマインダーが届かない場合は？", "a2_2": "iOS <strong>設定 &gt; 通知 &gt; PillPilot</strong> で「通知を許可」「即時通知」が有効かご確認ください。", "q2_3": "Dynamic Island とロック画面の表示", "a2_3": "服用予定時刻が近づくとカウントダウンが表示され、ワンタップで服用完了できます。", "cat3": "🔒 プライバシーと Face ID ロック", "q3_1": "服薬データは安全ですか？", "a3_1": "<strong>完全に安全です。</strong>すべてのデータは端末ローカルに保存され、外部に販売されることはありません。", "q3_2": "Face ID ロックの設定方法", "a3_2": "アプリ内の <strong>設定 &gt; アプリロック</strong> から有効にできます。", "cat4": "☁️ iCloud 同期とバックアップ", "q4_1": "複数端末での同期方法", "a4_1": "同じ Apple ID でサインインし iCloud ドライブを有効にすると自動同期されます。", "q4_2": "機種変更時のデータ移行", "a4_2": "新しい端末で同じ Apple ID にサインインすると自動的にデータが復元されます。", "cat5": "💎 有料プランと定期購読", "q5_1": "Pro プランの購入復元方法", "a5_1": "アプリ内 <strong>設定 &gt; PillPilot Pro</strong> の「購入の復元」をタップしてください。", "q5_2": "定期購読の解約方法", "a5_2": "iOS <strong>設定 &gt; [Apple アカウント] &gt; サブスクリプション</strong> から解約できます。", "q5_3": "ファミリー共有に対応していますか？", "a5_3": "はい！対象の Pro プランはファミリー共有に対応しています。", "contact_title": "ご不明な点はお問い合わせください", "contact_sub": "サポートチームが迅速に対応いたします。", "contact_btn": "サポートに問い合わせる", "footer": "&copy; 2026 GL Technologies. All rights reserved."}, "es": {"nav_overview": "← Resumen de PillPilot", "nav_privacy": "Política de Privacidad", "nav_terms": "Términos de Uso", "title": "Centro de Ayuda y FAQ de PillPilot", "subtitle": "Preguntas Frecuentes y Soporte Técnico", "cat1": "💊 Gestión de Medicación y Seguridad", "q1_1": "¿PillPilot proporciona asesoramiento médico?", "a1_1": "<strong>No.</strong> PillPilot es una herramienta de organización. Consulte siempre a su médico.", "q1_2": "¿Cómo funciona el escaneo por IA?", "a1_2": "Capture una foto de la caja o receta. El sistema extraerá los datos.<div class=\"tip-box\"><strong>Importante:</strong> Verifique los datos antes de guardar.</div>", "q1_3": "¿Cómo usar la entrada por voz?", "a1_3": "Dicte sus tomas y la app las transcribirá en su dispositivo.", "q1_4": "¿Permite controlar el inventario?", "a1_4": "Sí, el inventario se descuenta automáticamente con cada toma.", "cat2": "⏰ Recordatorios, Alarmas y Actividades en Vivo", "q2_1": "¿Cómo funcionan las alarmas fuertes?", "a2_1": "Utilizan AlarmKit de iOS para sonar incluso en silencio cuando esté permitido.", "q2_2": "¿Por qué no recibí un recordatorio?", "a2_2": "Revise Ajustes de iOS > Notificaciones > PillPilot y asegúrese de permitir avisos inmediatos.", "q2_3": "Actividades en Vivo en Dynamic Island", "a2_3": "Muestra la cuenta regresiva en pantalla de bloqueo y Dynamic Island.", "cat3": "🔒 Privacidad y Bloqueo con Face ID", "q3_1": "¿Mis datos son privados?", "a3_1": "<strong>Sí.</strong> Todo se almacena localmente en su dispositivo.", "q3_2": "¿Cómo activar Face ID?", "a3_2": "En Ajustes de PillPilot > Bloqueo de App.", "cat4": "☁️ Sincronización iCloud", "q4_1": "¿Cómo sincronizar dispositivos?", "a4_1": "Inicie sesión con el mismo Apple ID y active iCloud Drive.", "q4_2": "¿Cómo restaurar en un nuevo iPhone?", "a4_2": "Se restaurará automáticamente desde iCloud.", "cat5": "💎 Suscripciones y Pro", "q5_1": "¿Cómo restaurar compras Pro?", "a5_1": "En Ajustes de la app > PillPilot Pro > Restaurar compras.", "q5_2": "¿Cómo cancelar la suscripción?", "a5_2": "En Ajustes de iOS > Cuenta Apple > Suscripciones.", "q5_3": "¿Es compatible con En Familia?", "a5_3": "Sí, compatible con Compartir en Familia de Apple.", "contact_title": "¿Necesita más ayuda?", "contact_sub": "Nuestro equipo de soporte está listo para ayudarle.", "contact_btn": "Contactar Soporte", "footer": "&copy; 2026 GL Technologies. Todos los derechos reservados."}, "de": {"nav_overview": "← PillPilot Übersicht", "nav_privacy": "Datenschutzerklärung", "nav_terms": "Nutzungsbedingungen", "title": "PillPilot Support & FAQ", "subtitle": "Häufig gestellte Fragen & Hilfe-Center", "cat1": "💊 Medikamentenverwaltung & Sicherheit", "q1_1": "Bietet PillPilot medizinische Beratung?", "a1_1": "<strong>Nein.</strong> PillPilot dient der Organisation. Halten Sie stets Rücksprache mit Ihrem Arzt.", "q1_2": "Wie funktioniert das KI-Scannen?", "a1_2": "Scannen Sie die Verpackung oder das Rezept.<div class=\"tip-box\"><strong>Wichtig:</strong> Daten vor dem Speichern immer überprüfen.</div>", "q1_3": "Spracheingabe", "a1_3": "Diktieren Sie Pläne einfach per Spracheingabe auf dem Gerät.", "q1_4": "Bestandsverwaltung", "a1_4": "Der Vorrat wird bei jeder dokumentierten Einnahme automatisch reduziert.", "cat2": "⏰ Alarme & Live-Aktivitäten", "q2_1": "Starke Alarme", "a2_1": "Nutzung von iOS AlarmKit für zuverlässige Wecktöne.", "q2_2": "Erinnerung verpasst?", "a2_2": "Prüfen Sie iOS-Einstellungen > Mitteilungen > PillPilot.", "q2_3": "Live-Aktivitäten", "a2_3": "Countdown-Anzeige auf Dynamic Island und Sperrbildschirm.", "cat3": "🔒 Datenschutz & App-Sperre", "q3_1": "Datenschutz", "a3_1": "<strong>Vollständig lokal.</strong> Ihre Daten bleiben auf Ihrem Gerät.", "q3_2": "Face ID Sperre", "a3_2": "Aktivierbar unter Einstellungen > App-Sperre.", "cat4": "☁️ iCloud Sync", "q4_1": "Synchronisation", "a4_1": "Automatisch über denselben Apple-Account und iCloud Drive.", "q4_2": "Gerätewechsel", "a4_2": "Automatische Wiederherstellung aus iCloud.", "cat5": "💎 Abonnements & Käufe", "q5_1": "Kauf wiederherstellen", "a5_1": "Unter Einstellungen > PillPilot Pro > Käufe wiederherstellen.", "q5_2": "Abo kündigen", "a5_2": "In den iOS-Einstellungen > Apple-Account > Abonnements.", "q5_3": "Familienfreigabe", "a5_3": "Ja, Apple-Familienfreigabe wird unterstützt.", "contact_title": "Haben Sie weitere Fragen?", "contact_sub": "Unser Support-Team hilft Ihnen gerne weiter.", "contact_btn": "Support kontaktieren", "footer": "&copy; 2026 GL Technologies. Alle Rechte vorbehalten."}, "fr": {"nav_overview": "← Aperçu de PillPilot", "nav_privacy": "Politique de Confidentialité", "nav_terms": "Conditions d'Utilisation", "title": "Centre d'Aide & FAQ PillPilot", "subtitle": "Foire Aux Questions et Support Client", "cat1": "💊 Gestion des Traitements & Sécurité", "q1_1": "PillPilot fournit-il un avis médical ?", "a1_1": "<strong>Non.</strong> PillPilot est un outil d'organisation. Consultez toujours votre médecin.", "q1_2": "Comment fonctionne le scan IA ?", "a1_2": "Photographiez l'emballage ou l'ordonnance pour en extraire les données.<div class=\"tip-box\"><strong>Important :</strong> Vérifiez toujours les données avant de valider.</div>", "q1_3": "Saisie vocale", "a1_3": "Dictez vos prises directement via la reconnaissance vocale de l'appareil.", "q1_4": "Suivi des stocks", "a1_4": "Mise à jour automatique des stocks à chaque prise enregistrée.", "cat2": "⏰ Rappels, Alarmes & Activités en Direct", "q2_1": "Alarmes renforcées", "a2_1": "Utilisation d'AlarmKit iOS pour des alertes sonores fiables.", "q2_2": "Rappel non reçu ?", "a2_2": "Vérifiez Réglages iOS > Notifications > PillPilot.", "q2_3": "Activités en Direct", "a2_3": "Compte à rebours dynamique sur l'écran verrouillé et la Dynamic Island.", "cat3": "🔒 Confidentialité & Verrouillage Face ID", "q3_1": "Données privées", "a3_1": "<strong>Oui.</strong> Toutes les données restent stockées localement sur votre appareil.", "q3_2": "Activer Face ID", "a3_2": "Dans Réglages de l'app > Verrouillage de l'application.", "cat4": "☁️ Synchronisation iCloud", "q4_1": "Synchronisation multi-appareils", "a4_1": "Automatique via le même identifiant Apple et iCloud Drive.", "q4_2": "Nouvel appareil", "a4_2": "Restauration automatique depuis iCloud.", "cat5": "💎 Abonnements Pro", "q5_1": "Restaurer les achats", "a5_1": "Dans Réglages > PillPilot Pro > Restaurer les achats.", "q5_2": "Résilier l'abonnement", "a5_2": "Dans Réglages iOS > Identifiant Apple > Abonnements.", "q5_3": "Partage familial", "a5_3": "Oui, compatible avec le Partage familial Apple.", "contact_title": "Besoin d'aide supplémentaire ?", "contact_sub": "Notre équipe d'assistance est à votre disposition.", "contact_btn": "Contacter le Support", "footer": "&copy; 2026 GL Technologies. Tous droits réservés."}};
+    const i18n = {"en": {"nav_overview": "← Pill Reminder Overview", "nav_privacy": "Privacy Policy", "nav_terms": "Terms of Use", "title": "Pill Reminder Support & FAQ", "subtitle": "Frequently Asked Questions and Help Center", "cat1": "💊 Medication Management & Safety", "q1_1": "Does Pill Reminder provide medical advice?", "a1_1": "<strong>No.</strong> Pill Reminder is an organizational tool designed to help you remember and track medication schedules. It does not provide medical diagnoses, treatment instructions, or drug interaction checks. Always follow the advice of your licensed doctor or pharmacist.", "q1_2": "How does AI Medication Label Scanning work?", "a1_2": "You can capture a photo of a medication box, pharmacy dispensing label, or prescription bottle. Pill Reminder's vision engine extracts the drug name, strength, dosage form, and directions.<div class=\"tip-box\"><strong>Important:</strong> Always review and verify extracted details before tapping Save.</div>", "q1_3": "How does Voice Intake work?", "a1_3": "You can tap the microphone button to dictate instructions (e.g. <em>\"Take 500mg Amoxicillin every 8 hours after meals\"</em>). Pill Reminder transcribes your voice on-device and organizes it into a reminder plan.", "q1_4": "Can I manage inventory and low-stock warnings?", "a1_4": "Yes! When adding or editing a medication, you can set your current stock count and unit. As you log doses, Pill Reminder automatically updates your inventory and alerts you when it is time to refill.", "cat2": "⏰ Reminders, Alarms & Live Activities", "q2_1": "How do Strong Reminders and Alarms work?", "q2_2": "Why did I miss a medication reminder?", "a2_1": "Pill Reminder supports both gentle standard notifications and <strong>Strong Alarms</strong> (via iOS AlarmKit / Critical Reminders). Strong Reminders ensure critical doses are not missed even when your phone is in silent or Focus mode (when permitted).", "a2_2": "Please verify the following iOS settings:<ol><li>Open iOS <strong>Settings &gt; Notifications &gt; Pill Reminder</strong> and ensure <em>Allow Notifications</em> and <em>Time Sensitive Notifications</em> are enabled.</li><li>If you use Focus Modes (e.g. Sleep or Do Not Disturb), add Pill Reminder to the <strong>Allowed Apps</strong> list.</li><li>Ensure your device is not completely powered off or out of battery.</li></ol>", "q2_3": "How do Dynamic Island & Lock Screen Live Activities work?", "a2_3": "When a scheduled dose window approaches, Pill Reminder can display an active countdown timer on your iPhone's Dynamic Island and Lock Screen, letting you log intake with a single tap.", "cat3": "🔒 Privacy & App Lock", "q3_1": "Is my medical data stored privately?", "a3_1": "<strong>Yes, absolutely.</strong> Your medication records are stored locally on your device in your private database. We do not operate advertising trackers or sell your personal data.", "q3_2": "How do I lock Pill Reminder with Face ID or Passcode?", "a3_2": "Open Pill Reminder, navigate to <strong>Settings &gt; App Lock</strong>, and toggle on <em>Enable Face ID / Passcode</em>. Once enabled, biometric verification will be required whenever the app is opened.", "cat4": "☁️ iCloud Sync & Backup", "q4_1": "How do I sync my medication data across devices?", "a4_1": "Ensure you are logged into the same Apple ID on both devices and that <strong>iCloud Drive</strong> is enabled in iOS Settings. Pill Reminder uses Apple's CloudKit to seamlessly sync your records across your iPhone and iPad.", "q4_2": "How do I restore my data if I switch to a new phone?", "a4_2": "When you log into your new iPhone with your existing Apple ID and install Pill Reminder, your iCloud synced medication plans and logs will download automatically.", "cat5": "💎 Subscriptions & Purchases", "q5_1": "How do I restore my Pill Reminder Pro purchase?", "a5_1": "If you reinstalled the app or switched devices:<ol><li>Open Pill Reminder and go to <strong>Settings &gt; Pill Reminder Pro</strong>.</li><li>Tap <strong>Restore Purchases</strong>.</li><li>Ensure you are signed in with the Apple ID used for the original purchase.</li></ol>", "q5_2": "How do I cancel or manage my subscription?", "a5_2": "Subscriptions are managed directly by Apple:<ol><li>Open the iOS <strong>Settings</strong> app.</li><li>Tap your <strong>Apple Account Name</strong> at the top.</li><li>Tap <strong>Subscriptions</strong>.</li><li>Select <strong>Pill Reminder</strong> and tap <em>Cancel Subscription</em>.</li></ol>", "q5_3": "Does Pill Reminder Pro support Family Sharing?", "a5_3": "Yes! Non-consumable and eligible Pro subscription tiers support Apple Family Sharing. Make sure Family Sharing is enabled under your Apple Account settings.", "contact_title": "Still need assistance?", "contact_sub": "Our support team is here to assist you with any questions or technical issues.", "contact_btn": "Contact Support", "footer": "&copy; 2026 GL Technologies. All rights reserved."}, "zh-Hans": {"nav_overview": "← Pill Reminder 概览", "nav_privacy": "隐私政策", "nav_terms": "服务条款", "title": "Pill Reminder 支持与常见问题 (FAQ)", "subtitle": "常见问题解答与技术支持中心", "cat1": "💊 用药管理与安全", "q1_1": "Pill Reminder 提供专业的医疗或用药建议吗？", "a1_1": "<strong>不提供。</strong>Pill Reminder 是一款帮助您规划、记录用药日程并提供提醒的辅助工具。本应用不提供医疗诊断、处方调整或药物相互作用审核。请务必遵循执业医师或药师的医嘱。", "q1_2": "AI 药盒及处方标签扫描是如何工作的？", "a1_2": "您可以拍摄药盒包装、处方签或药瓶标签。Pill Reminder 视觉引擎会自动提取药品名、规格剂量、用法及服用频次。<div class=\"tip-box\"><strong>重要提醒：</strong>在点击保存前，请务必核对并确认识别结果。</div>", "q1_3": "语音快速录入功能如何使用？", "a1_3": "点击麦克风按钮直接说出服药安排（如：<em>“阿莫西林每次500毫克，每天三次饭后服用”</em>），系统将在端侧完成实时听写并自动生成规范的提醒计划。", "q1_4": "支持药品库存追踪与低库存预警吗？", "a1_4": "支持！在添加或编辑药品时可输入当前库存量与包装单位。随着您日常服药打卡，系统会自动扣减库存，并在余量不足时提醒您及时补药。", "cat2": "⏰ 提醒、强提醒闹钟与实时活动", "q2_1": "强提醒闹钟（Strong Reminders）是如何工作的？", "a2_1": "Pill Reminder 除了提供标准通知外，还支持基于 iOS AlarmKit 的<strong>强提醒闹钟</strong>。强提醒可在允许的情况下穿透静音与部分专注模式，确保重要用药不被遗漏。", "q2_2": "为什么有时候没有收到服药提醒？", "a2_2": "请排查以下系统设置：<ol><li>进入 iOS <strong>设置 &gt; 通知 &gt; Pill Reminder</strong>，确保已开启<em>“允许通知”</em>和<em>“即时通知（Time Sensitive）”</em>。</li><li>若使用了睡眠模式或专注模式，请将 Pill Reminder 加入<strong>“允许的 App”</strong>白名单。</li><li>确保手机未处于完全关机或电量耗尽状态。</li></ol>", "q2_3": "灵动岛与锁屏实时活动（Live Activities）如何运作？", "a2_3": "在临近用药时间窗时，Pill Reminder 可在 iPhone 灵动岛和锁屏上呈现倒计时卡片，让您无需解锁手机即可一键快速完成服药打卡。", "cat3": "🔒 隐私保护与 Face ID 应用锁", "q3_1": "我的用药记录是否会被上传或泄露？", "a3_1": "<strong>绝对安全。</strong>您的所有用药数据默认仅保存在本地设备数据库中。我们不植入任何广告追踪代码，绝不买卖用户个人隐私数据。", "q3_2": "如何开启 Face ID / 密码锁定？", "a3_2": "打开 Pill Reminder，进入 <strong>设置 &gt; 应用锁（App Lock）</strong>，开启 <em>启用面容 ID / 密码</em>。开启后，每次切换或重新打开应用均需生物认证。", "cat4": "☁️ iCloud 跨设备同步与数据备份", "q4_1": "如何在 iPhone 和 iPad 之间同步数据？", "a4_1": "确保两台设备登录了相同的 Apple ID，并在系统设置中开启了 <strong>iCloud 云盘</strong>。Pill Reminder 将通过 Apple CloudKit 自动在后台完成加密同步。", "q4_2": "更换新手机后如何恢复用药记录？", "a4_2": "在新手机上登录原有 Apple ID 并下载 Pill Reminder，应用会自动从您的个人 iCloud 空间恢复所有历史数据与服药计划。", "cat5": "💎 会员订阅与购买恢复", "q5_1": "重新安装后如何恢复已购买的 Pro 会员？", "a5_1": "若您更换了设备或重装了应用：<ol><li>打开 Pill Reminder，进入 <strong>设置 &gt; Pill Reminder Pro</strong>。</li><li>点击 <strong>恢复购买（Restore Purchases）</strong>。</li><li>确保当前登录的 Apple ID 与购买时的账号一致。</li></ol>", "q5_2": "如何取消或管理我的订阅？", "a5_2": "订阅由 Apple 统一管理：<ol><li>打开 iPhone <strong>设置</strong>。</li><li>轻点顶部的 <strong>Apple 账户名称</strong>。</li><li>轻点 <strong>订阅（Subscriptions）</strong>。</li><li>找到 <strong>Pill Reminder</strong> 并点击 <em>取消订阅</em>。</li></ol>", "q5_3": "Pill Reminder Pro 支持家人共享（Family Sharing）吗？", "a5_3": "支持！支持家人共享的 Pro 订阅方案可与您的家庭群组成员共享，请在 Apple 账户设置中确认已开启家人共享购买项。", "contact_title": "仍需协助？", "contact_sub": "我们的技术支持团队随时为您解答疑问与处理反馈。", "contact_btn": "联系客服支持", "footer": "&copy; 2026 GL Technologies. 保留所有权利。"}, "zh-Hant": {"nav_overview": "← Pill Reminder 概覽", "nav_privacy": "隱私權政策", "nav_terms": "服務條款", "title": "Pill Reminder 支援與常見問題 (FAQ)", "subtitle": "常見問題解答與技術支援中心", "cat1": "💊 用藥管理與安全", "q1_1": "Pill Reminder 提供專業醫療或用藥建議嗎？", "a1_1": "<strong>不提供。</strong>Pill Reminder 僅為用藥排程與提醒輔助工具，不提供醫療診斷或處方建議。請務必遵照醫師或藥師指示。", "q1_2": "AI 藥品標籤掃描如何運作？", "a1_2": "您可拍攝藥盒、處方箋或藥瓶標籤，系統自動提取藥名、劑量與服用頻率。<div class=\"tip-box\"><strong>重要提醒：</strong>儲存前請務必確認識別內容。</div>", "q1_3": "語音快速輸入如何使用？", "a1_3": "點擊麥克風說出用藥安排，系統於端側即時轉譯並建立排程。", "q1_4": "支援庫存追蹤與低庫存警示嗎？", "a1_4": "支援！記錄服藥後系統自動扣減庫存並提醒補藥。", "cat2": "⏰ 提醒、強提醒鬧鐘與即時動態", "q2_1": "強提醒鬧鐘如何運作？", "a2_1": "支援基於 iOS AlarmKit 的強提醒鬧鐘，可在允許情況下穿透靜音確保服藥。", "q2_2": "為何未收到服藥提醒？", "a2_2": "請檢查 iOS <strong>設定 &gt; 通知 &gt; Pill Reminder</strong> 已開啟通知與即時通知，並於專注模式中加入允許名單。", "q2_3": "動態島與即時動態如何顯示？", "a2_3": "用藥時間接近時於動態島及鎖定畫面顯示倒數卡片，可一鍵記錄。", "cat3": "🔒 隱私與 Face ID 鎖定", "q3_1": "用藥記錄安全嗎？", "a3_1": "<strong>絕對安全。</strong>所有資料預設僅儲存於您的本機裝置，絕不販售個人隱私。", "q3_2": "如何啟用 Face ID 應用鎖？", "a3_2": "至 Pill Reminder <strong>設定 &gt; 應用程式鎖定</strong> 啟用即可。", "cat4": "☁️ iCloud 跨裝置同步", "q4_1": "如何跨裝置同步？", "a4_1": "兩台裝置登入相同 Apple ID 並開啟 iCloud 雲碟即可自動加密同步。", "q4_2": "換新機如何還原？", "a4_2": "登入相同 Apple ID 安裝後自動從 iCloud 還原。", "cat5": "💎 訂閱與購買還原", "q5_1": "如何還原 Pro 會員？", "a5_1": "至 <strong>設定 &gt; Pill Reminder Pro</strong> 點擊 <strong>還原購買</strong> 即可。", "q5_2": "如何取消訂閱？", "a5_2": "至 iOS <strong>設定 &gt; [您的 Apple 帳號] &gt; 訂閱項目</strong> 進行取消。", "q5_3": "支援家人共享嗎？", "a5_3": "支援！符合條件之方案支援 Apple 家人共享。", "contact_title": "需要協助？", "contact_sub": "支援團隊隨時為您提供協助與解答。", "contact_btn": "聯絡客戶支援", "footer": "&copy; 2026 GL Technologies. 版權所有。"}, "ja": {"nav_overview": "← Pill Reminder 概要", "nav_privacy": "プライバシーポリシー", "nav_terms": "利用規約", "title": "Pill Reminder サポート＆FAQ", "subtitle": "よくあるご質問とお問い合わせ窓口", "cat1": "💊 服薬管理と安全性", "q1_1": "Pill Reminder は医療アドバイスを提供しますか？", "a1_1": "<strong>いいえ。</strong>Pill Reminder は服薬スケジュールの整理とリマインダーを目的とした補助ツールです。医師や薬剤師の指示に必ず従ってください。", "q1_2": "AI 薬ラベルスキャンはどのように機能しますか？", "a1_2": "薬の箱や処方箋を撮影すると、薬品名や服用頻度を自動抽出します。<div class=\"tip-box\"><strong>重要：</strong>保存前に内容を必ずご確認ください。</div>", "q1_3": "音声入力の使い方", "a1_3": "マイクボタンをタップして服用指示を話すだけで、端末内でスケジュールに変換されます。", "q1_4": "残薬・在庫の管理はできますか？", "a1_4": "はい！服用を記録するたびに在庫が自動減算され、残数が少なくなると補充通知が届きます。", "cat2": "⏰ リマインダー・アラーム・ライブアクティビティ", "q2_1": "強力アラームとは何ですか？", "a2_1": "iOS AlarmKit を利用し、マナーモード時でも確実に通知を受け取れるアラーム機能です。", "q2_2": "リマインダーが届かない場合は？", "a2_2": "iOS <strong>設定 &gt; 通知 &gt; Pill Reminder</strong> で「通知を許可」「即時通知」が有効かご確認ください。", "q2_3": "Dynamic Island とロック画面の表示", "a2_3": "服用予定時刻が近づくとカウントダウンが表示され、ワンタップで服用完了できます。", "cat3": "🔒 プライバシーと Face ID ロック", "q3_1": "服薬データは安全ですか？", "a3_1": "<strong>完全に安全です。</strong>すべてのデータは端末ローカルに保存され、外部に販売されることはありません。", "q3_2": "Face ID ロックの設定方法", "a3_2": "アプリ内の <strong>設定 &gt; アプリロック</strong> から有効にできます。", "cat4": "☁️ iCloud 同期とバックアップ", "q4_1": "複数端末での同期方法", "a4_1": "同じ Apple ID でサインインし iCloud ドライブを有効にすると自動同期されます。", "q4_2": "機種変更時のデータ移行", "a4_2": "新しい端末で同じ Apple ID にサインインすると自動的にデータが復元されます。", "cat5": "💎 有料プランと定期購読", "q5_1": "Pro プランの購入復元方法", "a5_1": "アプリ内 <strong>設定 &gt; Pill Reminder Pro</strong> の「購入の復元」をタップしてください。", "q5_2": "定期購読の解約方法", "a5_2": "iOS <strong>設定 &gt; [Apple アカウント] &gt; サブスクリプション</strong> から解約できます。", "q5_3": "ファミリー共有に対応していますか？", "a5_3": "はい！対象の Pro プランはファミリー共有に対応しています。", "contact_title": "ご不明な点はお問い合わせください", "contact_sub": "サポートチームが迅速に対応いたします。", "contact_btn": "サポートに問い合わせる", "footer": "&copy; 2026 GL Technologies. All rights reserved."}, "es": {"nav_overview": "← Resumen de Pill Reminder", "nav_privacy": "Política de Privacidad", "nav_terms": "Términos de Uso", "title": "Centro de Ayuda y FAQ de Pill Reminder", "subtitle": "Preguntas Frecuentes y Soporte Técnico", "cat1": "💊 Gestión de Medicación y Seguridad", "q1_1": "¿Pill Reminder proporciona asesoramiento médico?", "a1_1": "<strong>No.</strong> Pill Reminder es una herramienta de organización. Consulte siempre a su médico.", "q1_2": "¿Cómo funciona el escaneo por IA?", "a1_2": "Capture una foto de la caja o receta. El sistema extraerá los datos.<div class=\"tip-box\"><strong>Importante:</strong> Verifique los datos antes de guardar.</div>", "q1_3": "¿Cómo usar la entrada por voz?", "a1_3": "Dicte sus tomas y la app las transcribirá en su dispositivo.", "q1_4": "¿Permite controlar el inventario?", "a1_4": "Sí, el inventario se descuenta automáticamente con cada toma.", "cat2": "⏰ Recordatorios, Alarmas y Actividades en Vivo", "q2_1": "¿Cómo funcionan las alarmas fuertes?", "a2_1": "Utilizan AlarmKit de iOS para sonar incluso en silencio cuando esté permitido.", "q2_2": "¿Por qué no recibí un recordatorio?", "a2_2": "Revise Ajustes de iOS > Notificaciones > Pill Reminder y asegúrese de permitir avisos inmediatos.", "q2_3": "Actividades en Vivo en Dynamic Island", "a2_3": "Muestra la cuenta regresiva en pantalla de bloqueo y Dynamic Island.", "cat3": "🔒 Privacidad y Bloqueo con Face ID", "q3_1": "¿Mis datos son privados?", "a3_1": "<strong>Sí.</strong> Todo se almacena localmente en su dispositivo.", "q3_2": "¿Cómo activar Face ID?", "a3_2": "En Ajustes de Pill Reminder > Bloqueo de App.", "cat4": "☁️ Sincronización iCloud", "q4_1": "¿Cómo sincronizar dispositivos?", "a4_1": "Inicie sesión con el mismo Apple ID y active iCloud Drive.", "q4_2": "¿Cómo restaurar en un nuevo iPhone?", "a4_2": "Se restaurará automáticamente desde iCloud.", "cat5": "💎 Suscripciones y Pro", "q5_1": "¿Cómo restaurar compras Pro?", "a5_1": "En Ajustes de la app > Pill Reminder Pro > Restaurar compras.", "q5_2": "¿Cómo cancelar la suscripción?", "a5_2": "En Ajustes de iOS > Cuenta Apple > Suscripciones.", "q5_3": "¿Es compatible con En Familia?", "a5_3": "Sí, compatible con Compartir en Familia de Apple.", "contact_title": "¿Necesita más ayuda?", "contact_sub": "Nuestro equipo de soporte está listo para ayudarle.", "contact_btn": "Contactar Soporte", "footer": "&copy; 2026 GL Technologies. Todos los derechos reservados."}, "de": {"nav_overview": "← Pill Reminder Übersicht", "nav_privacy": "Datenschutzerklärung", "nav_terms": "Nutzungsbedingungen", "title": "Pill Reminder Support & FAQ", "subtitle": "Häufig gestellte Fragen & Hilfe-Center", "cat1": "💊 Medikamentenverwaltung & Sicherheit", "q1_1": "Bietet Pill Reminder medizinische Beratung?", "a1_1": "<strong>Nein.</strong> Pill Reminder dient der Organisation. Halten Sie stets Rücksprache mit Ihrem Arzt.", "q1_2": "Wie funktioniert das KI-Scannen?", "a1_2": "Scannen Sie die Verpackung oder das Rezept.<div class=\"tip-box\"><strong>Wichtig:</strong> Daten vor dem Speichern immer überprüfen.</div>", "q1_3": "Spracheingabe", "a1_3": "Diktieren Sie Pläne einfach per Spracheingabe auf dem Gerät.", "q1_4": "Bestandsverwaltung", "a1_4": "Der Vorrat wird bei jeder dokumentierten Einnahme automatisch reduziert.", "cat2": "⏰ Alarme & Live-Aktivitäten", "q2_1": "Starke Alarme", "a2_1": "Nutzung von iOS AlarmKit für zuverlässige Wecktöne.", "q2_2": "Erinnerung verpasst?", "a2_2": "Prüfen Sie iOS-Einstellungen > Mitteilungen > Pill Reminder.", "q2_3": "Live-Aktivitäten", "a2_3": "Countdown-Anzeige auf Dynamic Island und Sperrbildschirm.", "cat3": "🔒 Datenschutz & App-Sperre", "q3_1": "Datenschutz", "a3_1": "<strong>Vollständig lokal.</strong> Ihre Daten bleiben auf Ihrem Gerät.", "q3_2": "Face ID Sperre", "a3_2": "Aktivierbar unter Einstellungen > App-Sperre.", "cat4": "☁️ iCloud Sync", "q4_1": "Synchronisation", "a4_1": "Automatisch über denselben Apple-Account und iCloud Drive.", "q4_2": "Gerätewechsel", "a4_2": "Automatische Wiederherstellung aus iCloud.", "cat5": "💎 Abonnements & Käufe", "q5_1": "Kauf wiederherstellen", "a5_1": "Unter Einstellungen > Pill Reminder Pro > Käufe wiederherstellen.", "q5_2": "Abo kündigen", "a5_2": "In den iOS-Einstellungen > Apple-Account > Abonnements.", "q5_3": "Familienfreigabe", "a5_3": "Ja, Apple-Familienfreigabe wird unterstützt.", "contact_title": "Haben Sie weitere Fragen?", "contact_sub": "Unser Support-Team hilft Ihnen gerne weiter.", "contact_btn": "Support kontaktieren", "footer": "&copy; 2026 GL Technologies. Alle Rechte vorbehalten."}, "fr": {"nav_overview": "← Aperçu de Pill Reminder", "nav_privacy": "Politique de Confidentialité", "nav_terms": "Conditions d'Utilisation", "title": "Centre d'Aide & FAQ Pill Reminder", "subtitle": "Foire Aux Questions et Support Client", "cat1": "💊 Gestion des Traitements & Sécurité", "q1_1": "Pill Reminder fournit-il un avis médical ?", "a1_1": "<strong>Non.</strong> Pill Reminder est un outil d'organisation. Consultez toujours votre médecin.", "q1_2": "Comment fonctionne le scan IA ?", "a1_2": "Photographiez l'emballage ou l'ordonnance pour en extraire les données.<div class=\"tip-box\"><strong>Important :</strong> Vérifiez toujours les données avant de valider.</div>", "q1_3": "Saisie vocale", "a1_3": "Dictez vos prises directement via la reconnaissance vocale de l'appareil.", "q1_4": "Suivi des stocks", "a1_4": "Mise à jour automatique des stocks à chaque prise enregistrée.", "cat2": "⏰ Rappels, Alarmes & Activités en Direct", "q2_1": "Alarmes renforcées", "a2_1": "Utilisation d'AlarmKit iOS pour des alertes sonores fiables.", "q2_2": "Rappel non reçu ?", "a2_2": "Vérifiez Réglages iOS > Notifications > Pill Reminder.", "q2_3": "Activités en Direct", "a2_3": "Compte à rebours dynamique sur l'écran verrouillé et la Dynamic Island.", "cat3": "🔒 Confidentialité & Verrouillage Face ID", "q3_1": "Données privées", "a3_1": "<strong>Oui.</strong> Toutes les données restent stockées localement sur votre appareil.", "q3_2": "Activer Face ID", "a3_2": "Dans Réglages de l'app > Verrouillage de l'application.", "cat4": "☁️ Synchronisation iCloud", "q4_1": "Synchronisation multi-appareils", "a4_1": "Automatique via le même identifiant Apple et iCloud Drive.", "q4_2": "Nouvel appareil", "a4_2": "Restauration automatique depuis iCloud.", "cat5": "💎 Abonnements Pro", "q5_1": "Restaurer les achats", "a5_1": "Dans Réglages > Pill Reminder Pro > Restaurer les achats.", "q5_2": "Résilier l'abonnement", "a5_2": "Dans Réglages iOS > Identifiant Apple > Abonnements.", "q5_3": "Partage familial", "a5_3": "Oui, compatible avec le Partage familial Apple.", "contact_title": "Besoin d'aide supplémentaire ?", "contact_sub": "Notre équipe d'assistance est à votre disposition.", "contact_btn": "Contacter le Support", "footer": "&copy; 2026 GL Technologies. Tous droits réservés."}};
 
     function getInitialLanguage() {
         try {
@@ -372,7 +542,7 @@
             const paramLang = urlParams.get('lang');
             if (paramLang && i18n[paramLang]) return paramLang;
 
-            const saved = localStorage.getItem('pillpilot_lang');
+            const saved = localStorage.getItem('pill_reminder_lang');
             if (saved && i18n[saved]) return saved;
 
             const browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
@@ -389,7 +559,7 @@
     function changeLanguage(lang) {
         if (!i18n[lang]) lang = 'en';
         try {
-            localStorage.setItem('pillpilot_lang', lang);
+            localStorage.setItem('pill_reminder_lang', lang);
         } catch (e) {}
         
         const select = document.getElementById('langSelect');
