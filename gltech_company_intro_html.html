@@ -1,0 +1,1931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GL.tech | Independent iOS Software Studio</title>
+  <meta
+    name="description"
+    content="GL.tech is an independent iOS software studio creating simple, reliable, and beautifully crafted apps for everyday life."
+  />
+  <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+  <meta name="color-scheme" content="light dark" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="GL.tech | Independent iOS Software Studio" />
+  <meta property="og:description" content="Simple iOS tools for health, AI recognition, security, travel, and everyday productivity." />
+  <meta property="og:site_name" content="GL.tech" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="GL.tech | Independent iOS Software Studio" />
+  <meta name="twitter:description" content="Simple iOS tools for everyday life." />
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Crect width='128' height='128' fill='none'/%3E%3Crect x='8' y='8' width='112' height='112' rx='30' fill='white'/%3E%3Cpath d='M66 28a36 36 0 1 0 0 72h20V79H66a15 15 0 1 1 13-22.5l18.2-10.5A36 36 0 0 0 66 28Z' fill='%230071e3'/%3E%3Cpath d='M83 30h21v49H83zM83 79h32v21H83z' fill='%231d1d1f'/%3E%3Ccircle cx='66' cy='64' r='6.5' fill='%230071e3'/%3E%3C/svg%3E"
+  />
+  <link
+    rel="shortcut icon"
+    type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Crect width='128' height='128' fill='none'/%3E%3Crect x='8' y='8' width='112' height='112' rx='30' fill='white'/%3E%3Cpath d='M66 28a36 36 0 1 0 0 72h20V79H66a15 15 0 1 1 13-22.5l18.2-10.5A36 36 0 0 0 66 28Z' fill='%230071e3'/%3E%3Cpath d='M83 30h21v49H83zM83 79h32v21H83z' fill='%231d1d1f'/%3E%3Ccircle cx='66' cy='64' r='6.5' fill='%230071e3'/%3E%3C/svg%3E"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' fill='white'/%3E%3Crect x='10' y='10' width='160' height='160' rx='38' fill='white'/%3E%3Cpath d='M92 38a52 52 0 1 0 0 104h28v-30H92a22 22 0 1 1 19-32.5l26-15A52 52 0 0 0 92 38Z' fill='%230071e3'/%3E%3Cpath d='M117 40h30v72h-30zM117 112h46v30h-46z' fill='%231d1d1f'/%3E%3Ccircle cx='92' cy='90' r='9.5' fill='%230071e3'/%3E%3C/svg%3E"
+  />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "GL.tech",
+      "url": "https://x.com/GLtechHQ",
+      "sameAs": ["https://x.com/GLtechHQ"],
+      "description": "GL.tech is an independent iOS software studio creating simple, reliable apps for everyday life."
+    }
+  </script>
+  <style>
+    :root {
+      --page: #f5f5f7;
+      --surface: rgba(255, 255, 255, 0.78);
+      --surface-strong: #ffffff;
+      --text: #1d1d1f;
+      --muted: #6e6e73;
+      --muted-2: #86868b;
+      --blue: #0071e3;
+      --blue-dark: #005bb5;
+      --line: rgba(0, 0, 0, 0.08);
+      --shadow-soft: 0 24px 80px rgba(0, 0, 0, 0.08);
+      --shadow-card: 0 18px 48px rgba(0, 0, 0, 0.07);
+      --radius-xl: 36px;
+      --radius-lg: 28px;
+      --radius-md: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background: var(--page);
+      color: var(--text);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    :focus-visible {
+      outline: 3px solid rgba(0, 113, 227, 0.42);
+      outline-offset: 4px;
+      border-radius: 12px;
+    }
+
+    .skip-link {
+      position: fixed;
+      left: 16px;
+      top: 12px;
+      z-index: 999;
+      transform: translateY(-140%);
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: #1d1d1f;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 700;
+      transition: transform 180ms ease;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    ::selection {
+      background: rgba(0, 113, 227, 0.18);
+    }
+
+    .top-gradient {
+      position: fixed;
+      inset: 0 0 auto 0;
+      height: 620px;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(0, 113, 227, 0.18), transparent 38%),
+        radial-gradient(circle at 85% 8%, rgba(90, 200, 250, 0.18), transparent 32%),
+        radial-gradient(circle at 12% 20%, rgba(175, 82, 222, 0.10), transparent 26%);
+      z-index: -2;
+    }
+
+    .noise {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.36), rgba(255,255,255,0.36)),
+        radial-gradient(rgba(0, 0, 0, 0.045) 0.7px, transparent 0.7px);
+      background-size: auto, 18px 18px;
+      opacity: 0.45;
+      z-index: -1;
+    }
+
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      background: rgba(245, 245, 247, 0.78);
+      backdrop-filter: saturate(180%) blur(22px);
+      -webkit-backdrop-filter: saturate(180%) blur(22px);
+    }
+
+    .nav-inner {
+      width: min(1080px, calc(100% - 32px));
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+    }
+
+    .brand-logo {
+      width: 30px;
+      height: 30px;
+      border-radius: 9px;
+      background: #ffffff;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0, 113, 227, 0.12);
+      border: 1px solid rgba(0, 113, 227, 0.08);
+      flex: 0 0 auto;
+    }
+
+    .logo-svg {
+      display: block;
+    }
+
+    .brand-logo .logo-svg {
+      width: 23px;
+      height: 23px;
+    }
+
+    .hero-logo .logo-svg {
+      width: 86px;
+      height: 86px;
+    }
+
+    .center-orb .logo-svg {
+      width: 112px;
+      height: 112px;
+    }
+
+    .logo-svg-blue {
+      fill: #0071e3;
+      transition: fill 180ms ease;
+    }
+
+    .logo-svg-dark {
+      fill: #1d1d1f;
+      transition: fill 180ms ease;
+    }
+
+    .logo-svg-circle {
+      fill: #0071e3;
+      transition: fill 180ms ease;
+    }
+
+    .brand-logo img {
+      width: 23px;
+      height: 23px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .fallback-logo {
+      display: none;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: -0.08em;
+      color: var(--text);
+    }
+
+    .brand span,
+    .accent {
+      color: var(--blue);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: rgba(29, 29, 31, 0.72);
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .nav-links a {
+      transition: color 180ms ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .language-switch {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    }
+
+    .language-switch button {
+      min-width: 42px;
+      height: 28px;
+      border: none;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 180ms ease;
+    }
+
+    .language-switch button.active {
+      background: #1d1d1f;
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.14);
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 108px 0 54px;
+      text-align: center;
+    }
+
+    .hero-logo {
+      width: 118px;
+      height: 118px;
+      margin: 0 auto 32px;
+      border-radius: 32px;
+      background: rgba(255, 255, 255, 0.9);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 30px 70px rgba(0, 113, 227, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.88);
+    }
+
+    .hero-logo img {
+      width: 86px;
+      height: 86px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .hero-logo .fallback-logo {
+      font-size: 34px;
+    }
+
+    .eyebrow {
+      color: var(--blue);
+      font-size: 19px;
+      line-height: 1.25;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      max-width: 980px;
+      margin: 0 auto;
+      font-size: clamp(54px, 9vw, 116px);
+      line-height: 0.93;
+      letter-spacing: -0.074em;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .hero-subtitle {
+      max-width: 780px;
+      margin: 28px auto 0;
+      color: var(--muted);
+      font-size: clamp(22px, 3.4vw, 34px);
+      line-height: 1.2;
+      letter-spacing: -0.045em;
+      font-weight: 650;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 22px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 17px;
+      font-weight: 500;
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+    }
+
+    .button.primary {
+      background: var(--blue);
+      color: #ffffff;
+    }
+
+    .button.primary:hover {
+      background: var(--blue-dark);
+      transform: translateY(-1px);
+    }
+
+    .button.secondary {
+      color: var(--blue);
+      border-color: rgba(0, 113, 227, 0.28);
+      background: rgba(255, 255, 255, 0.54);
+    }
+
+    .button.secondary:hover {
+      border-color: rgba(0, 113, 227, 0.5);
+      transform: translateY(-1px);
+    }
+
+    .hero-device {
+      margin: 64px auto 0;
+      width: min(920px, 100%);
+      min-height: 430px;
+      border-radius: 46px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,255,255,0.68)),
+        radial-gradient(circle at 50% 0%, rgba(0, 113, 227, 0.18), transparent 54%);
+      border: 1px solid rgba(255, 255, 255, 0.92);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      padding: 44px;
+    }
+
+    .hero-device::before {
+      content: "";
+      position: absolute;
+      inset: 28px;
+      border-radius: 38px;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      pointer-events: none;
+    }
+
+    .ecosystem {
+      position: relative;
+      width: min(620px, 100%);
+      height: 310px;
+    }
+
+    .center-orb {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 160px;
+      height: 160px;
+      border-radius: 42px;
+      background: #ffffff;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 26px 68px rgba(0, 113, 227, 0.16);
+      border: 1px solid rgba(0, 113, 227, 0.08);
+      z-index: 4;
+    }
+
+    .center-orb img {
+      width: 112px;
+      height: 112px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .center-orb .fallback-logo {
+      font-size: 46px;
+    }
+
+    .orbit-line {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 520px;
+      height: 220px;
+      border: 1px solid rgba(0, 113, 227, 0.13);
+      border-radius: 50%;
+    }
+
+    .app-bubble {
+      position: absolute;
+      min-width: 142px;
+      padding: 13px 15px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.08);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      z-index: 5;
+    }
+
+    .app-bubble span {
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      background: #f5f5f7;
+      display: grid;
+      place-items: center;
+      font-size: 19px;
+      flex: 0 0 auto;
+    }
+
+    .bubble-1 { left: 2%; top: 14%; }
+    .bubble-2 { right: 0; top: 20%; }
+    .bubble-3 { left: 0; bottom: 14%; }
+    .bubble-4 { right: 6%; bottom: 10%; }
+
+    .section {
+      padding: 42px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin: 0 auto 34px;
+      max-width: 820px;
+    }
+
+    .section-kicker {
+      color: var(--blue);
+      font-size: 17px;
+      line-height: 1.25;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: clamp(42px, 6.5vw, 82px);
+      line-height: 0.98;
+      letter-spacing: -0.067em;
+      font-weight: 800;
+    }
+
+    .section-copy {
+      margin: 18px auto 0;
+      color: var(--muted);
+      max-width: 720px;
+      font-size: clamp(19px, 2.2vw, 25px);
+      line-height: 1.32;
+      letter-spacing: -0.035em;
+      font-weight: 600;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .product-card {
+      min-height: 320px;
+      padding: 26px;
+      border-radius: var(--radius-lg);
+      background: var(--surface-strong);
+      box-shadow: var(--shadow-card);
+      border: 1px solid rgba(255, 255, 255, 0.72);
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 220ms ease, box-shadow 220ms ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.10);
+    }
+
+    .product-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -40px -60px auto;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 113, 227, 0.13), transparent 70%);
+      pointer-events: none;
+    }
+
+    .product-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 17px;
+      background: #f5f5f7;
+      display: grid;
+      place-items: center;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .product-card h3 {
+      font-size: 24px;
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+      margin-bottom: 12px;
+    }
+
+    .product-card p {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.55;
+      letter-spacing: -0.015em;
+    }
+
+    .product-tag {
+      width: fit-content;
+      margin-top: 24px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: #f5f5f7;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .coming {
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.86), rgba(255,255,255,0.76)),
+        repeating-linear-gradient(135deg, rgba(0,0,0,0.03) 0 1px, transparent 1px 13px);
+      border: 1px dashed rgba(0, 0, 0, 0.14);
+    }
+
+    .studio-panel {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .large-panel,
+    .principle-panel {
+      border-radius: var(--radius-xl);
+      background: var(--surface-strong);
+      box-shadow: var(--shadow-card);
+      border: 1px solid rgba(255, 255, 255, 0.72);
+      overflow: hidden;
+    }
+
+    .large-panel {
+      min-height: 560px;
+      padding: clamp(34px, 5vw, 58px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background:
+        radial-gradient(circle at 70% 10%, rgba(0, 113, 227, 0.18), transparent 35%),
+        linear-gradient(135deg, #ffffff 0%, #f5f5f7 100%);
+    }
+
+    .large-panel h2 {
+      max-width: 620px;
+    }
+
+    .large-panel p {
+      max-width: 620px;
+      color: var(--muted);
+      font-size: 22px;
+      line-height: 1.42;
+      letter-spacing: -0.035em;
+      font-weight: 600;
+    }
+
+    .studio-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 46px;
+    }
+
+    .stat {
+      padding: 20px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 27px;
+      line-height: 1;
+      letter-spacing: -0.055em;
+      margin-bottom: 8px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+      font-weight: 650;
+    }
+
+    .principle-panel {
+      padding: 18px;
+      display: grid;
+      gap: 14px;
+      background: rgba(255, 255, 255, 0.64);
+      backdrop-filter: blur(16px);
+    }
+
+    .principle {
+      padding: 25px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .principle strong {
+      display: block;
+      font-size: 20px;
+      letter-spacing: -0.035em;
+      margin-bottom: 8px;
+    }
+
+    .principle p {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.56;
+      letter-spacing: -0.01em;
+    }
+
+    .studio-notes {
+      align-content: stretch;
+    }
+
+    .principles-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .value-card {
+      min-height: 250px;
+      background: var(--surface-strong);
+      box-shadow: var(--shadow-card);
+      border: 1px solid rgba(255, 255, 255, 0.72);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .social-card {
+      min-height: 160px;
+      padding: 22px;
+      border-radius: 26px;
+      background: var(--surface-strong);
+      border: 1px solid rgba(255, 255, 255, 0.72);
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 220ms ease, box-shadow 220ms ease;
+    }
+
+    .social-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.10);
+    }
+
+    .social-card span {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: #f5f5f7;
+      display: grid;
+      place-items: center;
+      color: var(--text);
+      font-size: 20px;
+      font-weight: 850;
+      letter-spacing: -0.05em;
+    }
+
+    .social-card strong {
+      margin-top: 24px;
+      display: block;
+      font-size: 18px;
+      letter-spacing: -0.035em;
+    }
+
+    .social-card small {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .closing {
+      padding: 60px 0 80px;
+      text-align: center;
+    }
+
+    .closing-card {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: clamp(38px, 6vw, 72px);
+      border-radius: var(--radius-xl);
+      background: #1d1d1f;
+      color: #ffffff;
+      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.16);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .closing-card::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: -120px;
+      width: 520px;
+      height: 280px;
+      transform: translateX(-50%);
+      background: radial-gradient(circle, rgba(0, 113, 227, 0.42), transparent 68%);
+      pointer-events: none;
+    }
+
+    .closing-card h2,
+    .closing-card p,
+    .closing-card .button {
+      position: relative;
+      z-index: 1;
+    }
+
+    .closing-card p {
+      max-width: 680px;
+      margin: 20px auto 32px;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 22px;
+      line-height: 1.38;
+      letter-spacing: -0.035em;
+      font-weight: 600;
+    }
+
+    .footer {
+      padding: 20px 0 36px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+      padding-top: 18px;
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--blue);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --page: #000000;
+        --surface: rgba(28, 28, 30, 0.74);
+        --surface-strong: #1c1c1e;
+        --text: #f5f5f7;
+        --muted: #a1a1a6;
+        --muted-2: #8e8e93;
+        --line: rgba(255, 255, 255, 0.11);
+        --shadow-soft: 0 24px 80px rgba(0, 0, 0, 0.36);
+        --shadow-card: 0 18px 48px rgba(0, 0, 0, 0.26);
+      }
+
+      body {
+        background: #000000;
+      }
+
+      .top-gradient {
+        background:
+          radial-gradient(circle at 50% 0%, rgba(0, 113, 227, 0.30), transparent 38%),
+          radial-gradient(circle at 85% 8%, rgba(90, 200, 250, 0.18), transparent 32%),
+          radial-gradient(circle at 12% 20%, rgba(175, 82, 222, 0.16), transparent 26%);
+      }
+
+      .noise {
+        background-image:
+          linear-gradient(rgba(0,0,0,0.20), rgba(0,0,0,0.20)),
+          radial-gradient(rgba(255, 255, 255, 0.045) 0.7px, transparent 0.7px);
+        opacity: 0.55;
+      }
+
+      .site-nav {
+        background: rgba(22, 22, 23, 0.76);
+        border-bottom-color: rgba(255, 255, 255, 0.10);
+      }
+
+      .nav-links {
+        color: rgba(245, 245, 247, 0.72);
+      }
+
+      .nav-links a:hover {
+        color: #ffffff;
+      }
+
+      .language-switch,
+      .menu-button,
+      .brand-logo,
+      .hero-logo,
+      .center-orb,
+      .product-icon,
+      .app-bubble span,
+      .social-card span {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.10);
+      }
+
+      .logo-svg-dark {
+        fill: #f5f5f7;
+      }
+
+      .button.primary {
+        background: #0a84ff;
+      }
+
+      .button.primary:hover {
+        background: #0071e3;
+      }
+
+      .button.secondary {
+        color: #0a84ff;
+        border-color: rgba(10, 132, 255, 0.32);
+        background: rgba(255, 255, 255, 0.06);
+      }
+
+      .button.secondary:hover {
+        border-color: rgba(10, 132, 255, 0.54);
+        background: rgba(255, 255, 255, 0.10);
+      }
+
+      .app-bubble {
+        background: rgba(28, 28, 30, 0.86);
+        border-color: rgba(255, 255, 255, 0.08);
+        box-shadow: 0 18px 44px rgba(0, 0, 0, 0.38);
+      }
+
+      .language-switch button.active {
+        background: #f5f5f7;
+        color: #1d1d1f;
+      }
+
+      .menu-button span {
+        background: #f5f5f7;
+      }
+
+      .mobile-menu {
+        background: rgba(28, 28, 30, 0.88);
+        border-color: rgba(255, 255, 255, 0.12);
+      }
+
+      .mobile-menu a {
+        background: rgba(255, 255, 255, 0.08);
+        color: #f5f5f7;
+      }
+
+      .hero-device {
+        background:
+          linear-gradient(180deg, rgba(28,28,30,0.92), rgba(28,28,30,0.66)),
+          radial-gradient(circle at 50% 0%, rgba(0, 113, 227, 0.26), transparent 54%);
+        border-color: rgba(255, 255, 255, 0.10);
+      }
+
+      .hero-device::before,
+      .product-card,
+      .large-panel,
+      .principle-panel,
+      .large-panel,
+      .value-card,
+      .social-card {
+        border-color: rgba(255, 255, 255, 0.10);
+      }
+
+      .product-card,
+      .principle,
+      .value-card,
+      .social-card {
+        background: #1c1c1e;
+      }
+
+      .coming {
+        background:
+          linear-gradient(180deg, rgba(28,28,30,0.92), rgba(28,28,30,0.78)),
+          repeating-linear-gradient(135deg, rgba(255,255,255,0.05) 0 1px, transparent 1px 13px);
+        border-color: rgba(255, 255, 255, 0.18);
+      }
+
+      .large-panel {
+        background:
+          radial-gradient(circle at 70% 10%, rgba(0, 113, 227, 0.26), transparent 35%),
+          linear-gradient(135deg, #1c1c1e 0%, #111113 100%);
+      }
+
+      .principle-panel {
+        background: rgba(28, 28, 30, 0.62);
+      }
+
+      .stat,
+      .product-tag {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.10);
+      }
+
+      .closing-card {
+        background: #1c1c1e;
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .closing-card p {
+        color: rgba(255, 255, 255, 0.72);
+      }
+
+      .footer-inner {
+        border-top-color: rgba(255, 255, 255, 0.10);
+      }
+    }
+
+    @media (max-width: 1020px) {
+      .portfolio-grid,
+      .principles-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .social-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .studio-panel {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav-links a:not(.nav-x) {
+        display: none;
+      }
+
+      .nav-inner {
+        width: min(100% - 22px, 1080px);
+      }
+
+      .hero {
+        padding-top: 72px;
+      }
+
+      h1 {
+        font-size: clamp(48px, 16vw, 74px);
+      }
+
+      .hero-device {
+        min-height: 520px;
+        padding: 24px;
+        border-radius: 34px;
+      }
+
+      .ecosystem {
+        height: 420px;
+      }
+
+      .orbit-line {
+        width: 320px;
+        height: 320px;
+      }
+
+      .center-orb {
+        width: 138px;
+        height: 138px;
+        border-radius: 36px;
+      }
+
+      .center-orb img {
+        width: 94px;
+        height: 94px;
+      }
+
+      .app-bubble {
+        min-width: 132px;
+        font-size: 13px;
+      }
+
+      .bubble-1 { left: 50%; top: 0; transform: translateX(-50%); }
+      .bubble-2 { right: 0; top: 34%; }
+      .bubble-3 { left: 0; top: 34%; bottom: auto; }
+      .bubble-4 { left: 50%; right: auto; bottom: 0; transform: translateX(-50%); }
+
+      .portfolio-grid,
+      .principles-grid,
+      .studio-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .social-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .product-card,
+      .value-card {
+        min-height: 250px;
+      }
+
+      .social-card {
+        min-height: 138px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    @media (max-width: 460px) {
+      .container {
+        width: min(100% - 22px, 1180px);
+      }
+
+      .hero-logo {
+        width: 96px;
+        height: 96px;
+        border-radius: 26px;
+      }
+
+      .hero-logo img {
+        width: 70px;
+        height: 70px;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .hero-actions {
+        width: 100%;
+      }
+
+      .language-switch button {
+        min-width: 38px;
+      }
+    }
+  
+
+    /* Mobile-first refinements */
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .menu-button {
+      width: 38px;
+      height: 38px;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .menu-button span {
+      width: 15px;
+      height: 1.5px;
+      border-radius: 999px;
+      background: #1d1d1f;
+      transition: transform 180ms ease, opacity 180ms ease;
+    }
+
+    .menu-button.active span:first-child {
+      transform: translateY(3.25px) rotate(45deg);
+    }
+
+    .menu-button.active span:last-child {
+      transform: translateY(-3.25px) rotate(-45deg);
+    }
+
+    .mobile-menu {
+      position: fixed;
+      left: 12px;
+      right: 12px;
+      top: calc(54px + env(safe-area-inset-top, 0px) + 8px);
+      z-index: 19;
+      display: none;
+      grid-template-columns: 1fr;
+      gap: 6px;
+      padding: 10px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.12);
+      backdrop-filter: saturate(180%) blur(24px);
+      -webkit-backdrop-filter: saturate(180%) blur(24px);
+      transform: translateY(-10px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 180ms ease, transform 180ms ease;
+    }
+
+    .mobile-menu.open {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .mobile-menu a {
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      border-radius: 17px;
+      color: #1d1d1f;
+      background: rgba(245, 245, 247, 0.72);
+      font-size: 16px;
+      font-weight: 650;
+      letter-spacing: -0.02em;
+    }
+
+    .mobile-menu a::after {
+      content: "›";
+      color: var(--muted-2);
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    @media (max-width: 760px) {
+      body.menu-open {
+        overflow: hidden;
+      }
+
+      .site-nav {
+        padding-top: env(safe-area-inset-top, 0px);
+        height: calc(54px + env(safe-area-inset-top, 0px));
+      }
+
+      .desktop-links {
+        display: none;
+      }
+
+      .menu-button {
+        display: flex;
+      }
+
+      .mobile-menu {
+        display: grid;
+      }
+
+      .brand {
+        font-size: 14px;
+      }
+
+      .brand-logo {
+        width: 28px;
+        height: 28px;
+        border-radius: 8px;
+      }
+
+      .brand-logo img {
+        width: 21px;
+        height: 21px;
+      }
+
+      .language-switch {
+        padding: 2px;
+      }
+
+      .language-switch button {
+        min-width: 36px;
+        height: 27px;
+        font-size: 11px;
+      }
+
+      .hero {
+        padding-top: 58px;
+      }
+
+      .hero-subtitle,
+      .section-copy,
+      .large-panel p,
+      .closing-card p {
+        letter-spacing: -0.025em;
+      }
+
+      .hero-actions {
+        max-width: 380px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-device {
+        margin-top: 42px;
+        min-height: 470px;
+      }
+
+      .app-bubble {
+        box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
+      }
+
+      .portfolio-grid {
+        gap: 14px;
+      }
+
+      .product-card,
+      .large-panel,
+      .principle-panel,
+      .closing-card {
+        border-radius: 28px;
+      }
+
+      .product-card {
+        padding: 24px;
+      }
+
+      .large-panel {
+        min-height: auto;
+        gap: 42px;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .nav-inner {
+        gap: 10px;
+      }
+
+      .nav-actions {
+        gap: 8px;
+      }
+
+      .brand {
+        gap: 7px;
+      }
+
+      .brand-logo {
+        width: 26px;
+        height: 26px;
+      }
+
+      .language-switch button {
+        min-width: 32px;
+      }
+
+      .menu-button {
+        width: 36px;
+        height: 36px;
+      }
+
+      .hero-device {
+        padding: 18px;
+      }
+
+      .app-bubble {
+        min-width: 118px;
+        padding: 10px 11px;
+      }
+
+      .social-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .app-bubble span {
+        width: 32px;
+        height: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="top-gradient"></div>
+  <div class="noise"></div>
+
+  <header class="site-nav">
+    <div class="nav-inner">
+      <a class="brand" href="#top" aria-label="GL.tech homepage">
+        <span class="brand-logo">
+          <svg class="logo-svg" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path class="logo-svg-blue" d="M66 28a36 36 0 1 0 0 72h20V79H66a15 15 0 1 1 13-22.5l18.2-10.5A36 36 0 0 0 66 28Z" />
+            <path class="logo-svg-dark" d="M83 30h21v49H83zM83 79h32v21H83z" />
+            <circle class="logo-svg-circle" cx="66" cy="64" r="6.5" />
+          </svg>
+          <span class="fallback-logo">GL</span>
+        </span>
+        <span>GL<span>.</span>tech</span>
+      </a>
+
+      <div class="nav-actions">
+        <nav class="nav-links desktop-links" aria-label="Navigation links">
+          <a href="#apps" data-i18n="navApps">Apps</a>
+          <a href="#studio" data-i18n="navStudio">Studio</a>
+          <a href="#principlesSection" data-i18n="navPrinciples">Principles</a>
+          <a href="#social" data-i18n="navSocial">Social</a>
+          <a class="nav-x" href="https://x.com/GLtechHQ" target="_blank" rel="noopener noreferrer">@GLtechHQ</a>
+        </nav>
+
+        <div class="language-switch" aria-label="Language switcher">
+          <button type="button" class="active" data-lang="en">EN</button>
+          <button type="button" data-lang="zh">中文</button>
+        </div>
+
+        <button class="menu-button" type="button" aria-label="Open mobile menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" aria-hidden="true">
+      <a href="#apps" data-i18n="navApps">Apps</a>
+      <a href="#studio" data-i18n="navStudio">Studio</a>
+      <a href="#principlesSection" data-i18n="navPrinciples">Principles</a>
+          <a href="#social" data-i18n="navSocial">Social</a>
+      <a href="https://x.com/GLtechHQ" target="_blank" rel="noopener noreferrer">@GLtechHQ</a>
+    </div>
+  </header>
+
+  <main id="top" tabindex="-1">
+    <div id="main-content"></div>
+    <section class="hero container" aria-label="GL.tech introduction">
+      <div class="hero-logo">
+        <svg class="logo-svg" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path class="logo-svg-blue" d="M66 28a36 36 0 1 0 0 72h20V79H66a15 15 0 1 1 13-22.5l18.2-10.5A36 36 0 0 0 66 28Z" />
+          <path class="logo-svg-dark" d="M83 30h21v49H83zM83 79h32v21H83z" />
+          <circle class="logo-svg-circle" cx="66" cy="64" r="6.5" />
+        </svg>
+        <span class="fallback-logo">GL</span>
+      </div>
+
+      <p class="eyebrow" data-i18n="eyebrow">Independent iOS Software Studio</p>
+      <h1 data-i18n="heroTitle">Simple tools. Built beautifully.</h1>
+      <p class="hero-subtitle" data-i18n="heroSubtitle">
+        GL.tech creates focused iOS apps for health, AI recognition, security, travel, and everyday productivity.
+      </p>
+
+      <div class="hero-actions">
+        <a class="button primary" href="#apps" data-i18n="heroPrimary">View App Portfolio</a>
+        <a class="button secondary" href="https://x.com/GLtechHQ" target="_blank" rel="noopener noreferrer" data-i18n="heroSecondary">Follow @GLtechHQ</a>
+      </div>
+
+      <div class="hero-device" aria-label="GL.tech app ecosystem visual">
+        <div class="ecosystem">
+          <div class="orbit-line"></div>
+          <div class="center-orb">
+            <svg class="logo-svg" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path class="logo-svg-blue" d="M66 28a36 36 0 1 0 0 72h20V79H66a15 15 0 1 1 13-22.5l18.2-10.5A36 36 0 0 0 66 28Z" />
+              <path class="logo-svg-dark" d="M83 30h21v49H83zM83 79h32v21H83z" />
+              <circle class="logo-svg-circle" cx="66" cy="64" r="6.5" />
+            </svg>
+            <span class="fallback-logo">GL</span>
+          </div>
+
+          <div class="app-bubble bubble-1"><span>💊</span><b data-i18n="bubbleHealth">Health</b></div>
+          <div class="app-bubble bubble-2"><span>🐜</span><b data-i18n="bubbleAI">AI Recognition</b></div>
+          <div class="app-bubble bubble-3"><span>🔐</span><b data-i18n="bubbleSecurity">Security</b></div>
+          <div class="app-bubble bubble-4"><span>📷</span><b data-i18n="bubbleTravel">Travel</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="apps" class="section container" aria-label="App portfolio">
+      <div class="section-header">
+        <p class="section-kicker" data-i18n="appsKicker">App Portfolio</p>
+        <h2 data-i18n="appsTitle">A growing family of focused apps.</h2>
+        <p class="section-copy" data-i18n="appsCopy">
+          Each product can stand alone, while the GL.tech brand keeps the entire software ecosystem clean, consistent, and recognizable.
+        </p>
+      </div>
+
+      <div class="portfolio-grid">
+        <article class="product-card">
+          <div>
+            <div class="product-icon">💊</div>
+            <h3 data-i18n="medTitle">Medication Reminder</h3>
+            <p data-i18n="medDesc">A simple, dependable reminder app designed to support daily medication routines with less friction.</p>
+          </div>
+          <div class="product-tag" data-i18n="medTag">Health Utility</div>
+        </article>
+
+        <article class="product-card">
+          <div>
+            <div class="product-icon">🐜</div>
+            <h3 data-i18n="antTitle">Ant Recognition</h3>
+            <p data-i18n="antDesc">AI-powered identification for nature observation, quick discovery, and everyday learning.</p>
+          </div>
+          <div class="product-tag" data-i18n="antTag">AI Recognition</div>
+        </article>
+
+        <article class="product-card">
+          <div>
+            <div class="product-icon">🔐</div>
+            <h3 data-i18n="authTitle">Authenticator</h3>
+            <p data-i18n="authDesc">A focused security tool for protecting accounts with a clean and reliable authentication experience.</p>
+          </div>
+          <div class="product-tag" data-i18n="authTag">Security</div>
+        </article>
+
+        <article class="product-card">
+          <div>
+            <div class="product-icon">📷</div>
+            <h3 data-i18n="cameraTitle">Travel Watermark Camera</h3>
+            <p data-i18n="cameraDesc">Capture travel moments with time, location, and visual context for memories, sharing, and documentation.</p>
+          </div>
+          <div class="product-tag" data-i18n="cameraTag">Travel Camera</div>
+        </article>
+
+        <article class="product-card coming">
+          <div>
+            <div class="product-icon">✨</div>
+            <h3 data-i18n="futureTitle1">New iOS Utility</h3>
+            <p data-i18n="futureDesc1">Reserved for the next focused app in the GL.tech product family.</p>
+          </div>
+          <div class="product-tag" data-i18n="futureTag1">Coming Next</div>
+        </article>
+
+        <article class="product-card coming">
+          <div>
+            <div class="product-icon">🧭</div>
+            <h3 data-i18n="futureTitle2">Productivity Tool</h3>
+            <p data-i18n="futureDesc2">A future utility for daily workflows, personal organization, or lightweight automation.</p>
+          </div>
+          <div class="product-tag" data-i18n="futureTag2">Expandable</div>
+        </article>
+
+        <article class="product-card coming">
+          <div>
+            <div class="product-icon">🧠</div>
+            <h3 data-i18n="futureTitle3">AI Companion</h3>
+            <p data-i18n="futureDesc3">Room for a future intelligent app that turns small tasks into smoother mobile experiences.</p>
+          </div>
+          <div class="product-tag" data-i18n="futureTag3">Future App</div>
+        </article>
+
+        <article class="product-card coming">
+          <div>
+            <div class="product-icon">＋</div>
+            <h3 data-i18n="futureTitle4">More Apps</h3>
+            <p data-i18n="futureDesc4">Add more software products here as the GL.tech ecosystem continues to grow.</p>
+          </div>
+          <div class="product-tag" data-i18n="futureTag4">Portfolio Growth</div>
+        </article>
+      </div>
+    </section>
+
+    <section id="studio" class="section container" aria-label="Studio philosophy">
+      <div class="studio-panel">
+        <div class="large-panel">
+          <div>
+            <p class="section-kicker" data-i18n="studioKicker">Studio Philosophy</p>
+            <h2 data-i18n="studioTitle">Software should feel calm, useful, and trustworthy.</h2>
+          </div>
+          <div>
+            <p data-i18n="studioCopy">
+              GL.tech focuses on practical products that solve real-life problems. We keep each app lightweight and focused, then improve it through steady iteration, careful design, and reliable engineering.
+            </p>
+
+            <div class="studio-stats" aria-label="GL.tech highlights">
+              <div class="stat">
+                <strong>iOS</strong>
+                <span data-i18n="stat1">Native-first development</span>
+              </div>
+              <div class="stat">
+                <strong data-i18n="stat2Title">Multi-app</strong>
+                <span data-i18n="stat2">Expandable product portfolio</span>
+              </div>
+              <div class="stat">
+                <strong data-i18n="stat3Title">Daily</strong>
+                <span data-i18n="stat3">Tools for real-life needs</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="principle-panel studio-notes">
+          <article class="principle">
+            <strong data-i18n="studioNote1Title">Portfolio-first brand</strong>
+            <p data-i18n="studioNote1Copy">Built for multiple apps from the beginning, so every new product can join the same clean ecosystem.</p>
+          </article>
+
+          <article class="principle">
+            <strong data-i18n="studioNote2Title">Small tools, high polish</strong>
+            <p data-i18n="studioNote2Copy">The focus is not on making apps look complicated, but on making useful software feel effortless.</p>
+          </article>
+
+          <article class="principle">
+            <strong data-i18n="studioNote3Title">Independent by design</strong>
+            <p data-i18n="studioNote3Copy">A lean studio structure makes it easier to explore new ideas, ship quickly, and keep improving.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="principlesSection" class="section container" aria-label="Product principles">
+      <div class="section-header">
+        <p class="section-kicker" data-i18n="principlesKicker">Product Principles</p>
+        <h2 data-i18n="principlesTitle">The details that make small apps feel premium.</h2>
+        <p class="section-copy" data-i18n="principlesCopy">
+          GL.tech products are designed around clarity, trust, and long-term usefulness.
+        </p>
+      </div>
+
+      <div class="principles-grid">
+        <article class="principle value-card">
+          <strong data-i18n="principle1Title">Native iOS Craft</strong>
+          <p data-i18n="principle1Copy">Designed for the Apple ecosystem with clarity, responsiveness, and familiar interaction patterns.</p>
+        </article>
+
+        <article class="principle value-card">
+          <strong data-i18n="principle2Title">Real-Life Use Cases</strong>
+          <p data-i18n="principle2Copy">Products begin with daily needs: health routines, account security, travel records, recognition, and utility.</p>
+        </article>
+
+        <article class="principle value-card">
+          <strong data-i18n="principle3Title">Clean Product Systems</strong>
+          <p data-i18n="principle3Copy">Each app remains focused, while the brand creates a consistent identity across a growing portfolio.</p>
+        </article>
+
+        <article class="principle value-card">
+          <strong data-i18n="principle4Title">Long-Term Iteration</strong>
+          <p data-i18n="principle4Copy">Small improvements, stable releases, and thoughtful updates make the apps more dependable over time.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="social" class="section container" aria-label="Social links">
+      <div class="section-header">
+        <p class="section-kicker" data-i18n="socialKicker">Connect</p>
+        <h2 data-i18n="socialTitle">Follow the GL.tech ecosystem.</h2>
+        <p class="section-copy" data-i18n="socialCopy">
+          These links are prepared as placeholders so you can connect each official channel when it is ready.
+        </p>
+      </div>
+
+      <div class="social-grid">
+        <a class="social-card" href="https://x.com/GLtechHQ" target="_blank" rel="noopener noreferrer">
+          <span>X</span>
+          <strong>X / Twitter</strong>
+          <small>@GLtechHQ</small>
+        </a>
+        <a class="social-card" href="#" aria-label="Facebook placeholder">
+          <span>f</span>
+          <strong>Facebook</strong>
+          <small data-i18n="socialPlaceholder">Coming soon</small>
+        </a>
+        <a class="social-card" href="#" aria-label="YouTube placeholder">
+          <span>▶</span>
+          <strong>YouTube</strong>
+          <small data-i18n="socialPlaceholder">Coming soon</small>
+        </a>
+        <a class="social-card" href="#" aria-label="TikTok placeholder">
+          <span>♪</span>
+          <strong>TikTok</strong>
+          <small data-i18n="socialPlaceholder">Coming soon</small>
+        </a>
+        <a class="social-card" href="#" aria-label="Instagram placeholder">
+          <span>◎</span>
+          <strong>Instagram</strong>
+          <small data-i18n="socialPlaceholder">Coming soon</small>
+        </a>
+        <a class="social-card" href="#" aria-label="App Store placeholder">
+          <span></span>
+          <strong>App Store</strong>
+          <small data-i18n="socialPlaceholder">Coming soon</small>
+        </a>
+      </div>
+    </section>
+
+    <section class="closing container" aria-label="Closing statement">
+      <div class="closing-card">
+        <h2 data-i18n="closingTitle">Built for the long term. Designed for everyday life.</h2>
+        <p data-i18n="closingCopy">
+          GL.tech is building a focused portfolio of simple, reliable iOS apps — practical tools that can keep improving over time.
+        </p>
+        <a class="button primary" href="https://x.com/GLtechHQ" target="_blank" rel="noopener noreferrer" data-i18n="closingButton">Follow GL.tech</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <div class="footer-inner">
+      <div>© <span id="year"></span> GL.tech. <span data-i18n="footerRights">All rights reserved.</span></div>
+      <div class="footer-links">
+        <span data-i18n="footerLocation">Independent iOS Studio</span>
+        <a href="https://x.com/GLtechHQ" target="_blank" rel="noopener noreferrer">@GLtechHQ</a>
+        <span data-i18n="footerTagline">Simple iOS tools for everyday life.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        navApps: "Apps",
+        navStudio: "Studio",
+        navPrinciples: "Principles",
+        navSocial: "Social",
+        eyebrow: "Independent iOS Software Studio",
+        heroTitle: "Simple tools. Built beautifully.",
+        heroSubtitle: "GL.tech creates focused iOS apps for health, AI recognition, security, travel, and everyday productivity.",
+        heroPrimary: "View App Portfolio",
+        heroSecondary: "Follow @GLtechHQ",
+        bubbleHealth: "Health",
+        bubbleAI: "AI Recognition",
+        bubbleSecurity: "Security",
+        bubbleTravel: "Travel",
+        appsKicker: "App Portfolio",
+        appsTitle: "A growing family of focused apps.",
+        appsCopy: "Each product can stand alone, while the GL.tech brand keeps the entire software ecosystem clean, consistent, and recognizable.",
+        medTitle: "Medication Reminder",
+        medDesc: "A simple, dependable reminder app designed to support daily medication routines with less friction.",
+        medTag: "Health Utility",
+        antTitle: "Ant Recognition",
+        antDesc: "AI-powered identification for nature observation, quick discovery, and everyday learning.",
+        antTag: "AI Recognition",
+        authTitle: "Authenticator",
+        authDesc: "A focused security tool for protecting accounts with a clean and reliable authentication experience.",
+        authTag: "Security",
+        cameraTitle: "Travel Watermark Camera",
+        cameraDesc: "Capture travel moments with time, location, and visual context for memories, sharing, and documentation.",
+        cameraTag: "Travel Camera",
+        futureTitle1: "New iOS Utility",
+        futureDesc1: "Reserved for the next focused app in the GL.tech product family.",
+        futureTag1: "Coming Next",
+        futureTitle2: "Productivity Tool",
+        futureDesc2: "A future utility for daily workflows, personal organization, or lightweight automation.",
+        futureTag2: "Expandable",
+        futureTitle3: "AI Companion",
+        futureDesc3: "Room for a future intelligent app that turns small tasks into smoother mobile experiences.",
+        futureTag3: "Future App",
+        futureTitle4: "More Apps",
+        futureDesc4: "Add more software products here as the GL.tech ecosystem continues to grow.",
+        futureTag4: "Portfolio Growth",
+        studioKicker: "Studio Philosophy",
+        studioTitle: "Software should feel calm, useful, and trustworthy.",
+        studioCopy: "GL.tech focuses on practical products that solve real-life problems. We keep each app lightweight and focused, then improve it through steady iteration, careful design, and reliable engineering.",
+        studioNote1Title: "Portfolio-first brand",
+        studioNote1Copy: "Built for multiple apps from the beginning, so every new product can join the same clean ecosystem.",
+        studioNote2Title: "Small tools, high polish",
+        studioNote2Copy: "The focus is not on making apps look complicated, but on making useful software feel effortless.",
+        studioNote3Title: "Independent by design",
+        studioNote3Copy: "A lean studio structure makes it easier to explore new ideas, ship quickly, and keep improving.",
+        principlesKicker: "Product Principles",
+        principlesTitle: "The details that make small apps feel premium.",
+        principlesCopy: "GL.tech products are designed around clarity, trust, and long-term usefulness.",
+        stat1: "Native-first development",
+        stat2Title: "Multi-app",
+        stat2: "Expandable product portfolio",
+        stat3Title: "Daily",
+        stat3: "Tools for real-life needs",
+        principle1Title: "Native iOS Craft",
+        principle1Copy: "Designed for the Apple ecosystem with clarity, responsiveness, and familiar interaction patterns.",
+        principle2Title: "Real-Life Use Cases",
+        principle2Copy: "Products begin with daily needs: health routines, account security, travel records, recognition, and utility.",
+        principle3Title: "Clean Product Systems",
+        principle3Copy: "Each app remains focused, while the brand creates a consistent identity across a growing portfolio.",
+        principle4Title: "Long-Term Iteration",
+        principle4Copy: "Small improvements, stable releases, and thoughtful updates make the apps more dependable over time.",
+        socialKicker: "Connect",
+        socialTitle: "Follow the GL.tech ecosystem.",
+        socialCopy: "These links are prepared as placeholders so you can connect each official channel when it is ready.",
+        socialPlaceholder: "Coming soon",
+        closingTitle: "Built for the long term. Designed for everyday life.",
+        closingCopy: "GL.tech is building a focused portfolio of simple, reliable iOS apps — practical tools that can keep improving over time.",
+        closingButton: "Follow GL.tech",
+        footerRights: "All rights reserved.",
+        footerLocation: "Independent iOS Studio",
+        footerTagline: "Simple iOS tools for everyday life."
+      },
+      zh: {
+        navApps: "应用",
+        navStudio: "工作室",
+        navPrinciples: "理念",
+        navSocial: "社交媒体",
+        eyebrow: "独立 iOS 软件工作室",
+        heroTitle: "简单工具，精致打造。",
+        heroSubtitle: "GL.tech 专注开发面向健康、AI 识别、安全验证、旅行记录与日常效率的 iOS 应用。",
+        heroPrimary: "查看应用矩阵",
+        heroSecondary: "关注 @GLtechHQ",
+        bubbleHealth: "健康",
+        bubbleAI: "AI 识别",
+        bubbleSecurity: "安全",
+        bubbleTravel: "旅行",
+        appsKicker: "应用矩阵",
+        appsTitle: "持续增长的专注型 App 家族。",
+        appsCopy: "每个产品都可以独立使用，同时 GL.tech 品牌让整个软件生态保持统一、简洁、清晰。",
+        medTitle: "吃药提醒",
+        medDesc: "一个简单可靠的提醒工具，帮助用户更轻松地管理日常用药习惯。",
+        medTag: "健康工具",
+        antTitle: "蚂蚁识别",
+        antDesc: "基于 AI 的识别应用，适合自然观察、快速发现与日常学习。",
+        antTag: "AI 识别",
+        authTitle: "Authenticator",
+        authDesc: "专注于账号安全的验证工具，提供清晰、可靠的身份验证体验。",
+        authTag: "安全工具",
+        cameraTitle: "旅游水印相机",
+        cameraDesc: "用时间、地点和视觉信息记录旅行瞬间，适合留念、分享与记录。",
+        cameraTag: "旅行相机",
+        futureTitle1: "新的 iOS 工具",
+        futureDesc1: "为 GL.tech 产品家族中的下一款专注型应用预留位置。",
+        futureTag1: "即将推出",
+        futureTitle2: "效率工具",
+        futureDesc2: "未来可用于日常流程、个人管理或轻量自动化的实用应用。",
+        futureTag2: "可扩展",
+        futureTitle3: "AI 助手类应用",
+        futureDesc3: "为未来智能应用预留空间，让小任务在手机上变得更顺手。",
+        futureTag3: "未来应用",
+        futureTitle4: "更多应用",
+        futureDesc4: "随着 GL.tech 生态继续扩展，可以在这里继续加入新的软件产品。",
+        futureTag4: "产品增长",
+        studioKicker: "工作室理念",
+        studioTitle: "软件应该安静、实用、值得信任。",
+        studioCopy: "GL.tech 关注能够解决真实生活问题的产品。我们让每个 App 保持轻量和专注，并通过持续迭代、细致设计和可靠工程不断改进。",
+        studioNote1Title: "产品矩阵优先",
+        studioNote1Copy: "从一开始就为多款 App 设计品牌结构，让每个新产品都能加入统一、干净的软件生态。",
+        studioNote2Title: "小工具，高完成度",
+        studioNote2Copy: "重点不是把 App 做得复杂，而是让真正有用的软件变得自然、顺手、没有负担。",
+        studioNote3Title: "独立工作室模式",
+        studioNote3Copy: "轻量的工作室结构更适合探索新想法、快速发布，并持续改进产品。",
+        principlesKicker: "产品理念",
+        principlesTitle: "让小型 App 也有高级感的细节。",
+        principlesCopy: "GL.tech 的产品围绕清晰、信任和长期实用性来设计。",
+        stat1: "原生优先开发",
+        stat2Title: "多应用",
+        stat2: "可扩展产品矩阵",
+        stat3Title: "日常",
+        stat3: "服务真实生活需求",
+        principle1Title: "原生 iOS 体验",
+        principle1Copy: "围绕 Apple 生态设计，注重清晰、流畅和用户熟悉的交互方式。",
+        principle2Title: "真实生活场景",
+        principle2Copy: "产品从日常需求出发：健康习惯、账号安全、旅行记录、智能识别和实用工具。",
+        principle3Title: "清晰的产品系统",
+        principle3Copy: "每个 App 保持专注，同时通过统一品牌形成长期的软件产品组合。",
+        principle4Title: "长期持续迭代",
+        principle4Copy: "通过小步改进、稳定发布和认真更新，让应用随着时间变得更可靠。",
+        socialKicker: "连接",
+        socialTitle: "关注 GL.tech 的产品生态。",
+        socialCopy: "这些社交媒体入口已经预留好，后续开通官方账号后直接替换链接即可。",
+        socialPlaceholder: "即将开通",
+        closingTitle: "面向长期，服务日常。",
+        closingCopy: "GL.tech 正在构建一个专注、简单、可靠的 iOS 应用产品矩阵，让实用工具随着时间持续变得更好。",
+        closingButton: "关注 GL.tech",
+        footerRights: "保留所有权利。",
+        footerLocation: "独立 iOS 工作室",
+        footerTagline: "为日常生活打造简单的 iOS 工具。"
+      }
+    };
+
+    const buttons = document.querySelectorAll("[data-lang]");
+    const translatable = document.querySelectorAll("[data-i18n]");
+    const savedLanguage = localStorage.getItem("gltech-language") || "en";
+
+    function setLanguage(lang) {
+      const dict = translations[lang] || translations.en;
+      document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
+
+      translatable.forEach((element) => {
+        const key = element.getAttribute("data-i18n");
+        if (dict[key]) {
+          element.textContent = dict[key];
+        }
+      });
+
+      buttons.forEach((button) => {
+        button.classList.toggle("active", button.getAttribute("data-lang") === lang);
+      });
+
+      localStorage.setItem("gltech-language", lang);
+    }
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => setLanguage(button.getAttribute("data-lang")));
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    setLanguage(savedLanguage);
+
+    const menuButton = document.querySelector(".menu-button");
+    const mobileMenu = document.querySelector(".mobile-menu");
+    const mobileMenuLinks = document.querySelectorAll(".mobile-menu a");
+
+    function closeMobileMenu() {
+      if (!menuButton || !mobileMenu) return;
+      menuButton.classList.remove("active");
+      menuButton.setAttribute("aria-expanded", "false");
+      mobileMenu.classList.remove("open");
+      mobileMenu.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("menu-open");
+    }
+
+    if (menuButton && mobileMenu) {
+      menuButton.addEventListener("click", () => {
+        const isOpen = mobileMenu.classList.toggle("open");
+        menuButton.classList.toggle("active", isOpen);
+        menuButton.setAttribute("aria-expanded", String(isOpen));
+        mobileMenu.setAttribute("aria-hidden", String(!isOpen));
+        document.body.classList.toggle("menu-open", isOpen);
+      });
+
+      mobileMenuLinks.forEach((link) => {
+        link.addEventListener("click", closeMobileMenu);
+      });
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 760) closeMobileMenu();
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeMobileMenu();
+      });
+    }
+  </script>
+</body>
+</html>
