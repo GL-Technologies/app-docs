@@ -1,0 +1,252 @@
+{
+  "language": "en",
+  "name": "English",
+  "nav": [
+    "FAQ",
+    "Support",
+    "Privacy",
+    "Terms"
+  ],
+  "resources": [
+    "Help with sign-in, cleanup and restoration",
+    "Troubleshooting and contact",
+    "How your data is handled",
+    "Account actions and subscriptions"
+  ],
+  "independent": "Independent tool. Not affiliated with TikTok.",
+  "skip": "Skip to content",
+  "allRights": "All rights reserved.",
+  "description": "Repost Reset help, privacy and terms of use.",
+  "pages": {
+    "index": {
+      "title": "Repost Reset",
+      "subtitle": "Review and remove selected reposts, likes and favorites, then check what changed. Repost Reset is an independent iOS tool by GL Technologies.",
+      "sections": [
+        {
+          "title": "A clear cleanup flow",
+          "body": "<ol><li>Connect your own account through TikTok’s official sign-in website.</li><li>Sync Reposts, Likes and Favorites. Choose a list and review the videos.</li><li>Select the items you want to remove, then tap Remove. Removal starts immediately.</li><li>Keep the app open. Check the result and recheck uncertain items.</li></ol>"
+        },
+        {
+          "title": "History & Recycle Bin",
+          "body": "<p>History saves cleanup results locally. Verified removals can appear in Recycle Bin for a new repost, like or favorite action. Restoration depends on the original video and TikTok availability; it cannot recreate the old action date, order or favorite-folder placement.</p>"
+        },
+        {
+          "title": "Availability",
+          "body": "<p>This page provides product information and support. A public App Store download link is not available here yet. Purchase availability and prices are shown by Apple in the app; no prices on this site are offers.</p>"
+        }
+      ]
+    },
+    "faq": {
+      "title": "Help & answers.",
+      "subtitle": "Practical guidance for your next cleanup.",
+      "sections": [
+        {
+          "title": "Getting started",
+          "items": [
+            {
+              "question": "Is Repost Reset made by TikTok?",
+              "answer": "No. It is an independent tool by GL Technologies, with no affiliation, endorsement or sponsorship from TikTok."
+            },
+            {
+              "question": "How do I connect my account?",
+              "answer": "Use Connect TikTok and sign in on TikTok’s official website. Complete any verification in that website. The app checks the connected account and syncs your lists. Never send your password, verification codes or cookies to support."
+            },
+            {
+              "question": "Why does sign-in need attention?",
+              "answer": "Website sessions may expire, and TikTok may require a challenge or verification. Open sign-in, complete the official steps, and return to the app. If the page stalls, use its refresh or retry control. Support cannot complete verification for you."
+            },
+            {
+              "question": "Why are counts missing or out of date?",
+              "answer": "Wait for sign-in verification, then use Sync. Cached lists are a previous snapshot; they do not authorize a new cleanup until the account and list have been checked. An incomplete or failed scan is not treated as an empty list."
+            }
+          ]
+        },
+        {
+          "title": "Choosing & removing",
+          "items": [
+            {
+              "question": "What does cleanup remove?",
+              "answer": "It removes selected repost, like or favorite actions from the chosen list. The three categories are independent. It does not delete the creator’s original video, your TikTok account or unrelated entries."
+            },
+            {
+              "question": "Can I preview or select only some videos?",
+              "answer": "Yes. Tap a cover to preview. Use the selection controls for individual, monthly or all-item selection, and search by creator or caption. Search can hide selected items; review the selection-count menu before tapping Remove. Watching a video does not select it."
+            },
+            {
+              "question": "Which date is shown?",
+              "answer": "Grouping and sorting use the video’s publication date when available, not the time you reposted, liked or favorited it. Videos without a known date are shown separately."
+            },
+            {
+              "question": "Is there another confirmation after Remove?",
+              "answer": "In the current cleanup screen, tapping Remove starts the selected actions immediately. Review the category and the full selection first. Restoration is limited and cannot be guaranteed."
+            },
+            {
+              "question": "What do Removed, Pending and Retry mean?",
+              "answer": "Removed means the app obtained verification of removal. Pending means the result is uncertain and needs a check. Retry means the item was not confirmed removed or an error occurred. An accepted request, timeout or interrupted connection alone is not proof of removal."
+            },
+            {
+              "question": "Why is cleanup slow or temporarily limited?",
+              "answer": "Requests are deliberately spaced out. TikTok may apply additional limits and a cooldown; the app saves progress and waits. Respect the displayed wait, avoid repeated retries, and resume when allowed. A paid plan does not bypass TikTok limits or guarantee account safety."
+            },
+            {
+              "question": "Can cleanup continue with the screen locked?",
+              "answer": "For reliability, keep the app open in the foreground. iOS background time and website execution are limited; background or locked-screen completion is not guaranteed. After an interruption, reopen the app, check the task status, and continue if offered. Uncertain actions are checked before another attempt."
+            },
+            {
+              "question": "Why did an account change stop my task?",
+              "answer": "Tasks belong to the TikTok account that started them. Sign in to that same account to continue, or stop the task before starting another. A task is not transferred to a different account."
+            }
+          ]
+        },
+        {
+          "title": "History, restoration & data",
+          "items": [
+            {
+              "question": "What can I restore from Recycle Bin?",
+              "answer": "Eligible verified removals can be restored by making a new repost, like or favorite action on the same account. Only a confirmed reappearance is marked Restored. Private, deleted or unavailable videos may not be restorable. Old timestamps, order and favorite folders are not restored."
+            },
+            {
+              "question": "What does Delete permanently mean?",
+              "answer": "In Recycle Bin it removes the local restoration entry. The original cleanup record can still keep its result and video metadata. Deleting a cleanup record removes that record and its related restoration entries. These actions do not delete a TikTok video or reverse a completed cleanup. Local archival backups can retain earlier records; see the privacy policy."
+            },
+            {
+              "question": "Does Disconnect delete my history?",
+              "answer": "No. It clears this app’s TikTok website session on this device. Local history remains, and completed TikTok actions are not undone. Disconnecting does not delete your TikTok account or cancel an Apple subscription."
+            },
+            {
+              "question": "Where is my data stored?",
+              "answer": "Account identifiers, video metadata, list snapshots, tasks, results and restoration records are saved on this device. Covers are cached locally. There is no app-managed cloud sync or automatic upload of history to a GL Technologies server. Device backups and third-party websites have separate behavior; see the privacy policy."
+            },
+            {
+              "question": "Why is a cover or video unavailable?",
+              "answer": "Media URLs can expire, connectivity can fail, or TikTok may remove or restrict a video. Sync again to refresh metadata, or open the original in TikTok. A placeholder cover is not proof that a video was removed from your list."
+            }
+          ]
+        },
+        {
+          "title": "Purchases & support",
+          "items": [
+            {
+              "question": "Do I need Pro to clean up?",
+              "answer": "Cleanup currently works without a subscription and has no app-imposed free-action quota or selection-count cap. Pro does not grant access to another person’s account or bypass platform restrictions. Only purchase if the in-app offer suits your needs."
+            },
+            {
+              "question": "How do I restore or cancel a purchase?",
+              "answer": "Use Settings → Restore Purchases with the Apple Account used for purchase. For cancellation, open iPhone Settings → your name → Subscriptions, or use Manage subscription in the app when available. Deleting the app does not cancel a subscription. <a href=\"https://support.apple.com/en-us/118428\">Apple cancellation instructions</a>."
+            },
+            {
+              "question": "Why are prices or purchases unavailable?",
+              "answer": "Store availability, connectivity and the installed distribution can affect Apple products. Retry later. Demo prices are examples and cannot charge you. The current public download is not linked on this website; actual product availability and charges are determined by Apple’s purchase sheet."
+            },
+            {
+              "question": "How can I get help?",
+              "answer": "Visit the <a href=\"support.html\">support center</a> or email <a href=\"mailto:GL.Tech@icloud.com\">GL.Tech@icloud.com</a>. Include the app version, iOS version, selected category and a description of the issue. Redact private data first."
+            }
+          ]
+        }
+      ]
+    },
+    "support": {
+      "title": "Let’s get you unstuck.",
+      "subtitle": "Sign-in, cleanup, restoration or purchases — start here.",
+      "sections": [
+        {
+          "title": "Contact GL Technologies",
+          "body": "<p>Email <a href=\"mailto:GL.Tech@icloud.com?subject=Repost%20Reset%20Support\">GL.Tech@icloud.com</a> or use Settings → Contact us in the app. You review and send the message yourself. We never need your password, verification codes or session cookies.</p>"
+        },
+        {
+          "title": "Before contacting support",
+          "body": "<ol><li>Read the <a href=\"faq.html\">FAQ</a> for your issue.</li><li>For sign-in problems, complete TikTok’s official verification and refresh the sign-in page if needed.</li><li>For limited requests, wait for the cooldown instead of restarting repeatedly.</li><li>For an uncertain result, recheck before trying another removal or restore.</li><li>For a storage error, avoid deleting or reinstalling the app before preserving the records you need. Reinstallation can lose local history.</li></ol>"
+        },
+        {
+          "title": "What to include",
+          "body": "<ul><li>App version and build number from Settings → About Repost Reset.</li><li>Device model, iOS version and the list category: Reposts, Likes or Favorites.</li><li>What you expected, what happened, and the displayed error or task status.</li><li>A redacted screenshot if useful. Share history exports only if necessary; they can contain account and video metadata.</li></ul>"
+        },
+        {
+          "title": "Purchases & billing",
+          "body": "<p>Restore purchases with the original Apple Account. Apple handles billing, subscriptions and refund eligibility. <a href=\"https://support.apple.com/en-us/118428\">Cancel or manage a subscription</a>; <a href=\"https://reportaproblem.apple.com/\">request a refund from Apple</a>. Support cannot cancel a subscription or promise a refund on Apple’s behalf.</p>"
+        },
+        {
+          "title": "Privacy questions",
+          "body": "<p>See our <a href=\"privacy.html\">privacy policy</a>. You can use the same email for questions about local records or information you have sent to support. We do not have remote access to your TikTok account or local app archive.</p>"
+        }
+      ]
+    },
+    "privacy": {
+      "title": "Privacy policy",
+      "subtitle": "Effective and last updated: October 13, 2026.",
+      "sections": [
+        {
+          "title": "1. Who we are",
+          "body": "<p>Repost Reset is an independent iOS app provided by GL Technologies. Contact: <a href=\"mailto:GL.Tech@icloud.com\">GL.Tech@icloud.com</a>. This policy covers our app and its support workflow. TikTok, sign-in providers, Apple and GitHub process data under their own policies.</p>"
+        },
+        {
+          "title": "2. TikTok sign-in and account operations",
+          "body": "<p>Sign-in occurs on TikTok’s official website in an embedded WebKit browser, and may open the sign-in provider you choose. You enter credentials into those websites; Repost Reset does not ask you to send credentials to GL Technologies. WebKit stores website session data on your device. The app uses the signed-in session to identify your account, read lists and perform the repost, like or favorite actions you select. Session credentials are not sent to a developer-operated server. TikTok and your sign-in provider receive the requests and may process technical information such as IP addresses and website cookies.</p>"
+        },
+        {
+          "title": "3. Data stored on your device",
+          "body": "<p>The local archive contains account identifiers and usernames, video IDs, creators, captions, original and cover URLs, available dates, list categories and snapshots, selected task items, cleanup and restoration results, request identifiers, timestamps and cooldown state. Covers are downloaded and cached locally; appearance, language and other preferences are also local. Archive files use iOS file protection. There is no app-managed cloud sync or automatic upload of these records to GL Technologies. iOS device backup and restore may retain app data according to your Apple settings; local storage does not mean exclusion from every device backup.</p>"
+        },
+        {
+          "title": "4. Covers, video playback and third parties",
+          "body": "<p>Covers and video previews connect to TikTok or its media hosts, which receive normal network requests. Playback uses a separate temporary WebKit session; management sign-in remains separate. TikTok website and player behavior, including their cookies or analytics, is governed by TikTok. The app does not integrate a developer analytics, advertising or AI service. Apple StoreKit processes purchases and provides product and entitlement information; we do not receive your card or bank details.</p>"
+        },
+        {
+          "title": "5. Notifications and Live Activities",
+          "body": "<p>If enabled and allowed by iOS, local notifications and Live Activities show task status and can open the associated cleanup. These displays can be visible on your lock screen. You can manage them in the app’s settings and iOS Settings. They do not guarantee continuous execution in the background.</p>"
+        },
+        {
+          "title": "6. Exports and support messages",
+          "body": "<p>If you export history or share a report, the chosen destination receives the content you send. History exports may contain account and video metadata. Contact us prepares an email draft with the topic, app version/build, device model, iOS version, connected-account state and Pro state. It is sent only if you send it using your mail app. GL Technologies and the email service process the message, sender address and attachments to handle your request. Avoid sending passwords, verification codes, cookies or unnecessary personal data. Contact us about information you previously sent and we will handle the request as applicable; we cannot delete data held independently by TikTok or Apple.</p>"
+        },
+        {
+          "title": "7. Retention and deletion",
+          "body": "<p>Disconnect clears this app’s website session on the device; it preserves local history and does not undo completed TikTok actions. Deleting a cleanup record removes it and related restoration entries from the active archive. Delete permanently in Recycle Bin removes the restoration entry while the original cleanup result and metadata may remain in history. Local archive recovery backups can retain earlier records, so these controls are not a secure erasure of every copy. To remove local app storage and its in-app recovery backups, delete the app rather than offloading it; separately manage device backups and any files, reports or emails you exported. Deleting the app does not cancel an Apple subscription or delete your TikTok account.</p>"
+        },
+        {
+          "title": "8. This documentation website",
+          "body": "<p>This site is hosted on GitHub Pages. GitHub may process visitor IP addresses and technical access logs under its <a href=\"https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement\">privacy statement</a>. This site uses browser local storage only to remember your language choice and includes no third-party fonts or analytics scripts. External links open services with their own policies.</p>"
+        },
+        {
+          "title": "9. Age requirements, rights and changes",
+          "body": "<p>Use the app only if you meet TikTok’s age and eligibility requirements and the requirements applicable in your region. For access, correction or deletion questions about information provided to us, contact our support email. Your applicable privacy and consumer rights are preserved. Changes will be published on this page with an updated date. See TikTok’s <a href=\"https://www.tiktok.com/legal/page/row/privacy-policy/en\">privacy policy</a> or the regional policy shown in its website.</p>"
+        }
+      ]
+    },
+    "terms": {
+      "title": "Terms of use",
+      "subtitle": "Effective and last updated: October 13, 2026.",
+      "sections": [
+        {
+          "title": "1. Provider and scope",
+          "body": "<p>GL Technologies provides Repost Reset, an independent tool for managing selected TikTok reposts, likes and favorites. It is not affiliated with, endorsed by or sponsored by TikTok. These terms describe the app’s use and service limits. If distributed through the App Store, the applicable license is Apple’s <a href=\"https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\">Standard End User License Agreement</a>, unless a separate custom EULA is presented. Nothing here replaces mandatory consumer rights or applicable Apple terms.</p>"
+        },
+        {
+          "title": "2. Your account and choices",
+          "body": "<p>Use only an account you own or are authorized to manage, and meet TikTok’s age and regional eligibility requirements. Follow TikTok’s <a href=\"https://www.tiktok.com/legal/page/row/terms-of-service/en\">terms</a> and applicable regional terms. Review your list category and all selected items before tapping Remove, which starts cleanup immediately in the current interface. The app changes selected repost, like or favorite actions, not the original creator’s video.</p>"
+        },
+        {
+          "title": "3. Verification and restoration limits",
+          "body": "<p>A request is not treated as a verified change just because it was accepted. Pending or uncertain results require a check. The app may pause for sign-in, account changes, network failures, storage errors or platform limits. Recycle Bin restoration performs a new account action and cannot guarantee recovery of unavailable content or original action dates, order or favorite folders. Deleting a local restoration entry can remove your ability to use that entry again.</p>"
+        },
+        {
+          "title": "4. Third-party availability",
+          "body": "<p>The app depends on TikTok websites and services, connectivity and iOS execution limits. Those services may change, impose restrictions or become unavailable. Keep the app in the foreground for reliable task execution. We cannot guarantee uninterrupted use, a particular completion time, successful removal or restoration, or freedom from TikTok account restrictions. Do not attempt to bypass challenges, access controls or rate limits.</p>"
+        },
+        {
+          "title": "5. Purchases and subscriptions",
+          "body": "<p>Cleanup currently works without a subscription and has no app-imposed free-action quota or selection cap. Optional Pro purchases, when available, use Apple’s purchase system. The available plan, price, currency, period and included benefits are shown in the app and Apple’s purchase confirmation; sample prices are not paid offers. Any auto-renewing subscription continues under the conditions shown by Apple unless canceled. Manage or cancel it in iPhone Settings → your name → Subscriptions; <a href=\"https://support.apple.com/en-us/118428\">Apple’s instructions</a> apply. Deleting the app or disconnecting TikTok does not cancel it. Use Restore Purchases with the original Apple Account. Refund requests are handled by <a href=\"https://reportaproblem.apple.com/\">Apple</a> under its applicable policies and legal requirements. Purchasing does not bypass TikTok limits or guarantee account safety.</p>"
+        },
+        {
+          "title": "6. Local data and support",
+          "body": "<p>You control exports and sharing. Records and recovery backups are local, with device backups governed by your system settings. Preserve needed records before deleting the app. Disconnect and local deletion do not undo completed platform actions. See the <a href=\"privacy.html\">privacy policy</a> for retention, third-party requests and support messages.</p>"
+        },
+        {
+          "title": "7. Changes, rights and contact",
+          "body": "<p>Features and third-party compatibility may change. Updates to these terms will be published here with a new date; purchase-specific conditions remain subject to the offer and applicable law. These terms do not exclude liability or rights that cannot lawfully be excluded. For help or questions, contact <a href=\"mailto:GL.Tech@icloud.com\">GL.Tech@icloud.com</a> or visit the <a href=\"support.html\">support center</a>.</p>"
+        }
+      ]
+    }
+  }
+}

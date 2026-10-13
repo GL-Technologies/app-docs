@@ -1,0 +1,252 @@
+{
+  "language": "de",
+  "name": "Deutsch",
+  "nav": [
+    "FAQ",
+    "Support",
+    "Datenschutz",
+    "Nutzung"
+  ],
+  "resources": [
+    "Anmeldung, Bereinigung und Wiederherstellung",
+    "Probleme lösen und Kontakt aufnehmen",
+    "Umgang mit deinen Daten",
+    "Kontoaktionen und Abonnements"
+  ],
+  "independent": "Unabhängiges Werkzeug. Nicht mit TikTok verbunden.",
+  "skip": "Zum Inhalt",
+  "allRights": "Alle Rechte vorbehalten.",
+  "description": "Hilfe, Datenschutz und Nutzungsbedingungen für Repost Reset.",
+  "pages": {
+    "index": {
+      "title": "Repost Reset",
+      "subtitle": "Ausgewählte TikTok-Reposts, Likes und Favoriten prüfen und entfernen — mit anschließender Kontrolle. Ein unabhängiges iOS-Werkzeug von GL Technologies.",
+      "sections": [
+        {
+          "title": "Ein klarer Ablauf",
+          "body": "<p>Melde dich über Connect TikTok auf der offiziellen Website mit deinem Konto an und synchronisiere die drei Listen. Prüfe die Kategorie und Auswahl. Remove startet sofort. Lass die App im Vordergrund und überprüfe unklare Ergebnisse.</p>"
+        },
+        {
+          "title": "Verlauf und Papierkorb",
+          "body": "<p>Ergebnisse bleiben lokal im Verlauf. Bestätigte Entfernungen können über neue Repost-, Like- oder Favoritenaktionen wiederhergestellt werden. Das hängt vom Video und TikTok ab; ursprüngliche Zeitpunkte, Reihenfolge und Favoritenordner werden nicht wiederhergestellt.</p>"
+        },
+        {
+          "title": "Verfügbarkeit",
+          "body": "<p>Diese Seite bietet Informationen und Hilfe. Ein öffentlicher App-Store-Downloadlink steht hier noch nicht bereit. Verfügbare Produkte und Preise zeigt Apple in der App; diese Website macht keine Preisangebote.</p>"
+        }
+      ]
+    },
+    "faq": {
+      "title": "Hilfe und häufige Fragen",
+      "subtitle": "Hinweise zur Auswahl, Bereinigung und Überprüfung.",
+      "sections": [
+        {
+          "title": "Erste Schritte",
+          "items": [
+            {
+              "question": "Ist dies eine offizielle TikTok-App?",
+              "answer": "Nein. Das unabhängige Werkzeug von GL Technologies ist nicht mit TikTok verbunden und wird von TikTok weder unterstützt noch gesponsert."
+            },
+            {
+              "question": "Wie verbinde ich mein Konto?",
+              "answer": "Wähle Connect TikTok und melde dich auf TikToks offizieller Website an. Schließe die dortige Verifizierung ab. Die App prüft das Konto und synchronisiert die Listen. Sende dem Support keine Passwörter, Codes oder Cookies."
+            },
+            {
+              "question": "Warum muss ich mich erneut verifizieren?",
+              "answer": "Die Sitzung kann ablaufen oder TikTok kann eine Prüfung verlangen. Öffne die Anmeldung, befolge die offiziellen Schritte und kehre zurück. Bei einer blockierten Seite helfen Aktualisieren oder Erneut versuchen. Der Support kann dich nicht stellvertretend verifizieren."
+            },
+            {
+              "question": "Warum fehlen Zahlen oder sind sie veraltet?",
+              "answer": "Warte auf die Kontoprüfung und nutze Sync. Zwischengespeicherte Listen sind frühere Momentaufnahmen. Vor einer neuen Bereinigung werden Konto und Liste geprüft. Fehlgeschlagene oder unvollständige Abfragen gelten nicht als leere Liste."
+            }
+          ]
+        },
+        {
+          "title": "Auswahl und Entfernung",
+          "items": [
+            {
+              "question": "Was entfernt die Bereinigung?",
+              "answer": "Sie widerruft ausgewählte Reposts, Likes oder Favoriten in der gewählten Kategorie. Die drei Listen sind unabhängig. Originalvideos, dein TikTok-Konto und nicht ausgewählte Einträge werden nicht gelöscht."
+            },
+            {
+              "question": "Kann ich Videos ansehen und nur einige auswählen?",
+              "answer": "Ja. Tippe für eine Vorschau auf das Vorschaubild. Wähle einzelne Videos, einen Monat oder alle, und suche nach Ersteller oder Text. Die Suche kann ausgewählte Einträge ausblenden: Prüfe vor Remove das Menü des Auswahlzählers. Ansehen wählt ein Video nicht aus."
+            },
+            {
+              "question": "Welches Datum wird angezeigt?",
+              "answer": "Gruppierung und Sortierung verwenden das Veröffentlichungsdatum, sofern bekannt — nicht den Zeitpunkt deines Reposts, Likes oder Favoriten. Einträge ohne Datum erscheinen separat."
+            },
+            {
+              "question": "Gibt es nach Remove eine weitere Bestätigung?",
+              "answer": "In der aktuellen Oberfläche beginnt Remove sofort. Prüfe vorher die Kategorie und gesamte Auswahl. Wiederherstellung ist eingeschränkt und nicht garantiert."
+            },
+            {
+              "question": "Was bedeuten Removed, Pending und Retry?",
+              "answer": "Removed bedeutet überprüfte Entfernung. Pending bezeichnet ein unklares, noch zu prüfendes Ergebnis. Retry bedeutet, dass die Entfernung nicht bestätigt wurde oder ein Fehler auftrat. Annahme der Anfrage, Zeitüberschreitung oder Unterbrechung beweisen keine Entfernung."
+            },
+            {
+              "question": "Warum ist es langsam oder vorübergehend eingeschränkt?",
+              "answer": "Anfragen haben bewusst Abstände. TikTok kann weitere Limits und Wartezeiten vorgeben; Fortschritt wird gespeichert. Beachte die angezeigte Pause und vermeide wiederholte Versuche. Ein Kauf umgeht keine Limits und garantiert keine Freiheit von Kontoeinschränkungen."
+            },
+            {
+              "question": "Läuft es bei gesperrtem Bildschirm weiter?",
+              "answer": "Lass die App für verlässliche Ausführung im Vordergrund. iOS-Hintergrundzeit und Webausführung sind begrenzt; Abschluss im Hintergrund oder bei Sperre ist nicht garantiert. Öffne die App wieder, prüfe den Status und setze fort, falls angeboten. Unklare Aktionen werden vor einem neuen Versuch geprüft."
+            },
+            {
+              "question": "Warum stoppt ein Kontowechsel die Aufgabe?",
+              "answer": "Die Aufgabe gehört zum ursprünglichen Konto. Melde dich dort wieder an oder stoppe sie vor einer neuen Aufgabe. Sie wird nicht auf ein anderes Konto übertragen."
+            }
+          ]
+        },
+        {
+          "title": "Verlauf, Wiederherstellung und Daten",
+          "items": [
+            {
+              "question": "Was lässt sich aus dem Papierkorb wiederherstellen?",
+              "answer": "Geeignete bestätigte Entfernungen werden durch eine neue Aktion im selben Konto wiederhergestellt. Erst eine bestätigte Rückkehr in die Liste wird als Restored markiert. Private, gelöschte oder unzugängliche Videos können ausfallen. Alte Zeitpunkte, Reihenfolge und Ordner werden nicht zurückgesetzt."
+            },
+            {
+              "question": "Was bedeutet Delete permanently?",
+              "answer": "Es entfernt den lokalen Wiederherstellungseintrag; das ursprüngliche Ergebnis und Metadaten können im Verlauf bleiben. Das Löschen eines Verlaufsdatensatzes entfernt auch zugehörige Wiederherstellungseinträge. TikTok-Videos werden nicht gelöscht und fertige Aktionen nicht rückgängig gemacht. Lokale Sicherungen können ältere Datensätze behalten; siehe Datenschutz."
+            },
+            {
+              "question": "Löscht Disconnect meinen Verlauf?",
+              "answer": "Nein. Es löscht die Websitzung dieser App auf dem Gerät. Verlauf und abgeschlossene Aktionen bleiben. Weder das TikTok-Konto noch ein Apple-Abonnement werden dadurch gelöscht oder gekündigt."
+            },
+            {
+              "question": "Wo bleiben meine Daten?",
+              "answer": "Kontokennungen, Videometadaten, Listenstände, Aufgaben, Ergebnisse, Wiederherstellungen und Vorschaubilder bleiben auf dem Gerät. Es gibt keine eigene Cloud-Synchronisierung oder automatische Übermittlung des Verlaufs an GL Technologies. Gerätebackups und externe Websites arbeiten separat."
+            },
+            {
+              "question": "Warum fehlen Vorschaubild oder Video?",
+              "answer": "URLs können ablaufen, Verbindungen scheitern oder TikTok kann Inhalte entfernen beziehungsweise einschränken. Synchronisiere erneut oder öffne das Original in TikTok. Ein Platzhalter beweist keine Entfernung aus deiner Liste."
+            }
+          ]
+        },
+        {
+          "title": "Käufe und Support",
+          "items": [
+            {
+              "question": "Brauche ich Pro zum Bereinigen?",
+              "answer": "Aktuell ist kein Abonnement nötig; die App hat kein kostenloses Aktionskontingent oder Auswahlmaximum. Pro gewährt keinen Zugriff auf fremde Konten und umgeht keine Plattformregeln. Entscheide anhand des Angebots in der App."
+            },
+            {
+              "question": "Wie stelle ich Käufe wieder her oder kündige?",
+              "answer": "Nutze Settings → Restore Purchases mit dem ursprünglichen Apple Account. Kündige über iPhone-Einstellungen → dein Name → Abonnements oder die angebotene Verwaltung in der App. App-Löschen kündigt nicht. <a href=\"https://support.apple.com/en-us/118428\">Anleitung von Apple</a>."
+            },
+            {
+              "question": "Warum fehlen Preise oder Kaufmöglichkeiten?",
+              "answer": "Region, Verbindung und installierte Distribution können Apple-Produkte beeinflussen. Versuche es später. Demopreise lösen keine Zahlung aus. Hier ist noch kein öffentlicher Download verlinkt; das Apple-Kaufformular zeigt tatsächliche Produkte und Kosten."
+            },
+            {
+              "question": "Wie bekomme ich Hilfe?",
+              "answer": "Öffne den <a href=\"support.html\">Support</a> oder schreibe an <a href=\"mailto:GL.Tech@icloud.com\">GL.Tech@icloud.com</a>. Nenne App- und iOS-Version, Kategorie und Problem. Schwärze private Informationen vorher."
+            }
+          ]
+        }
+      ]
+    },
+    "support": {
+      "title": "Support",
+      "subtitle": "Hilfe bei Anmeldung, Bereinigung, Wiederherstellung und Käufen.",
+      "sections": [
+        {
+          "title": "GL Technologies kontaktieren",
+          "body": "<p>Schreibe an <a href=\"mailto:GL.Tech@icloud.com\">GL.Tech@icloud.com</a> oder nutze Settings → Contact us. Du prüfst und sendest die Nachricht selbst. Passwörter, Bestätigungscodes und Sitzungscookies sind nicht erforderlich.</p>"
+        },
+        {
+          "title": "Vor der Kontaktaufnahme",
+          "body": "<p>Lies die <a href=\"faq.html\">FAQ</a>. Schließe offizielle TikTok-Verifizierungen ab und aktualisiere die Seite bei Bedarf. Warte bei Limits und prüfe unklare Ergebnisse vor neuen Aktionen. Sichere bei Speicherfehlern nötige Datensätze, bevor du löschst oder neu installierst; der Verlauf kann verloren gehen.</p>"
+        },
+        {
+          "title": "Hilfreiche Angaben",
+          "body": "<p>Nenne Version und Build aus Settings → About Repost Reset, Gerätemodell, iOS-Version, Kategorie, erwartetes und tatsächliches Verhalten sowie Fehler oder Aufgabenstatus. Füge bei Bedarf geschwärzte Screenshots hinzu. Teile Verlaufsexporte nur soweit nötig; sie können Konto- und Videometadaten enthalten.</p>"
+        },
+        {
+          "title": "Käufe und Abrechnung",
+          "body": "<p>Stelle Käufe mit dem ursprünglichen Apple Account wieder her. Abrechnung, Abonnements und Erstattungsberechtigung liegen bei Apple. <a href=\"https://support.apple.com/en-us/118428\">Abonnement kündigen</a>; <a href=\"https://reportaproblem.apple.com/\">Erstattung beantragen</a>. Der Support kann nicht für Apple kündigen oder Erstattungen garantieren.</p>"
+        },
+        {
+          "title": "Datenschutzfragen",
+          "body": "<p>Lies die <a href=\"privacy.html\">Datenschutzerklärung</a>. Fragen zu lokalen Datensätzen oder früher übermittelten Informationen sind über dieselbe E-Mail möglich. Wir haben keinen Fernzugriff auf dein TikTok-Konto oder dein lokales Archiv.</p>"
+        }
+      ]
+    },
+    "privacy": {
+      "title": "Datenschutzerklärung",
+      "subtitle": "Gültig und zuletzt aktualisiert: 13. Oktober 2026.",
+      "sections": [
+        {
+          "title": "1. Anbieter",
+          "body": "<p>Repost Reset ist eine unabhängige iOS-App von GL Technologies. Kontakt: <a href=\"mailto:GL.Tech@icloud.com\">GL.Tech@icloud.com</a>. Diese Erklärung betrifft App und Support. TikTok, Anmeldeanbieter, Apple und GitHub verarbeiten Daten nach eigenen Richtlinien.</p>"
+        },
+        {
+          "title": "2. TikTok-Anmeldung und Kontoaktionen",
+          "body": "<p>Die Anmeldung läuft über die offizielle TikTok-Website in WebKit und gegebenenfalls den gewählten Anbieter. Du gibst Zugangsdaten dort ein; GL Technologies verlangt keine Zusendung. WebKit speichert die Sitzung auf dem Gerät. Die App nutzt sie zur Kontoprüfung, Listenabfrage und für deine gewählten Repost-, Like- oder Favoritenaktionen. Zugangsdaten werden nicht an Entwicklerserver gesendet. TikTok und Anmeldeanbieter erhalten Anfragen und können IP-Adressen sowie Cookies verarbeiten.</p>"
+        },
+        {
+          "title": "3. Lokale Daten",
+          "body": "<p>Das lokale Archiv enthält Kontokennungen und Namen, Video-IDs, Ersteller, Texte, Original- und Bild-URLs, verfügbare Datumsangaben, Kategorien und Listenstände, ausgewählte Aufgaben, Bereinigungs- und Wiederherstellungsergebnisse, Anfragekennungen, Zeitpunkte und Wartezustände. Bilder und Einstellungen sind ebenfalls lokal. Archivdateien verwenden iOS-Dateischutz. Es gibt keine eigene Cloud-Synchronisierung oder automatische Übertragung an GL Technologies. iOS-Backups können App-Daten gemäß deinen Apple-Einstellungen enthalten; lokale Speicherung schließt nicht jedes Backup aus.</p>"
+        },
+        {
+          "title": "4. Vorschaubilder, Wiedergabe und Dritte",
+          "body": "<p>Bilder und Videovorschauen verbinden sich mit TikTok beziehungsweise Medienservern und senden normale Netzwerkanfragen. Wiedergabe verwendet eine temporäre, von der Verwaltung getrennte WebKit-Sitzung. Cookies und Analysen der TikTok-Websites und Player unterliegen TikToks Richtlinien. Die App integriert keine Entwickler-Analyse-, Werbe- oder KI-Dienste. StoreKit verarbeitet Käufe und liefert Produkt- und Berechtigungsdaten; Karten- oder Bankdaten erhalten wir nicht.</p>"
+        },
+        {
+          "title": "5. Mitteilungen und Live-Aktivitäten",
+          "body": "<p>Bei Aktivierung und iOS-Freigabe zeigen lokale Mitteilungen und Live-Aktivitäten den Status und öffnen passende Aufgaben. Inhalte können auf dem Sperrbildschirm sichtbar sein. Verwaltung ist in App und iOS-Einstellungen möglich. Kontinuierliche Hintergrundausführung wird nicht garantiert.</p>"
+        },
+        {
+          "title": "6. Exporte und Supportnachrichten",
+          "body": "<p>Bei Export oder Berichtfreigabe erhält das gewählte Ziel den gesendeten Inhalt. Verlaufsexporte können Konto- und Videometadaten enthalten. Contact us erstellt einen Entwurf mit Thema, Version/Build, Gerät, iOS sowie Verbindungs- und Pro-Status. Nur dein Versand im Mailprogramm sendet ihn ab. GL Technologies und der E-Mail-Dienst verarbeiten Nachricht, Absender und Anhänge zur Bearbeitung. Sende keine Passwörter, Codes, Cookies oder unnötigen persönlichen Daten. Anfragen zu übermittelten Informationen werden nach anwendbaren Anforderungen behandelt; unabhängig von TikTok oder Apple gehaltene Daten können wir nicht löschen.</p>"
+        },
+        {
+          "title": "7. Aufbewahrung und Löschung",
+          "body": "<p>Disconnect löscht die Websitzung, erhält Verlauf und abgeschlossene TikTok-Aktionen. Verlaufsdatensätze werden mit zugehörigen Wiederherstellungseinträgen aus dem aktiven Archiv gelöscht. Dauerhaftes Löschen im Papierkorb entfernt nur den Wiederherstellungseintrag; Ergebnisse und Metadaten können im Verlauf bleiben. Lokale Wiederherstellungssicherungen können frühere Stände behalten. Diese Funktionen löschen nicht jede Kopie sicher. Um App-Speicher und interne Sicherungen zu entfernen, lösche die App statt sie unter Erhalt der Daten auszulagern. Gerätebackups, Exporte, Berichte und E-Mails verwaltest du separat. App-Löschen kündigt keine Abonnements und löscht kein TikTok-Konto.</p>"
+        },
+        {
+          "title": "8. Diese Dokumentationswebsite",
+          "body": "<p>Diese Website liegt auf GitHub Pages. GitHub kann IP-Adressen und Zugriffsprotokolle nach seiner <a href=\"https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement\">Datenschutzerklärung</a> verarbeiten. Browser-Lokalspeicher merkt nur die Sprache. Es gibt keine externen Schriftarten oder Analyseskripte. Verlinkte Dienste haben eigene Richtlinien.</p>"
+        },
+        {
+          "title": "9. Alter, Rechte und Änderungen",
+          "body": "<p>Erfülle TikToks und die regionalen Alters- und Nutzungsanforderungen. Fragen zu Auskunft, Berichtigung oder Löschung übermittelter Informationen richten sich an den Support. Anwendbare Datenschutz- und Verbraucherrechte bleiben erhalten. Änderungen erscheinen mit neuem Datum hier. Siehe TikToks <a href=\"https://www.tiktok.com/legal/page/row/privacy-policy/en\">Datenschutzrichtlinie</a> oder die dort angebotene regionale Fassung.</p>"
+        }
+      ]
+    },
+    "terms": {
+      "title": "Nutzungsbedingungen",
+      "subtitle": "Gültig und zuletzt aktualisiert: 13. Oktober 2026.",
+      "sections": [
+        {
+          "title": "1. Anbieter und Geltung",
+          "body": "<p>GL Technologies bietet ein unabhängiges Werkzeug für ausgewählte TikTok-Reposts, Likes und Favoriten. Es besteht keine Verbindung, Unterstützung oder Förderung durch TikTok. Diese Bedingungen erklären Nutzung und Grenzen. Bei App-Store-Vertrieb gilt Apples <a href=\"https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\">Standardlizenzvertrag</a>, sofern kein eigener EULA vorgelegt wird. Zwingende Verbraucherrechte und anwendbare Apple-Bedingungen bleiben bestehen.</p>"
+        },
+        {
+          "title": "2. Konto und Auswahl",
+          "body": "<p>Verwende nur eigene oder autorisiert verwaltete Konten und erfülle Alters- und Regionalanforderungen. Beachte TikToks <a href=\"https://www.tiktok.com/legal/page/row/terms-of-service/en\">Bedingungen</a> und regionale Fassungen. Prüfe Kategorie und gesamte Auswahl vor Remove; die Aktionen starten sofort. Die App ändert gewählte Kontoaktionen, nicht das Originalvideo des Erstellers.</p>"
+        },
+        {
+          "title": "3. Prüfung und Wiederherstellung",
+          "body": "<p>Eine angenommene Anfrage beweist keine Änderung. Unklare Ergebnisse brauchen Prüfung. Anmeldung, Kontowechsel, Netzwerk- oder Speicherfehler und Limits können Aufgaben pausieren. Wiederherstellung ist eine neue Aktion und garantiert weder unzugängliche Inhalte noch ursprüngliche Zeitpunkte, Reihenfolge oder Ordner. Gelöschte Wiederherstellungseinträge können nicht weiter genutzt werden.</p>"
+        },
+        {
+          "title": "4. Verfügbarkeit externer Dienste",
+          "body": "<p>Die App hängt von TikTok, Verbindung und iOS-Ausführungsgrenzen ab. Dienste können sich ändern, beschränkt werden oder ausfallen. Lass die App im Vordergrund. Ununterbrochene Nutzung, Abschlusszeit, erfolgreiche Entfernung oder Wiederherstellung und Freiheit von Kontobeschränkungen sind nicht garantiert. Umgehe keine Verifizierungen, Zugriffskontrollen oder Limits.</p>"
+        },
+        {
+          "title": "5. Käufe und Abonnements",
+          "body": "<p>Aktuell braucht Bereinigung kein Abonnement und hat keine App-Kontingente oder Auswahlobergrenze. Optionale verfügbare Pro-Käufe laufen über Apple. Plan, Preis, Währung, Laufzeit und Vorteile gelten laut App und Apples Bestätigung; Beispiele sind keine Angebote. Automatische Verlängerung erfolgt bis zur Kündigung nach Apples Bedingungen. Verwalte unter iPhone-Einstellungen → dein Name → Abonnements; siehe <a href=\"https://support.apple.com/en-us/118428\">Apple-Anleitung</a>. Löschen oder Disconnect kündigen nicht. Stelle mit dem ursprünglichen Account wieder her. Erstattungen behandelt <a href=\"https://reportaproblem.apple.com/\">Apple</a> nach Richtlinien und Recht. Ein Kauf umgeht keine TikTok-Limits und garantiert keine Kontosicherheit.</p>"
+        },
+        {
+          "title": "6. Lokale Daten und Support",
+          "body": "<p>Du bestimmst Exporte und Freigaben. Archive und Wiederherstellungssicherungen sind lokal; Gerätebackups richten sich nach deinen Einstellungen. Bewahre nötige Datensätze vor dem Löschen. Trennung und lokale Löschung widerrufen keine fertigen Plattformaktionen. Details stehen in der <a href=\"privacy.html\">Datenschutzerklärung</a>.</p>"
+        },
+        {
+          "title": "7. Änderungen, Rechte und Kontakt",
+          "body": "<p>Funktionen und Kompatibilität können sich ändern. Aktualisierte Bedingungen erscheinen mit Datum; konkrete Kaufbedingungen richten sich nach Angebot und Recht. Gesetzlich nicht ausschließbare Haftung oder Rechte werden nicht ausgeschlossen. Kontakt: <a href=\"mailto:GL.Tech@icloud.com\">GL.Tech@icloud.com</a> oder <a href=\"support.html\">Support</a>.</p>"
+        }
+      ]
+    }
+  }
+}
