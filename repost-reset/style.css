@@ -114,6 +114,9 @@ footer > a { display: inline-flex; align-items: center; min-height: 44px; }
   .segmented-control a { padding: 7px 4px; font-size: 12px; }
   .segmented-control a { gap: 4px; }
   .segmented-control svg { width: 15px; height: 15px; }
+  html:lang(fr) .segmented-control,
+  html:lang(de) .segmented-control,
+  html:lang(es) .segmented-control { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .doc-header { padding-bottom: 22px; }
   h1, .portal h1 { font-size: 25px; }
   .portal-icon { width: 88px; height: 88px; }
