@@ -2,3 +2,7 @@
 *.swp
 .idea/
 .vscode/
+
+# Local publishing guidance for future agents (never published).
+/README.local.md
+/AGENTS.md
