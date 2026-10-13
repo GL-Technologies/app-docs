@@ -16,11 +16,11 @@
   "independent": "獨立工具，與 TikTok 無關聯。",
   "skip": "跳到正文",
   "allRights": "保留所有權利。",
-  "description": "Repost Reset 使用幫助、隱私政策和使用條款。",
+  "description": "TokCleaner 使用幫助、隱私政策和使用條款。",
   "pages": {
     "index": {
-      "title": "Repost Reset",
-      "subtitle": "查看並移除選中的轉發、點贊和收藏，再核驗實際變化。Repost Reset 是 GL Technologies 開發的獨立 iOS 工具。",
+      "title": "TokCleaner",
+      "subtitle": "查看並移除選中的轉發、點贊和收藏，再核驗實際變化。TokCleaner 是 GL Technologies 開發的獨立 iOS 工具。",
       "sections": [
         {
           "title": "清晰的清理流程",
@@ -44,7 +44,7 @@
           "title": "開始使用",
           "items": [
             {
-              "question": "Repost Reset 是 TikTok 官方應用嗎？",
+              "question": "TokCleaner 是 TikTok 官方應用嗎？",
               "answer": "不是。它是 GL Technologies 開發的獨立工具，與 TikTok 沒有關聯、授權背書或贊助關係。"
             },
             {
@@ -152,7 +152,7 @@
       "sections": [
         {
           "title": "聯繫 GL Technologies",
-          "body": "<p>發送郵件至 <a href=\"mailto:GL.Tech@icloud.com?subject=Repost%20Reset%20Support\">GL.Tech@icloud.com</a>，或在應用設置中選擇聯繫我們。郵件由你檢查後自行發送。我們不需要你的密碼、驗證碼或會話 Cookie。</p>"
+          "body": "<p>發送郵件至 <a href=\"mailto:GL.Tech@icloud.com?subject=TokCleaner%20Support%20Request\">GL.Tech@icloud.com</a>，或在應用設置中選擇聯繫我們。郵件由你檢查後自行發送。我們不需要你的密碼、驗證碼或會話 Cookie。</p>"
         },
         {
           "title": "聯繫前可以先檢查",
@@ -160,7 +160,7 @@
         },
         {
           "title": "請提供哪些信息",
-          "body": "<ul><li>設置 → 關於 Repost Reset 中的應用版本和構建號。</li><li>設備型號、iOS 版本，以及轉發、點贊或收藏類別。</li><li>預期結果、實際表現、錯誤提示或任務狀態。</li><li>必要時提供遮蓋隱私後的截圖。僅在需要時發送歷史導出文件，它可能包含賬號和視頻元數據。</li></ul>"
+          "body": "<ul><li>設置 → 關於 TokCleaner 中的應用版本和構建號。</li><li>設備型號、iOS 版本，以及轉發、點贊或收藏類別。</li><li>預期結果、實際表現、錯誤提示或任務狀態。</li><li>必要時提供遮蓋隱私後的截圖。僅在需要時發送歷史導出文件，它可能包含賬號和視頻元數據。</li></ul>"
         },
         {
           "title": "購買與賬單",
@@ -178,7 +178,7 @@
       "sections": [
         {
           "title": "1. 我們是誰",
-          "body": "<p>Repost Reset 是 GL Technologies 提供的獨立 iOS 應用。聯繫郵箱：<a href=\"mailto:GL.Tech@icloud.com\">GL.Tech@icloud.com</a>。本政策說明應用及支持流程的數據處理；TikTok、登錄服務商、Apple 和 GitHub 根據各自政策處理數據。</p>"
+          "body": "<p>TokCleaner 是 GL Technologies 提供的獨立 iOS 應用。聯繫郵箱：<a href=\"mailto:GL.Tech@icloud.com\">GL.Tech@icloud.com</a>。本政策說明應用及支持流程的數據處理；TikTok、登錄服務商、Apple 和 GitHub 根據各自政策處理數據。</p>"
         },
         {
           "title": "2. TikTok 登錄與賬號操作",
@@ -220,7 +220,7 @@
       "sections": [
         {
           "title": "1. 提供方與適用範圍",
-          "body": "<p>GL Technologies 提供 Repost Reset，用於管理所選 TikTok 轉發、點贊和收藏。它與 TikTok 無關聯、授權背書或贊助關係。本條款說明應用使用和服務邊界。通過 App Store 發行時，適用 Apple 的<a href=\"https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\">標準最終用戶許可協議</a>，除非另行提供自定義 EULA。本條款不取代強制性的消費者權利或適用的 Apple 條款。</p>"
+          "body": "<p>GL Technologies 提供 TokCleaner，用於管理所選 TikTok 轉發、點贊和收藏。它與 TikTok 無關聯、授權背書或贊助關係。本條款說明應用使用和服務邊界。通過 App Store 發行時，適用 Apple 的<a href=\"https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\">標準最終用戶許可協議</a>，除非另行提供自定義 EULA。本條款不取代強制性的消費者權利或適用的 Apple 條款。</p>"
         },
         {
           "title": "2. 賬號與操作選擇",
@@ -248,5 +248,10 @@
         }
       ]
     }
+  },
+  "helpCard": {
+    "title": "仍需協助？",
+    "body": "我們的技術支援團隊隨時為您解答疑問與處理回饋。",
+    "action": "聯絡客服支援"
   }
 }

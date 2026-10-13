@@ -16,10 +16,10 @@
   "independent": "Unabhängiges Werkzeug. Nicht mit TikTok verbunden.",
   "skip": "Zum Inhalt",
   "allRights": "Alle Rechte vorbehalten.",
-  "description": "Hilfe, Datenschutz und Nutzungsbedingungen für Repost Reset.",
+  "description": "Hilfe, Datenschutz und Nutzungsbedingungen für TokCleaner.",
   "pages": {
     "index": {
-      "title": "Repost Reset",
+      "title": "TokCleaner",
       "subtitle": "Ausgewählte TikTok-Reposts, Likes und Favoriten prüfen und entfernen — mit anschließender Kontrolle. Ein unabhängiges iOS-Werkzeug von GL Technologies.",
       "sections": [
         {
@@ -160,7 +160,7 @@
         },
         {
           "title": "Hilfreiche Angaben",
-          "body": "<p>Nenne Version und Build aus Settings → About Repost Reset, Gerätemodell, iOS-Version, Kategorie, erwartetes und tatsächliches Verhalten sowie Fehler oder Aufgabenstatus. Füge bei Bedarf geschwärzte Screenshots hinzu. Teile Verlaufsexporte nur soweit nötig; sie können Konto- und Videometadaten enthalten.</p>"
+          "body": "<p>Nenne Version und Build aus Settings → About TokCleaner, Gerätemodell, iOS-Version, Kategorie, erwartetes und tatsächliches Verhalten sowie Fehler oder Aufgabenstatus. Füge bei Bedarf geschwärzte Screenshots hinzu. Teile Verlaufsexporte nur soweit nötig; sie können Konto- und Videometadaten enthalten.</p>"
         },
         {
           "title": "Käufe und Abrechnung",
@@ -178,7 +178,7 @@
       "sections": [
         {
           "title": "1. Anbieter",
-          "body": "<p>Repost Reset ist eine unabhängige iOS-App von GL Technologies. Kontakt: <a href=\"mailto:GL.Tech@icloud.com\">GL.Tech@icloud.com</a>. Diese Erklärung betrifft App und Support. TikTok, Anmeldeanbieter, Apple und GitHub verarbeiten Daten nach eigenen Richtlinien.</p>"
+          "body": "<p>TokCleaner ist eine unabhängige iOS-App von GL Technologies. Kontakt: <a href=\"mailto:GL.Tech@icloud.com\">GL.Tech@icloud.com</a>. Diese Erklärung betrifft App und Support. TikTok, Anmeldeanbieter, Apple und GitHub verarbeiten Daten nach eigenen Richtlinien.</p>"
         },
         {
           "title": "2. TikTok-Anmeldung und Kontoaktionen",
@@ -248,5 +248,10 @@
         }
       ]
     }
+  },
+  "helpCard": {
+    "title": "Noch Fragen?",
+    "body": "Unser technisches Supportteam beantwortet deine Fragen und hilft dir bei deinem Anliegen.",
+    "action": "Support kontaktieren"
   }
 }

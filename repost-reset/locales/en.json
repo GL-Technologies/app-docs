@@ -16,11 +16,11 @@
   "independent": "Independent tool. Not affiliated with TikTok.",
   "skip": "Skip to content",
   "allRights": "All rights reserved.",
-  "description": "Repost Reset help, privacy and terms of use.",
+  "description": "TokCleaner help, privacy and terms of use.",
   "pages": {
     "index": {
-      "title": "Repost Reset",
-      "subtitle": "Review and remove selected reposts, likes and favorites, then check what changed. Repost Reset is an independent iOS tool by GL Technologies.",
+      "title": "TokCleaner",
+      "subtitle": "Review and remove selected reposts, likes and favorites, then check what changed. TokCleaner is an independent iOS tool by GL Technologies.",
       "sections": [
         {
           "title": "A clear cleanup flow",
@@ -44,7 +44,7 @@
           "title": "Getting started",
           "items": [
             {
-              "question": "Is Repost Reset made by TikTok?",
+              "question": "Is TokCleaner made by TikTok?",
               "answer": "No. It is an independent tool by GL Technologies, with no affiliation, endorsement or sponsorship from TikTok."
             },
             {
@@ -152,7 +152,7 @@
       "sections": [
         {
           "title": "Contact GL Technologies",
-          "body": "<p>Email <a href=\"mailto:GL.Tech@icloud.com?subject=Repost%20Reset%20Support\">GL.Tech@icloud.com</a> or use Settings → Contact us in the app. You review and send the message yourself. We never need your password, verification codes or session cookies.</p>"
+          "body": "<p>Email <a href=\"mailto:GL.Tech@icloud.com?subject=TokCleaner%20Support%20Request\">GL.Tech@icloud.com</a> or use Settings → Contact us in the app. You review and send the message yourself. We never need your password, verification codes or session cookies.</p>"
         },
         {
           "title": "Before contacting support",
@@ -160,7 +160,7 @@
         },
         {
           "title": "What to include",
-          "body": "<ul><li>App version and build number from Settings → About Repost Reset.</li><li>Device model, iOS version and the list category: Reposts, Likes or Favorites.</li><li>What you expected, what happened, and the displayed error or task status.</li><li>A redacted screenshot if useful. Share history exports only if necessary; they can contain account and video metadata.</li></ul>"
+          "body": "<ul><li>App version and build number from Settings → About TokCleaner.</li><li>Device model, iOS version and the list category: Reposts, Likes or Favorites.</li><li>What you expected, what happened, and the displayed error or task status.</li><li>A redacted screenshot if useful. Share history exports only if necessary; they can contain account and video metadata.</li></ul>"
         },
         {
           "title": "Purchases & billing",
@@ -178,11 +178,11 @@
       "sections": [
         {
           "title": "1. Who we are",
-          "body": "<p>Repost Reset is an independent iOS app provided by GL Technologies. Contact: <a href=\"mailto:GL.Tech@icloud.com\">GL.Tech@icloud.com</a>. This policy covers our app and its support workflow. TikTok, sign-in providers, Apple and GitHub process data under their own policies.</p>"
+          "body": "<p>TokCleaner is an independent iOS app provided by GL Technologies. Contact: <a href=\"mailto:GL.Tech@icloud.com\">GL.Tech@icloud.com</a>. This policy covers our app and its support workflow. TikTok, sign-in providers, Apple and GitHub process data under their own policies.</p>"
         },
         {
           "title": "2. TikTok sign-in and account operations",
-          "body": "<p>Sign-in occurs on TikTok’s official website in an embedded WebKit browser, and may open the sign-in provider you choose. You enter credentials into those websites; Repost Reset does not ask you to send credentials to GL Technologies. WebKit stores website session data on your device. The app uses the signed-in session to identify your account, read lists and perform the repost, like or favorite actions you select. Session credentials are not sent to a developer-operated server. TikTok and your sign-in provider receive the requests and may process technical information such as IP addresses and website cookies.</p>"
+          "body": "<p>Sign-in occurs on TikTok’s official website in an embedded WebKit browser, and may open the sign-in provider you choose. You enter credentials into those websites; TokCleaner does not ask you to send credentials to GL Technologies. WebKit stores website session data on your device. The app uses the signed-in session to identify your account, read lists and perform the repost, like or favorite actions you select. Session credentials are not sent to a developer-operated server. TikTok and your sign-in provider receive the requests and may process technical information such as IP addresses and website cookies.</p>"
         },
         {
           "title": "3. Data stored on your device",
@@ -220,7 +220,7 @@
       "sections": [
         {
           "title": "1. Provider and scope",
-          "body": "<p>GL Technologies provides Repost Reset, an independent tool for managing selected TikTok reposts, likes and favorites. It is not affiliated with, endorsed by or sponsored by TikTok. These terms describe the app’s use and service limits. If distributed through the App Store, the applicable license is Apple’s <a href=\"https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\">Standard End User License Agreement</a>, unless a separate custom EULA is presented. Nothing here replaces mandatory consumer rights or applicable Apple terms.</p>"
+          "body": "<p>GL Technologies provides TokCleaner, an independent tool for managing selected TikTok reposts, likes and favorites. It is not affiliated with, endorsed by or sponsored by TikTok. These terms describe the app’s use and service limits. If distributed through the App Store, the applicable license is Apple’s <a href=\"https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\">Standard End User License Agreement</a>, unless a separate custom EULA is presented. Nothing here replaces mandatory consumer rights or applicable Apple terms.</p>"
         },
         {
           "title": "2. Your account and choices",
@@ -248,5 +248,10 @@
         }
       ]
     }
+  },
+  "helpCard": {
+    "title": "Still need help?",
+    "body": "Our technical support team is here to answer your questions and help with feedback.",
+    "action": "Contact support"
   }
 }

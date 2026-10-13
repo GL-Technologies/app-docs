@@ -16,10 +16,10 @@
   "independent": "独立したツールです。TikTok との提携はありません。",
   "skip": "本文へ移動",
   "allRights": "無断転載を禁じます。",
-  "description": "Repost Reset のヘルプ、プライバシー、利用規約。",
+  "description": "TokCleaner のヘルプ、プライバシー、利用規約。",
   "pages": {
     "index": {
-      "title": "Repost Reset",
+      "title": "TokCleaner",
       "subtitle": "TikTok の再投稿・いいね・お気に入りを選んで整理し、結果を確認する独立した iOS ツール。GL Technologies が提供します。",
       "sections": [
         {
@@ -160,7 +160,7 @@
         },
         {
           "title": "お知らせいただきたい情報",
-          "body": "<p>Settings → About Repost Reset のアプリバージョンとビルド番号、端末と iOS バージョン、再投稿・いいね・お気に入りの種類、期待した結果と実際の結果、エラーまたは処理状態をお知らせください。必要な場合だけ個人情報を隠した画像や履歴の書き出しを添付してください。履歴にはアカウントや動画の情報が含まれる場合があります。</p>"
+          "body": "<p>Settings → About TokCleaner のアプリバージョンとビルド番号、端末と iOS バージョン、再投稿・いいね・お気に入りの種類、期待した結果と実際の結果、エラーまたは処理状態をお知らせください。必要な場合だけ個人情報を隠した画像や履歴の書き出しを添付してください。履歴にはアカウントや動画の情報が含まれる場合があります。</p>"
         },
         {
           "title": "購入と請求",
@@ -178,7 +178,7 @@
       "sections": [
         {
           "title": "1. 提供者",
-          "body": "<p>Repost Reset は GL Technologies が提供する独立した iOS アプリです。連絡先：<a href=\"mailto:GL.Tech@icloud.com\">GL.Tech@icloud.com</a>。本ポリシーはアプリとサポートの情報処理に適用されます。TikTok、ログイン提供者、Apple、GitHub は各自のポリシーに基づいて処理します。</p>"
+          "body": "<p>TokCleaner は GL Technologies が提供する独立した iOS アプリです。連絡先：<a href=\"mailto:GL.Tech@icloud.com\">GL.Tech@icloud.com</a>。本ポリシーはアプリとサポートの情報処理に適用されます。TikTok、ログイン提供者、Apple、GitHub は各自のポリシーに基づいて処理します。</p>"
         },
         {
           "title": "2. TikTok ログインとアカウント操作",
@@ -248,5 +248,10 @@
         }
       ]
     }
+  },
+  "helpCard": {
+    "title": "お困りですか？",
+    "body": "ご質問やフィードバックは、テクニカルサポートチームまでお気軽にお寄せください。",
+    "action": "サポートに連絡"
   }
 }

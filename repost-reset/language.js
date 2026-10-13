@@ -10,7 +10,7 @@
   }
   const select = document.getElementById("language-select");
   const label = document.getElementById("current-language");
-  const descriptions = { en: "Repost Reset help, privacy and terms of use.", "zh-Hans": "Repost Reset 使用帮助、隐私政策和使用条款。", "zh-Hant": "Repost Reset 使用說明、隱私政策與使用條款。", ja: "Repost Reset のヘルプ、プライバシー、利用規約。", es: "Ayuda, privacidad y condiciones de Repost Reset.", de: "Hilfe, Datenschutz und Nutzungsbedingungen für Repost Reset.", fr: "Aide, confidentialité et conditions de Repost Reset." };
+  const descriptions = { en: "TokCleaner help, privacy and terms of use.", "zh-Hans": "TokCleaner 使用帮助、隐私政策和使用条款。", "zh-Hant": "TokCleaner 使用說明、隱私政策與使用條款。", ja: "TokCleaner のヘルプ、プライバシー、利用規約。", es: "Ayuda, privacidad y condiciones de TokCleaner.", de: "Hilfe, Datenschutz und Nutzungsbedingungen für TokCleaner.", fr: "Aide, confidentialité et conditions de TokCleaner." };
   const accessibility = { en: ["Language", "Documentation"], "zh-Hans": ["语言", "文档导航"], "zh-Hant": ["語言", "文件導覽"], ja: ["言語", "ドキュメント"], es: ["Idioma", "Documentación"], de: ["Sprache", "Dokumentation"], fr: ["Langue", "Documentation"] };
   function applyLanguage(language, persist = false) {
     const selected = supports(language) ? language : "en";
@@ -21,7 +21,7 @@
     document.querySelector("nav").setAttribute("aria-label", accessibility[selected][1]);
     label.textContent = names[selected];
     const heading = document.querySelector(`#main [data-lang="${selected}"] h1`);
-    document.title = heading.textContent === "Repost Reset" ? "Repost Reset · " + descriptions[selected] : "Repost Reset · " + heading.textContent;
+    document.title = heading.textContent === "TokCleaner" ? "TokCleaner" : "TokCleaner · " + heading.textContent;
     document.querySelector('meta[name="description"]').content = descriptions[selected];
     // Keep navigation shareable even when browser storage is disabled.
     document.querySelectorAll('a[href$=".html"], a[data-document-link]').forEach(link => {

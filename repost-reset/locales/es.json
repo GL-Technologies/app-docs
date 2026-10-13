@@ -16,10 +16,10 @@
   "independent": "Herramienta independiente, sin afiliación con TikTok.",
   "skip": "Ir al contenido",
   "allRights": "Todos los derechos reservados.",
-  "description": "Ayuda, privacidad y condiciones de Repost Reset.",
+  "description": "Ayuda, privacidad y condiciones de TokCleaner.",
   "pages": {
     "index": {
-      "title": "Repost Reset",
+      "title": "TokCleaner",
       "subtitle": "Revisa y elimina republicaciones, Me gusta y favoritos seleccionados, y comprueba el resultado. Una herramienta independiente para iOS de GL Technologies.",
       "sections": [
         {
@@ -160,7 +160,7 @@
         },
         {
           "title": "Qué información incluir",
-          "body": "<p>Incluye versión y compilación de Settings → About Repost Reset, modelo e iOS, categoría, resultado esperado y real, error o estado de la tarea. Añade capturas sin datos privados si ayudan. Comparte archivos de historial solo cuando sea necesario: pueden contener metadatos de cuentas y vídeos.</p>"
+          "body": "<p>Incluye versión y compilación de Settings → About TokCleaner, modelo e iOS, categoría, resultado esperado y real, error o estado de la tarea. Añade capturas sin datos privados si ayudan. Comparte archivos de historial solo cuando sea necesario: pueden contener metadatos de cuentas y vídeos.</p>"
         },
         {
           "title": "Compras y facturación",
@@ -178,7 +178,7 @@
       "sections": [
         {
           "title": "1. Quiénes somos",
-          "body": "<p>Repost Reset es una app independiente de GL Technologies. Contacto: <a href=\"mailto:GL.Tech@icloud.com\">GL.Tech@icloud.com</a>. Esta política cubre la app y el soporte. TikTok, los proveedores de identificación, Apple y GitHub tratan datos bajo sus propias políticas.</p>"
+          "body": "<p>TokCleaner es una app independiente de GL Technologies. Contacto: <a href=\"mailto:GL.Tech@icloud.com\">GL.Tech@icloud.com</a>. Esta política cubre la app y el soporte. TikTok, los proveedores de identificación, Apple y GitHub tratan datos bajo sus propias políticas.</p>"
         },
         {
           "title": "2. Inicio de sesión y acciones en TikTok",
@@ -248,5 +248,10 @@
         }
       ]
     }
+  },
+  "helpCard": {
+    "title": "¿Necesitas más ayuda?",
+    "body": "Nuestro equipo de soporte técnico está aquí para responder tus preguntas y atender tus comentarios.",
+    "action": "Contactar con soporte"
   }
 }

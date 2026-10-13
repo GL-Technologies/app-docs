@@ -16,10 +16,10 @@
   "independent": "Outil indépendant, sans affiliation avec TikTok.",
   "skip": "Aller au contenu",
   "allRights": "Tous droits réservés.",
-  "description": "Aide, confidentialité et conditions de Repost Reset.",
+  "description": "Aide, confidentialité et conditions de TokCleaner.",
   "pages": {
     "index": {
-      "title": "Repost Reset",
+      "title": "TokCleaner",
       "subtitle": "Vérifiez et retirez les republications, mentions J’aime et favoris de votre choix, puis contrôlez le résultat. Un outil iOS indépendant de GL Technologies.",
       "sections": [
         {
@@ -160,7 +160,7 @@
         },
         {
           "title": "Informations utiles",
-          "body": "<p>Précisez version et build dans Settings → About Repost Reset, modèle, version iOS, catégorie, résultat attendu et obtenu, erreur ou état de tâche. Joignez une capture masquée si utile. Partagez un export d’historique seulement si nécessaire : il peut contenir des métadonnées de compte et de vidéos.</p>"
+          "body": "<p>Précisez version et build dans Settings → About TokCleaner, modèle, version iOS, catégorie, résultat attendu et obtenu, erreur ou état de tâche. Joignez une capture masquée si utile. Partagez un export d’historique seulement si nécessaire : il peut contenir des métadonnées de compte et de vidéos.</p>"
         },
         {
           "title": "Achats et facturation",
@@ -178,7 +178,7 @@
       "sections": [
         {
           "title": "1. Qui nous sommes",
-          "body": "<p>Repost Reset est une app iOS indépendante fournie par GL Technologies. Contact : <a href=\"mailto:GL.Tech@icloud.com\">GL.Tech@icloud.com</a>. Cette politique concerne l’app et l’assistance. TikTok, les fournisseurs de connexion, Apple et GitHub appliquent leurs propres politiques.</p>"
+          "body": "<p>TokCleaner est une app iOS indépendante fournie par GL Technologies. Contact : <a href=\"mailto:GL.Tech@icloud.com\">GL.Tech@icloud.com</a>. Cette politique concerne l’app et l’assistance. TikTok, les fournisseurs de connexion, Apple et GitHub appliquent leurs propres politiques.</p>"
         },
         {
           "title": "2. Connexion et actions TikTok",
@@ -248,5 +248,10 @@
         }
       ]
     }
+  },
+  "helpCard": {
+    "title": "Besoin d’aide ?",
+    "body": "Notre équipe d’assistance technique est là pour répondre à vos questions et recueillir vos retours.",
+    "action": "Contacter l’assistance"
   }
 }
